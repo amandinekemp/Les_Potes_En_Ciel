@@ -1,0 +1,74 @@
+body {
+  background-color: #F6F4E8; /* ajouter la propriété background-color pour définir la couleur de fond */
+  color: #333;
+}
+
+.header {
+  position: absolute; /* pour positionner le titre de manière absolue par rapport à la page */
+  top: 80px; /* pour laisser un peu d'espace en haut */
+  left: 50%; /* pour centrer le titre horizontalement */
+  transform: translateX(-50%); /* pour compenser la valeur de "left" et centrer parfaitement le titre */
+  text-align: center;
+  width: 100%; /* pour que le titre prenne toute la largeur de la page */
+}
+
+
+.banner {
+  position: relative; /* pour que les éléments enfants puissent être positionnés de manière absolue par rapport à la bannière */
+  text-align: left;
+  color: black;
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  max-height: 400px; /* Adjust this value to reduce the banner image height */
+}
+
+.logo {
+  position: absolute; /* pour positionner le logo de manière absolue par rapport à la bannière */
+  top: 10px; /* pour ajouter un peu de marge en haut */
+  left: 10px; /* pour ajouter un peu de marge à gauche */
+  height: 50%; /* pour que la taille du logo soit égale à 50% de la hauteur de l'image de la bannière */
+  max-height: 200px; /* pour éviter que le logo ne soit trop grand (vous pouvez ajuster cette valeur en fonction de vos besoins) */
+}
+
+.banner-title {
+  position: absolute; /* pour positionner le titre de manière absolue par rapport à la bannière */
+  top: 20px; /* pour laisser un peu d'espace en haut */
+  left: 50%; /* pour centrer le titre horizontalement */
+  transform: translateX(-50%); /* pour compenser la valeur de "left" et centrer parfaitement le titre */
+  color: black;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 100%; /* pour que le titre prenne toute la largeur de la bannière */
+}
+
+.mission {
+  background-color: #fff;
+  padding: 50px 0;
+}
+
+.activities .carousel-item {
+  height: 500px;
+}
+
+.activities .carousel-item img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.footer {
+  background-color: black;
+  color: #F6F4E8;
+  padding: 20px 0;
+}
+
+.footer .btn {
+  background-color: #F6F4E8;
+  color: black;
+}
+
+.footer .btn-link {
+  color: #F6F4E8;
+}
