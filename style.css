@@ -27,8 +27,8 @@ body {
 
 .logo {
   position: absolute; /* pour positionner le logo de manière absolue par rapport à la bannière */
-  top: 10px; /* pour ajouter un peu de marge en haut */
-  left: 10px; /* pour ajouter un peu de marge à gauche */
+  top: 40px; /* pour ajouter un peu de marge en haut */
+  left: 40px; /* pour ajouter un peu de marge à gauche */
   height: 50%; /* pour que la taille du logo soit égale à 50% de la hauteur de l'image de la bannière */
   max-height: 200px; /* pour éviter que le logo ne soit trop grand (vous pouvez ajuster cette valeur en fonction de vos besoins) */
 }
@@ -59,16 +59,44 @@ body {
 }
 
 .footer {
-  background-color: black;
-  color: #F6F4E8;
-  padding: 20px 0;
+  background-color: #333;
+  color: #fff;
+  padding: 50px 0;
 }
 
-.footer .btn {
-  background-color: #F6F4E8;
-  color: black;
+.footer h5 {
+  color: #F6F4E8;
+  margin-bottom: 10px;
 }
 
-.footer .btn-link {
+.footer a {
   color: #F6F4E8;
+}
+
+.footer a:hover {
+  color: #F6F4E8;
+}
+
+.footer .btn-social {
+  background-color: #333;
+  border: none;
+  color: #F6F4E8;
+  font-size: 1.2rem;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 5px;
+  padding: 0;
+  text-align: center;
+  width: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer .btn-social:hover {
+  background-color:#F6F4E8;
+  color: #333;
+}
+
+.footer .col-md-4:last-child div {
+  display: flex;
+  justify-content: center;
 }
