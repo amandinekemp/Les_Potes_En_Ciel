@@ -59,22 +59,17 @@ body {
 }
 
 .footer {
-  background-color: #333;
+  background-color: black;
   color: #fff;
   padding: 50px 0;
 }
 
-.footer h5 {
-  color: #F6F4E8;
-  margin-bottom: 10px;
-}
-
 .footer a {
-  color: #F6F4E8;
+  color: black;
 }
 
 .footer a:hover {
-  color: #F6F4E8;
+  color: #29b468;
 }
 
 .footer .btn-social {
@@ -99,4 +94,11 @@ body {
 .footer .col-md-4:last-child div {
   display: flex;
   justify-content: center;
+}
+
+.footer .col-12 {
+  display: flex;
+  justify-content: center;
+  color: grey;
+  font-size: 0.7rem;
 }
