@@ -49,6 +49,7 @@ body {
   padding: 50px 0;
 }
 
+/* Carousel activities */
 .activities .carousel-item {
   height: 500px;
 }
@@ -58,6 +59,12 @@ body {
   object-fit: cover;
 }
 
+.activities .carousel-control-prev-icon,
+.activities .carousel-control-next-icon {
+  background-color: black; /* Couleur des flèches de navigation */
+}
+
+/* Footer */
 .footer {
   background-color: black;
   color: #fff;
