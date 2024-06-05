@@ -63,8 +63,8 @@ body {
 
 .activities .carousel-item img {
   width: 100%; /* S'assure que l'image prend toute la largeur de l'élément parent */
-  height: 400px; /* Hauteur fixe des images */
-  object-fit: cover; /* L'image s'adapte à l'élément parent en conservant son ratio d'aspect */
+  height: 200px; /* Hauteur fixe de l'image en mode réduit */
+  object-fit: contain; /* L'image s'adapte à l'élément parent en conservant son ratio d'aspect */
 }
 
 .activities .carousel-control-prev-icon,
