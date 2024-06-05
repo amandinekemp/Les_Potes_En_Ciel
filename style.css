@@ -59,6 +59,7 @@ body {
 /* Carousel activities */
 .activities .carousel-item {
   min-height: 300px;
+  background-size: cover;
 }
 
 .activities .carousel-item-img {
@@ -70,7 +71,8 @@ body {
 .activities .carousel-item-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  display: inline-block; /* Pour éviter les espaces blancs entre les images */
+  background-size: cover; /* Voir toute l'image dans le conteneur */
 }
 
 .activities .carousel-control-prev-icon,
