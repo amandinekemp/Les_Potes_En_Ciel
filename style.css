@@ -58,18 +58,34 @@ body {
 
 /* Carousel activities */
 .activities .carousel-item {
-  min-height: 300px; /* Hauteur minimale de l'élément .carousel-item */
+  min-height: 300px;
 }
 
-.activities .carousel-item img {
-  width: 100%; /* S'assure que l'image prend toute la largeur de l'élément parent */
-  height: 200px; /* Hauteur fixe de l'image en mode réduit */
-  object-fit: contain; /* L'image s'adapte à l'élément parent en conservant son ratio d'aspect */
+.activities .carousel-item-img {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+  padding: 0 5px;
+}
+
+.activities .carousel-item-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .activities .carousel-control-prev-icon,
 .activities .carousel-control-next-icon {
-  background-color: black; /* Couleur des flèches de navigation */
+  background-color: black;
+}
+
+/* Ajoute une marge à droite de chaque élément .carousel-item, sauf le dernier */
+.activities .carousel-item + .carousel-item {
+  margin-right: 10px;
+}
+
+/* Ajoute une marge à gauche du premier élément .carousel-item */
+.activities .carousel-item:first-child {
+  margin-left: 10px;
 }
 
 /* Footer */
