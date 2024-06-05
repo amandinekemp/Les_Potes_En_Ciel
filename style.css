@@ -49,14 +49,22 @@ body {
   padding: 50px 0;
 }
 
+/* Section for Planning Image */
+.planning img {
+  width: 100%; /* Assure que l'image prend toute la largeur de l'élément parent */
+  height: auto; /* Maintient le ratio d'aspect de l'image */
+  object-fit: cover; /* L'image s'adapte à l'élément parent en conservant son ratio d'aspect */
+}
+
 /* Carousel activities */
 .activities .carousel-item {
-  height: 500px;
+  min-height: 300px; /* Hauteur minimale de l'élément .carousel-item */
 }
 
 .activities .carousel-item img {
-  height: 100%;
-  object-fit: cover;
+  width: 100%; /* S'assure que l'image prend toute la largeur de l'élément parent */
+  height: 400px; /* Hauteur fixe des images */
+  object-fit: cover; /* L'image s'adapte à l'élément parent en conservant son ratio d'aspect */
 }
 
 .activities .carousel-control-prev-icon,
