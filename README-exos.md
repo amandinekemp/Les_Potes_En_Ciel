@@ -7,20 +7,6 @@
 
 ----------
 
-## ➤ Menu:
-
-* [➤ Concepts](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-concepts)
-* [➤ What’s this “Research & project approval”?](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-whats-this-research--project-approval)
-* [➤ Examples of the past](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-examples-of-the-past)
-* [➤ Some things to think about](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-some-things-to-think-about)
-* [➤ No idea? we have some for you…](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-no-idea-we-have-some-for-you)
-* [➤ Default Project](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-default-project)
-* [➤ More Info](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-more-info)
-* [➤ Tasks](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-more-info)
-* [➤ Author](https://github.com/amandinekemp/holbertonschool-higher_level_programming/tree/main/SQL_introduction#-author)
-
-----------
-
 ## ➤ Concepts:
 
 For this project, we expect you to look at this concept:
@@ -162,6 +148,412 @@ As an example, lets say you will develop an image compression algorithm, and dec
 </details>
 
 ----------
+
+
+<details>
+<summary>Research & Project approval (Part 2)</summary>
+
+----------
+
+# <p align="center">Research & Project approval (Part 2)</p>
+
+----------
+
+<p align="center">
+    <img [Research & Project approval (Part 2)] src="https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/images/research_and%20_project%20approval(part%202).png">
+</p>
+
+----------
+
+## ➤ What’s the Minimum Viable Product (MVP)?
+
+“A minimum viable product has just enough core features to effectively deploy the product, and no more.” – Wikipedia
+
+Now that the team and the challenge are well defined, it is time to create a specification for the first version of your software. This is important because it is an opportunity to get the scope of the project right. If a project is too small in scope, it does not serve as an opportunity to expand your technical understanding, or present as impressive. When a project is too large in scope, the project will likely be incomplete by the end of the 2 weeks.
+
+## ➤ Some things to think about:
+
+**User Experience**
+Remember that one of the most important users to consider will be the recruiter and hiring manager that will be evaluating your work. It may be helpful to think through a user experience that can be accessed without creating an account or giving personal details.
+
+**Scope**
+For this project, consider that it is better to end up with something a bit smaller in scope that has undergone a couple (or at least one) iteration of deployment, testing and bug fixes. Documentation is also a big bonus!
+
+**Shortcuts**
+It is fine to find ways to speed up development by taking shortcuts, but it’s important to state these openly, and have a plan in place to amend these if there is time. An example might be to first read and write from files without using a database (as you did with Airbnb at first), or hard-coding some values. This might be a good strategy if the real challenge of your software lies elsewhere, and you want to first create an end-to-end proof of concept to demonstrate feasibility.
+
+## ➤ Default Project:
+
+If you do not have an idea, and do not submit a proposal or do not gain approval for your proposed projects, you’ll be expected to complete the 2D Game: The Maze - concept page available on top of this project.
+
+## ➤ More Info:
+
+**Manual QA Review**
+Manual QA Reviews will be done by a staff member.
+
+----------
+
+<details>
+<summary>Tasks:</summary>
+
+### 0. Share your MVP specification!
+
+Share a link here to a NEW Google Document where each of the following tasks are addressed.
+
+Add URLs here: 
+
+### 1. Rename the document
+
+Rename the document to be the Project’s name and append “ MVP specification”
+
+### 2. Architecture
+
+In a section named “Architecture”:
+
+* Include an illustration or diagram of the Portfolio Project’s MVP. This should include an end-to-end map for the data flowing through your system. Each part of the diagram should be clearly labeled.
+Here are some resources to learn more:
+
+* [Web Architecture 101](https://intranet.hbtn.io/rltoken/QcKoID9D7jXe2LjvLAloSg)
+* [List of tools to create architecture diagrams](https://intranet.hbtn.io/rltoken/2qkHkipyGIYOkBfgv1kWzg)
+* [Web Application Architecture](https://intranet.hbtn.io/rltoken/iNFVEcCfJ_3t0CuFTuiOWg)
+ 
+### 3. APIs
+
+In a section called “APIs and Methods”:
+
+* List and describe the API routes that you will be creating for your web client to communicate with your web server
+
+```
+Example:
+/api/rewards
+GET: Returns a randomized array of ten rewards based on rarity for a user to win based on a roll POST: Takes a user id and reward id and adds that to the user rewards table
+/api/user
+GET: Returns the user's information based on session id
+/api/job_search
+POST: Returns job's matching the parameters through GitHub Jobs API
+```
+
+* List and describe any API endpoints or function/methods that you will be creating to allow any other clients to use:
+
+```
+Example: 
+class arrow.arrow.Arrow(year, month, day, hour=0, minute=0, second=0, microsecond=0, tzinfo=None)
+An Arrow object.
+Implements the datetime interface, behaving as an aware datetime while implementing additional functionality.
+
+Parameters
+year – the calendar year.
+month – the calendar month.
+day – the calendar day.
+hour – (optional) the hour. Defaults to 0.
+minute – (optional) the minute, Defaults to 0.
+second – (optional) the second, Defaults to 0.
+microsecond – (optional) the microsecond. Defaults 0.
+tzinfo – (optional) A timezone expression. Defaults to UTC.
+(source https://arrow.readthedocs.io/en/latest/#api-guide)
+```
+
+* List and describe any 3rd party APIs that you will be using
+
+```
+e.g. https://developer.twitter.com/en/docs/tweets/post-and-engage/overview
+POST statuses/update
+POST statuses/destroy/:id
+GET statuses/show/:id
+GET statuses/oembed
+GET statuses/lookup
+If there are no APIs used or provided, skip this section.
+```
+
+### 4. Data Modelling
+
+In a section named “Data Model”:
+
+Create a data model diagram to clarify how data will be stored
+Tools: SqlDBM
+
+Example: 
+
+<p align="center">
+    <img [### 4. Data Modelling_image] src="https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/images/P2-T4.data_modelling.gif">
+</p>
+
+### 5. User Stories
+
+First, research what [user stories](https://intranet.hbtn.io/rltoken/fAuAYAad8ElX8fU9VTt83g) are, and how to write them. Also note  [some pitfalls](https://intranet.hbtn.io/rltoken/GSC1ArZsSUI51fdMaTbDvw) of creating user stories that are too general.
+
+In the “User Stories” section:
+
+* Define 3-5 detailed user stories that will be satisfied when your MVP is complete.
+ 
+### 6. Mockups
+
+If there is any visual interface to your Portfolio Project, this section is required. If your project lives on the commandline, or in script, then do not include this section. Use a prototyping tool, like Balsamiq, to draft your user-facing visual interfaces.
+
+In a section called “Mockups”:
+
+<p align="center">
+    <img [### 6. Mockups-image] src="https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/images/P2%20T6-mockups.png">
+</p>
+
+Include a mockup of each view that will need to be created for your MVP
+
+</details>
+
+
+</details>
+
+----------
+
+<details>
+<summary>Research & Project approval (Part 3)</summary>
+
+----------
+
+# <p align="center">Research & Project approval (Part 3)</p>
+
+----------
+
+<p align="center">
+    <img [Research & Project approval (Part 3)] src="https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/images/p3.png">
+</p>
+
+----------
+
+## ➤ Concepts
+For this project, we expect you to look at this concept:
+
+* [Maze project](https://intranet.hbtn.io/concepts/917)
+
+## ➤ What’s a Portfolio Project?
+
+The Portfolio Project will be a project you will showcase on your resumé, online, and during interviews. A completed Portfolio Project will consist of:
+
+* A landing page describing your project
+* A comprehensive README.md
+* A demo of the project
+* A presentation
+* A blog post
+
+## ➤ Why build a Portfolio project?
+
+The Portfolio Project serves several different purposes:
+
+1. Highlights a Student’s unique interests and background when networking, or interviewing with potential employers.
+2. Provides a realistic workplace scenario where engineers create a solution to fit loosely defined requirements, break this down into concrete tasks and implement on a deadline.
+3. Allows for self-directed learning to explore a new technical topic, deepen understanding of a curriculum-covered topic, or use technology to bring an idea to life.
+
+## ➤ Timeline and checkpoints
+
+Projects can be developed alone, or in teams of up to 3 students. The technologies and project concept are defined by the student teams.
+
+Research & project approval (Part 1-3)
+
+* Week 1: Project proposal (staff review, approval required)
+* Week 2: MVP (Minimum Viable Product) proposal (staff review, approval required)
+* **Week 3: [Trello](https://intranet.hbtn.io/rltoken/YBW0nPA4KlKweXMmM8uzQQ) board (staff review, approval required)**
+
+Build Portfolio Project
+
+* Week 4: Development
+* Week 5: MVP completed (staff review, approval required)
+* Week 6: Landing page deployed, final presentation delivered (staff review, approval required)
+
+* Week 7: Blog post reflection (peer review)
+
+## ➤ What’s the Trello board?
+
+Trello is a free project management software that uses a kanban board to visually track the implementation of a feature set from “to-do” to “done”. Trello makes it easy to assign tasks, collaborate and collect notes in a central location.
+
+There are other project management tools, such as Asana, Airtable, and Jira. Trello has been selected for ease of use and ability to visualize progress.
+
+## ➤ Some things to think about
+
+**Scope of tasks**
+Creating well-scoped tasks is a skill that requires practice. Also explore creating subtasks within a task.
+
+**Dependencies**
+Some tasks will rely on other ones to first be completed. Other tasks can be done in parallel but may require integration with other components along the way. Define your tasks with dependencies in mind.
+
+**Priority**
+Similar to thinking about dependencies, it will also be important to complete the highest-risk part of your software first to ensure that the central workflows of your software can be completed. It may make sense to prioritize tasks that the team is least knowledgeable about, or require the greatest resources.
+
+## ➤ Default Project
+
+If you do not have an idea, and do not submit a proposal or do not gain approval for your proposed projects, you’ll be expected to complete the 2D Game: The Maze - concept page available on top of this project.
+
+## ➤ More Info
+
+Manual QA Review
+
+It is your responsibility to request a review for your Trello board from a peer before the project’s deadline. If no peers have been reviewed, you should request a review from a staff member.
+
+----------
+
+<details>
+<summary>Tasks:</summary>
+
+### 0. Share your Trello board!
+
+Share a link here to a public Trello board where each of the following tasks are addressed.
+
+Add URLs here:
+ 
+### 1. Column Headers
+
+Set up your Trello board with the following columns:
+
+* Proposed
+* Approved
+* In Progress
+* Dev Complete
+* Tested
+* Deployed
+
+### 2. Create Cards
+
+In the “proposed” column, create cards to fully represent the engineering tasks necessary to implement to satisfy the User Stories defined for your MVP. For each card, attach detailed descriptions, mockups, diagrams or technical specifications relevant to the engineering task.
+ 
+### 3. Assign cards
+
+For each card, assign ownership to a team member. This should make sense given the roles specified in the project proposal.
+
+### 4. Invite collaborators
+
+Invite the technical staff to be a collaborator on the Trello board so that each proposed task can be commented upon and moved into the approved column. 
+
+### 5. Set Due Dates
+
+For each task, based on priority and dependencies, assign a due date within the 2 week development window.
+
+### 6. Add a few mandatory tasks
+
+Include the following tasks to the “Approved” column:
+
+* Create presentation
+* Create project landing page
+* Write comprehensive README.md
+* Make demo of the project
+* Write blog post
+
+
+</details>
+
+
+<details>
+<summary>Build your portfolio project (Sprint 1): Making Progress</summary>
+
+----------
+
+# <p align="center">Build your portfolio project (Sprint 1): Making Progress</p>
+
+----------
+
+<p align="center">
+    <img [Build your portfolio project (Sprint 1): Making Progress] src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/10/a9988dee7cde9c364f7b.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240612%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240612T095525Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=0b59cf6be1a46eaca14ace7f0cf38f91fe8cb2e6f853644bffa6f18f2f3c5970">
+</p>
+
+----------
+
+## ➤ Concepts
+
+For this project, we expect you to look at these concepts:
+
+* [Portfolio Project Overview](https://intranet.hbtn.io/concepts/916)
+* [Maze project](https://intranet.hbtn.io/concepts/917)
+* [3 Ways to Make a Portfolio Project Great](https://intranet.hbtn.io/concepts/918)
+
+## ➤ And now, we build!
+
+This week is all about execution! You have a detailed plan and you’ve thought through many aspects of your project. Now, get to work and try to hit the goals you’ve set for yourself or your team. The deliverable for the upcoming week will be a status report to share the challenges and progress you’ve encountered this week.
+
+## ➤ PLD: Portfolio Project Checkin
+
+During the PLD this week, these are the objectives:
+
+* Each team meets with 3 other teams, one at a time for 40 minutes.
+* During the team-team meeting, each team presents for 20 minutes, then observes for 20 minutes.
+* When a team is presenting, they share their proposal, problem statement, and walk through code any they’ve implemented and technical choices they have made.
+* When a team is observing, they ask questions, share observations, and code review.
+
+## ➤ Some things to think about
+
+**Front-load the biggest challenges first**
+This is the best time to tackle the areas you defined as the riskiest parts, and prioritizing them so that you can be confident that the project is feasible end-to-end. By taking this on first, it also allows for time to update your plan and rework your solution if necessary.
+
+**Organize the collaboration**
+If you’re working as a team, clarify the integration points, schedule and expectations. Frequent checkins, and co-locating to work in-person can be very effective.
+
+**Implement specified branch strategy; merge often**
+Merging code frequently is a great way to avoid a broken application the night before the presentation.
+
+## ➤ Maze Project
+
+If you are doing our Maze project, you can find all instructions in the Maze concept page
+
+## ➤ More Info
+
+**Manual QA Review**
+
+Manual QA Reviews will be completed by staff members.
+
+Have fun!
+
+----------
+
+<details>
+<summary>Tasks:</summary>
+
+### 0. Share your project progress!
+
+Share a link here to a new Google Document where your team provides a written status update.
+
+Add URLs here:
+
+### 2. Challenges
+
+In a section named “Challenges”, answer:
+
+* What challenges have you discovered about your project that were not obvious when you did your research?
+* How have you had to change your plan to adapt to these unearthed challenges?
+* Describe any unexpected non-technical challenges?
+
+### 3. Collaboration/Communication
+
+In a section named “Collaboration”, answer:
+
+If you are working in a team:
+
+* Discuss the challenges and/or success your team has had with collaborating
+
+If you are not working in a team:
+
+* Discuss any help you’ve received or provide from/to peers, staff, mentors, etc.
+* Note: if this is empty, please consider finding more opportunities to collaborate with people more.
+
+### 4. Project Updates
+
+In a section named “Project Updates”:
+
+* Outline any changes you are making to your portfolio project’s deliverables. Provide reasoning for each.
+
+### 1. Progress
+#advanced
+
+In a section named “Progress”, answer:
+
+* On a scale of 1 to 10, how would you rate the progress you’ve made this week?
+* How are you measuring your progress?
+* Discuss why you have given your team (or yourself) this rating.
+* Provide an assessment of whether your project will be completed on time as specified in your Project Proposal and MVP definition.
+
+</details>
+
+
+</details>
+
+----------
+
 
 ## ➤ Author:
 
