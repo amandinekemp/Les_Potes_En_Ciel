@@ -441,6 +441,8 @@ Include the following tasks to the “Approved” column:
 
 </details>
 
+----------
+
 <details>
 <summary>Build your portfolio project (Sprint 1): Making Progress</summary>
 
