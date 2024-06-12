@@ -1,10 +1,6 @@
 <details>
 <summary>Research & Project approval (Part 1)</summary>
 
-<p align="center">
-    <img [Research & Project approval (Part 1)] src="https://s3.eu-west-3.amazonaws.com/hbtn.intranet/uploads/medias/2019/9/be601df25eea91eaaf0d.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4MYA5JM5DUTZGMZG%2F20240612%2Feu-west-3%2Fs3%2Faws4_request&X-Amz-Date=20240612T085504Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=1b457856910f9fab4454522970f6aa5226d58f4f5261daafef6385af99160748">
-</p>
-
 ----------
 
 # <p align="center">Research & Project approval (Part 1)</p>
@@ -13,10 +9,14 @@
 
 ## ➤ Menu:
 
-* [➤ Resources](https://github.com/amandinekemp/holbertonschool-higher_level_programming/tree/main/SQL_introduction#-concepts)
-* [➤ General](https://github.com/amandinekemp/holbertonschool-higher_level_programming/tree/main/SQL_introduction#-what’s-this-“Research-&-project-approval”?)
-* [➤ Requirements](https://github.com/amandinekemp/holbertonschool-higher_level_programming/tree/main/SQL_introduction#-examples-of-the-past)
-* [➤ Tasks](https://github.com/amandinekemp/holbertonschool-higher_level_programming/tree/main/SQL_introduction#some-things-to-think-about)
+* [➤ Concepts](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-concepts)
+* [➤ What’s this “Research & project approval”?](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-whats-this-research--project-approval)
+* [➤ Examples of the past](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-examples-of-the-past)
+* [➤ Some things to think about](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-some-things-to-think-about)
+* [➤ No idea? we have some for you…](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-no-idea-we-have-some-for-you)
+* [➤ Default Project](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-default-project)
+* [➤ More Info](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-more-info)
+* [➤ Tasks](https://github.com/amandinekemp/Les_Potes_En_Ciel/blob/feature/homepage-frontend/README-exos.md#-more-info)
 * [➤ Author](https://github.com/amandinekemp/holbertonschool-higher_level_programming/tree/main/SQL_introduction#-author)
 
 ----------
