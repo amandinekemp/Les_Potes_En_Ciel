@@ -439,6 +439,7 @@ Include the following tasks to the “Approved” column:
 
 </details>
 
+</details>
 
 <details>
 <summary>Build your portfolio project (Sprint 1): Making Progress</summary>
@@ -549,12 +550,9 @@ In a section named “Progress”, answer:
 
 </details>
 
-
 </details>
 
 ----------
-
-
 ## ➤ Author:
 
 - Amandine KEMP
