@@ -1,0 +1,44 @@
+.footer {
+  background-color: black;
+  color: #fff;
+  padding: 50px 0;
+}
+
+.footer a {
+  color: black;
+}
+
+.footer a:hover {
+  color: #29b468;
+}
+
+.footer .btn-social {
+  background-color: #333;
+  border: none;
+  color: #F6F4E8;
+  font-size: 1.2rem;
+  height: 40px;
+  line-height: 40px;
+  margin: 0 5px;
+  padding: 0;
+  text-align: center;
+  width: 40px;
+  transition: all 0.3s ease-in-out;
+}
+
+.footer .btn-social:hover {
+  background-color: #F6F4E8;
+  color: #333;
+}
+
+.footer .col-md-4:last-child div {
+  display: flex;
+  justify-content: center;
+}
+
+.footer .col-12 {
+  display: flex;
+  justify-content: center;
+  color: grey;
+  font-size: 0.7rem;
+}

@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #F6F4E8;
+  /* ajouter la propriété background-color pour définir la couleur de fond */
+  color: #333;
+}
+
+.mission {
+  background-color: #fff;
+  padding: 50px 0;
+}
+
+/* Section for Planning Image */
+.planning img {
+  width: 100%;
+  /* Assure que l'image prend toute la largeur de l'élément parent */
+  height: auto;
+  /* Maintient le ratio d'aspect de l'image */
+  object-fit: cover;
+  /* L'image s'adapte à l'élément parent en conservant son ratio d'aspect */
+}
+
+/* Carousel activities */
+.activities .carousel-item {
+  min-height: 300px;
+  background-size: cover;
+}
+
+.activities .carousel-item-img {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+  padding: 0 5px;
+}
+
+.activities .carousel-item-img img {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  /* Pour éviter les espaces blancs entre les images */
+  background-size: cover;
+  /* Voir toute l'image dans le conteneur */
+}
+
+.activities .carousel-control-prev-icon,
+.activities .carousel-control-next-icon {
+  background-color: black;
+}
+
+/* Ajoute une marge à droite de chaque élément .carousel-item, sauf le dernier */
+.activities .carousel-item+.carousel-item {
+  margin-right: 10px;
+}
+
+/* Ajoute une marge à gauche du premier élément .carousel-item */
+.activities .carousel-item:first-child {
+  margin-left: 10px;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* -------------------------------- Accueil ----------------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+body.light-beige {
+  background-color: #F8F5ED;
+}
+
+.nav-wrapper .brand-logo {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.banner-container {
+  position: relative;
+  text-align: center;
+}
+
+.banner-img {
+  width: 80%;
+}
+
+.banner-logo {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  height: 40%;
+}
+
+.hamburger-menu {
+  position: absolute;
+  top: 0%;
+  right: 95%;
+  color: black;
+}
+
+.mission-title {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 2rem;
+  color: black;
+}
+
+.mission-text {
+  margin: 20px 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.page-footer .container .row .beige-text {
+  color: #f5f5dc !important;
+}
+
+.footer-buttons a {
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* ---------------------------------- Login ----------------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+body.bg-custom {
+  background-color: #F8F5ED;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.btn-info {
+  background-color: #40e0d0;
+  border-color: #40e0d0;
+}
