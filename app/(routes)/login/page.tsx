@@ -1,6 +1,12 @@
+import { Metadata } from "next";
+import Script from "next/script";
 import FormInscription from "@/app/_components/login/FormInscription";
 import FormLogin from "@/app/_components/login/FormLogin";
-import Script from "next/script";
+
+export const metadata: Metadata = {
+  title: "Authentification - Les potes en ciel",
+  description: "Page d'authentification des potes en ciel",
+};
 
 export default function LoginPage() {
   return (
@@ -13,7 +19,6 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-      <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></Script>
       <Script src="authentification.js"></Script>
     </>
   );
