@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
 import CarouselComponent from '../_components/carousel/CarouselComponent';
+import banner_img from '/public/banner_lpec.jpg';
+import logo_img from '/public/logo_lpec.png';
 
 export const metadata: Metadata = {
   title: "Les potes en ciel",
@@ -10,6 +12,12 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
+      {/* Banner and logo */}
+      <div className="banner">
+          <Image src={banner_img} alt="Banner Image" className="banner_img img-fluid" />
+          <Image src={logo_img} alt="Logo" className="logo" />
+      </div>
+
       {/* Mission Section */}
       <section className="mission text-center py-5">
           <h2>Notre Mission</h2>

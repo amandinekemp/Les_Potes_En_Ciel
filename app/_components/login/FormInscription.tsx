@@ -1,59 +1,61 @@
+import { Button, Form, InputGroup } from "react-bootstrap";
+
 const FormInscription = () => {
   return (
     <>
     <div className="card shadow rounded">
       <div className="card-body">
         <h3 className="card-title text-center">Créer un compte</h3>
-        <form>
+        <Form>
           <div className="mb-3">
-            <label htmlFor="prenom" className="form-label">Prénom*</label>
-            <input type="text" className="form-control" id="prenom" required></input>
+            <Form.Label htmlFor="prenom">Prénom*</Form.Label>
+            <Form.Control type="text" id="prenom" required></Form.Control>
           </div>
           <div className="mb-3">
-            <label htmlFor="nom" className="form-label">Nom*</label>
-            <input type="text" className="form-control" id="nom" required></input>
+            <Form.Label htmlFor="nom">Nom*</Form.Label>
+            <Form.Control type="text" id="nom" required></Form.Control>
           </div>
           <div className="mb-3">
-            <label htmlFor="dob" className="form-label">Date de naissance*</label>
-            <input type="date" className="form-control" id="dob" required></input>
+            <Form.Label htmlFor="dob">Date de naissance*</Form.Label>
+            <Form.Control type="date" id="dob" required></Form.Control>
           </div>
           <div className="mb-3">
-            <label htmlFor="adresse" className="form-label">Adresse*</label>
-            <input type="text" className="form-control" id="adresse" required></input>
+            <Form.Label htmlFor="adresse">Adresse*</Form.Label>
+            <Form.Control type="text" id="adresse" required></Form.Control>
           </div>
           <div className="mb-3">
-            <label htmlFor="codePostalVille" className="form-label">Code postal - Ville*</label>
-            <input type="text" className="form-control" id="codePostalVille" required></input>
+            <Form.Label htmlFor="codePostalVille">Code postal - Ville*</Form.Label>
+            <Form.Control type="text" id="codePostalVille" required></Form.Control>
           </div>
           <div className="mb-3">
-            <label htmlFor="emailSignup" className="form-label">E-mail*</label>
-            <input type="email" className="form-control" id="emailSignup" required></input>
+            <Form.Label htmlFor="emailSignup">E-mail*</Form.Label>
+            <Form.Control type="email" id="emailSignup" required></Form.Control>
           </div>
           <div className="mb-3">
-            <label htmlFor="passwordSignup" className="form-label">Mot de passe*</label>
-            <div className="input-group">
-              <input type="password" className="form-control" id="passwordSignup" required></input>
-              <button className="btn btn-outline-secondary" type="button" id="togglePasswordSignup">
+            <Form.Label htmlFor="passwordSignup">Mot de passe*</Form.Label>
+            <InputGroup>
+              <Form.Control type="password" id="passwordSignup" required></Form.Control>
+              <Button variant="outline-secondary" type="button" id="togglePasswordSignup">
                 <i className="bi bi-eye"></i>
-              </button>
-            </div>
+              </Button>
+            </InputGroup>
           </div>
           <div className="form-check mb-3">
-            <input className="form-check-input" type="checkbox" id="newsletter"></input>
-            <label className="form-check-label" htmlFor="newsletter">
+            <Form.Check type="checkbox" id="newsletter"></Form.Check>
+            <Form.Label htmlFor="newsletter">
               Incrivez-vous à la newsletter de l&apos;association.
-            </label>
+            </Form.Label>
           </div>
           <div className="form-check mb-3">
-            <input className="form-check-input" type="checkbox" id="infoEmail" required></input>
-            <label className="form-check-label" htmlFor="infoEmail">
+            <Form.Check type="checkbox" id="infoEmail" required></Form.Check>
+            <Form.Label htmlFor="infoEmail">
               J&apos;autorise le café des enfants à m&apos;envoyer des informations par e-mail.*
-            </label>
+            </Form.Label>
           </div>
           <div className="d-grid">
-            <button type="submit" className="btn btn-info text-white">Enregistrer</button>
+            <Button type="submit" variant="info" className="text-white">Enregistrer</Button>
           </div>
-        </form>
+        </Form>
       </div>
     </div>
     </>
