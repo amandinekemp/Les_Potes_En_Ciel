@@ -1,5 +1,4 @@
 import Image from "next/image";
-import style from "./Navbar.module.css";
 
 import banner_img from '/public/banner_lpec.jpg';
 import logo_img from '/public/logo_lpec.png';
@@ -9,7 +8,7 @@ const Navbar = () => {
   return (
     <>
     <header>
-      <div className={[style.header, style.banner_title, ""].join(" ")}>
+      <div className="header banner_title">
         <Link href={"/"}><h1>Les Potes En Ciel</h1></Link>
       </div>
       <div className="d-flex justify-content-between align-items-center p-3">
@@ -31,9 +30,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className={style.banner}>
-          <Image src={banner_img} alt="Banner Image" className={[style.banner_img, "img-fluid"].join(" ")} />
-          <Image src={logo_img} alt="Logo" className={style.logo} />
+      <div className="banner">
+          <Image src={banner_img} alt="Banner Image" className="banner_img img-fluid" />
+          <Image src={logo_img} alt="Logo" className="logo" />
       </div>
     </header>
     </>

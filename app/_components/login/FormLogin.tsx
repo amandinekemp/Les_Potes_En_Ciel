@@ -1,27 +1,29 @@
+import { Button, Form, InputGroup } from "react-bootstrap";
+
 const FormLogin = () => {
   return (
     <>
     <div className="card shadow rounded mb-4">
       <div className="card-body">
         <h3 className="card-title text-center">Se connecter</h3>
-        <form>
+        <Form>
           <div className="mb-3">
-            <label htmlFor="email" className="form-label">E-mail*</label>
-            <input type="email" className="form-control" id="email" required></input>
+            <Form.Label htmlFor="email">E-mail*</Form.Label>
+            <Form.Control type="email"></Form.Control>
           </div>
           <div className="mb-3">
-            <label htmlFor="password" className="form-label">Mot de passe*</label>
-            <div className="input-group">
-              <input type="password" className="form-control" id="password" required></input>
-              <button className="btn btn-outline-secondary" type="button" id="togglePassword">
+            <Form.Label htmlFor="password" >Mot de passe*</Form.Label>
+            <InputGroup>
+              <Form.Control type="password" id="password" required></Form.Control>
+              <Button type="button" variant="light" id="togglePassword">
                 <i className="bi bi-eye"></i>
-              </button>
-            </div>
+              </Button>
+            </InputGroup>
           </div>
-          <div className="d-grid">
-            <button type="submit" className="btn btn-info text-white">Se connecter</button>
+          <div className="d-grid gap-2">
+            <Button type="submit" variant="primary" className="text-white">Se connecter</Button>
           </div>
-        </form>
+        </Form>
       </div>
     </div>
     </>
