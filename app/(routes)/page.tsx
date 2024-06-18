@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import Carousel from '../_components/carousel/Carousel';
+import CarouselComponent from '../_components/carousel/CarouselComponent';
 
 export const metadata: Metadata = {
   title: "Les potes en ciel",
@@ -24,7 +24,7 @@ export default function HomePage() {
       </section>
 
       {/* Activities Section */}
-      <Carousel/>
+      <CarouselComponent/>
     </>
   );
 }
