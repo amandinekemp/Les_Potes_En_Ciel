@@ -34,6 +34,17 @@ function BasicExample() {
           />{' '}
           Les Potes En Ciel
         </NavbarBrand>
+
+        <NavLink href="/login">
+          <i className="bi bi-person-circle text-dark"></i>
+        </NavLink>
+
+        <i className="bi bi-globe"></i>
+        <NavDropdown title="" id="basic-nav-dropdown">
+          <DropdownItem href="#action/3.4">En</DropdownItem>
+          <DropdownItem href="#action/3.3">Fr</DropdownItem>
+        </NavDropdown>
+        
       </Container>
     </Navbar>
   );
