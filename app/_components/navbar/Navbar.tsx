@@ -11,8 +11,8 @@ function BasicExample() {
         <NavbarToggle aria-controls="basic-navbar-nav" />
         <NavbarCollapse id="basic-navbar-nav">
           <Nav>
-            <NavLink href="#agenda">Agenda</NavLink>
-            <NavLink href="#Bibliothéque">Bibliothéque</NavLink>
+            <NavLink href="/agenda">Agenda</NavLink>
+            <NavLink href="/Bibliothéque">Bibliothéque</NavLink>
             <NavDropdown title="Les nouvelles" id="basic-nav-dropdown">
               <DropdownItem href="#action/3.1">Fil d&apos;actualité</DropdownItem>
               <DropdownItem href="#action/3.2">Newsletter</DropdownItem>
@@ -39,8 +39,7 @@ function BasicExample() {
           <i className="bi bi-person-circle text-dark"></i>
         </NavLink>
 
-        <i className="bi bi-globe"></i>
-        <NavDropdown title="" id="basic-nav-dropdown">
+        <NavDropdown title={<i className="bi bi-globe"></i>} id="basic-nav-dropdown">
           <DropdownItem href="#action/3.4">En</DropdownItem>
           <DropdownItem href="#action/3.3">Fr</DropdownItem>
         </NavDropdown>
