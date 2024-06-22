@@ -1,9 +1,10 @@
 "use client"
 
 import React, { useState } from 'react';
+import { Button, Form, Image, InputGroup } from 'react-bootstrap';
 
 // Composant BookCreateForm qui permet d'ajouter un nouveau livre à la bibliothèque
-const BookCreateForm = ({ onSubmit }) => {
+const BookCreateForm = () => {
   // États pour gérer les champs du formulaire
   const [title, setTitle] = useState('');       // État pour le titre du livre
   const [author, setAuthor] = useState('');     // État pour l'auteur du livre
@@ -26,7 +27,7 @@ const BookCreateForm = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();  // Empêche le rechargement de la page lors de la soumission du formulaire
     const newBook = { title, author, summary, cover };  // Crée un nouvel objet livre avec les données du formulaire
-    onSubmit(newBook);  // Appelle la fonction onSubmit avec le nouvel objet livre
+    // onSubmit(newBook);  // Appelle la fonction onSubmit avec le nouvel objet livre
     // Réinitialise les champs du formulaire après la soumission
     setTitle('');
     setAuthor('');
@@ -35,57 +36,56 @@ const BookCreateForm = ({ onSubmit }) => {
   };
 
   return (
-    <form className="mt-4" onSubmit={handleSubmit}>
+    <Form className="mt-4" onSubmit={handleSubmit}>
       {/* <h3>Ajouter un nouveau livre</h3> */}
       {/* Champ pour le titre du livre */}
-      <div className="form-group">
-        <label>Titre</label>
-        <input
-          type="text"
-          className="form-control"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-          required
-        />
-      </div>
+      <Form.Group>
+        <Form.Label>Titre</Form.Label>
+        <InputGroup>
+          <Form.Control type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          ></Form.Control>
+        </InputGroup>
+      </Form.Group>
       {/* Champ pour l'auteur du livre */}
-      <div className="form-group">
-        <label>Auteur</label>
-        <input
-          type="text"
-          className="form-control"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-          required
-        />
-      </div>
+      <Form.Group>
+        <Form.Label>Auteur</Form.Label>
+        <InputGroup>
+          <Form.Control type="text"
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+            required
+          ></Form.Control>
+        </InputGroup>
+      </Form.Group>
       {/* Champ pour le résumé du livre */}
-      <div className="form-group">
-        <label>Résumé</label>
-        <textarea
-          className="form-control"
+      <Form.Group>
+        <Form.Label>Résumé</Form.Label>
+        <Form.Control as="textarea"
           value={summary}
           onChange={(e) => setSummary(e.target.value)}
           required
-        ></textarea>
-      </div>
+        ></Form.Control>
+      </Form.Group>
       {/* Champ pour la couverture du livre */}
-      <div className="form-group">
-        <label>Couverture</label>
-        <input
-          type="file"
-          className="form-control"
-          onChange={handleCoverChange}
-          accept="image/*"
-          required
-        />
+      <Form.Group>
+        <Form.Label>Couverture</Form.Label>
+        <InputGroup>
+          <Form.Control type="file"
+            onChange={handleCoverChange}
+            accept="image/*"
+            required
+          ></Form.Control>
+        </InputGroup>
         {cover && (
-          <img src={cover} alt="Book cover preview" className="mt-2" style={{ width: '100px', height: '150px' }} />
+          <Image src={cover} alt="Book cover preview" className="mt-2" style={{ width: '100px', height: '150px' }} />
         )}
-      </div>
+      </Form.Group>
       {/* Bouton de soumission du formulaire */}
-      <button type="submit" className="btn btn-success">Ajouter</button>
-    </form>
+      <Button type="submit" className="btn btn-success">Ajouter</Button>
+    </Form>
   );
 };
 
