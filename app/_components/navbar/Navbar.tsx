@@ -12,7 +12,7 @@ function BasicExample() {
         <NavbarCollapse id="basic-navbar-nav">
           <Nav>
             <NavLink href="/agenda">Agenda</NavLink>
-            <NavLink href="/Bibliothéque">Bibliothéque</NavLink>
+            <NavLink href="/library">Bibliothéque</NavLink>
             <NavDropdown title="Les nouvelles" id="basic-nav-dropdown">
               <DropdownItem href="#action/3.1">Fil d&apos;actualité</DropdownItem>
               <DropdownItem href="#action/3.2">Newsletter</DropdownItem>
