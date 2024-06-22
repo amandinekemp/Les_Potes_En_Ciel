@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import type {Book} from '../../_types/Book';
 import BookDetailCmpt from './BookDetailCmpt';
-// import BookForm from './BookForm';
+import BookCreateForm from './BookCreateForm';
 
 // Composant LibraryPage qui affiche la bibliothèque et permet de gérer les livres
 const BookShelveCmpt = () => {
@@ -53,10 +53,10 @@ const BookShelveCmpt = () => {
   //   // Logique pour annuler une réservation de livre
   // };
 
-  // // Gestion de l'ajout d'un nouveau livre
-  // const handleAddBook = (book) => {
-  //   // Logique pour ajouter un livre
-  // };
+  // Gestion de l'ajout d'un nouveau livre
+  const handleAddBook = (bookIsbn:string) => {
+    // Logique pour ajouter un livre
+  };
 
   // // Gestion de la modification d'un livre existant
   // const handleEditBook = (bookId, updatedBook) => {
@@ -79,8 +79,6 @@ const BookShelveCmpt = () => {
           </div>
         ))}
       </div>
-      {/* Formulaire pour ajouter un nouveau livre */}
-      {/* <BookForm onSubmit={handleAddBook} /> */}
     </div>
   );
 };
