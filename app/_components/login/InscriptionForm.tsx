@@ -1,6 +1,6 @@
 import { Button, Form, InputGroup } from "react-bootstrap";
 
-const FormInscription = () => {
+const InscriptionForm = () => {
   return (
     <>
     <div className="card shadow rounded">
@@ -62,4 +62,4 @@ const FormInscription = () => {
   );
 }
 
-export default FormInscription;
+export default InscriptionForm;

@@ -2,11 +2,11 @@
 
 import React, { useState, useEffect } from 'react';
 import type {Book} from '../../_types/Book';
-import BookDetails from './BookDetails';
+import BookDetailCmpt from './BookDetailCmpt';
 // import BookForm from './BookForm';
 
 // Composant LibraryPage qui affiche la bibliothèque et permet de gérer les livres
-const BookShelve = () => {
+const BookShelveCmpt = () => {
   // const [books, setBooks] = useState([]);  // État pour stocker la liste des livres
 
   // useEffect(() => {
@@ -75,7 +75,7 @@ const BookShelve = () => {
         {/* Affiche les détails de chaque livre dans une carte */}
         {books.map((bookItem:Book) => (
           <div key={bookItem.isbn} className="col-md-4 mb-4">
-            <BookDetails book={bookItem} onReserve={handleReservation}/>
+            <BookDetailCmpt book={bookItem} onReserve={handleReservation}/>
           </div>
         ))}
       </div>
@@ -85,4 +85,4 @@ const BookShelve = () => {
   );
 };
 
-export default BookShelve;
+export default BookShelveCmpt;

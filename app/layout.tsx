@@ -1,5 +1,5 @@
-import Navbar from "./_components/navbar/Navbar";
-import Footer from "./_components/footer/Footer";
+import Navbar from "./_components/navbar/NavbarCmpt";
+import FooterCmpt from "./_components/footer/FooterCmpt";
 
 // These styles apply to every route in the application
 // Library styles
@@ -7,9 +7,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
 // App styles
 import "./globals.css";
-import "./_components/navbar/Navbar.css";
-import "./_components/footer/Footer.css";
-import "./_components/carousel/CarouselComponent.css";
+import "./_components/navbar/NavbarCmpt.css";
+import "./_components/footer/FooterCmpt.css";
+import "./_components/carousel/CarouselCmpt.css";
 
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
       <body>
         <Navbar/>
         {mypage}
-        <Footer/>
+        <FooterCmpt/>
       </body>
     </html>
   );

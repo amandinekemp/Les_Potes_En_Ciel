@@ -2,10 +2,9 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import type {Book} from '../../_types/Book';
 
-// Composant BookDetails qui affiche les détails d'un livre et propose des actions de réservation et d'annulation
-const BookDetails = (props: { book: Book; onReserve: any; }) => {
+// Composant BookDetail qui affiche les détails d'un livre et propose des actions de réservation et d'annulation
+const BookDetailCmpt = (props: { book: Book; onReserve: any; }) => {
   let book: Book = props.book;
-  let onReserve = props.onReserve;
   return (
     <Card>
       {/* Image de la couverture du livre*/}
@@ -18,10 +17,10 @@ const BookDetails = (props: { book: Book; onReserve: any; }) => {
         {/* Résumé du livre */}
         <p className="card-text">{book.summary}</p>
         {/* Bouton pour réserver le livre */}
-        <button className="btn btn-primary mr-2" onClick={() => onReserve(book.isbn)}>Réserver</button>
+        <button className="btn btn-primary mr-2" onClick={() => props.onReserve(book.isbn)}>Réserver</button>
       </div>
     </Card>
   );
 };
 
-export default BookDetails;
+export default BookDetailCmpt;

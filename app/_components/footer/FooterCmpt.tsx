@@ -1,6 +1,6 @@
 
 
-const Footer = () => {
+const FooterCmpt = () => {
   return (
     <>
     <footer className="footer text-light py-3">
@@ -34,4 +34,4 @@ const Footer = () => {
   );
 }
 
-export default Footer;
+export default FooterCmpt;

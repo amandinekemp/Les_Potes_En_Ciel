@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Script from "next/script";
-import FormInscription from "@/app/_components/login/FormInscription";
-import FormLogin from "@/app/_components/login/FormLogin";
+import InscriptionForm from "@/app/_components/login/InscriptionForm";
+import LoginForm from "@/app/_components/login/LoginForm";
 
 export const metadata: Metadata = {
   title: "Authentification - Les potes en ciel",
@@ -14,8 +14,8 @@ export default function LoginPage() {
       <div className="container mt-5">
         <div className="row justify-content-center">
             <div className="col-md-6">
-              <FormLogin/>
-              <FormInscription/>
+              <LoginForm/>
+              <InscriptionForm/>
           </div>
         </div>
       </div>

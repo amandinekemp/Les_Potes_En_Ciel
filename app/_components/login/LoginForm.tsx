@@ -1,6 +1,6 @@
 import { Button, Form, InputGroup } from "react-bootstrap";
 
-const FormLogin = () => {
+const LoginForm = () => {
   return (
     <>
     <div className="card shadow rounded mb-4">
@@ -30,4 +30,4 @@ const FormLogin = () => {
   );
 }
 
-export default FormLogin;
+export default LoginForm;

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import Image from 'next/image';
-import CarouselComponent from '../_components/carousel/CarouselComponent';
+import CarouselCmpt from '../_components/carousel/CarouselCmpt';
 import banner_img from '/public/banner_lpec.jpg';
 import logo_img from '/public/logo_lpec.png';
 
@@ -32,7 +32,7 @@ export default function HomePage() {
       </section>
 
       {/* Activities Section */}
-      <CarouselComponent/>
+      <CarouselCmpt/>
     </>
   );
 }

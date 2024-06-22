@@ -1,10 +1,10 @@
-import { DropdownDivider, DropdownItem, NavbarBrand, NavbarCollapse, NavbarToggle, NavLink, Image } from 'react-bootstrap';
+import { DropdownItem, NavbarBrand, NavbarCollapse, NavbarToggle, NavLink, Image } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
-function BasicExample() {
+function NavbarCmpt() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary d-flex">
       <Container>
@@ -12,7 +12,7 @@ function BasicExample() {
         <NavbarCollapse id="basic-navbar-nav">
           <Nav>
             <NavLink href="/agenda">Agenda</NavLink>
-            <NavLink href="/library">Bibliothéque</NavLink>
+            <NavLink href="/library">Bibliothèque</NavLink>
             <NavDropdown title="Les nouvelles" id="basic-nav-dropdown">
               <DropdownItem href="#action/3.1">Fil d&apos;actualité</DropdownItem>
               <DropdownItem href="#action/3.2">Newsletter</DropdownItem>
@@ -49,4 +49,4 @@ function BasicExample() {
   );
 }
 
-export default BasicExample;
+export default NavbarCmpt;

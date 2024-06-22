@@ -1,4 +1,4 @@
-import BookShelve from "@/app/_components/library/BookShelve";
+import BookShelveCmpt from "@/app/_components/library/BookShelveCmpt";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,7 +11,7 @@ export default function LibraryPage() {
     <>
       <div className="container mt-5">
         <div className="row justify-content-center">
-          <BookShelve/>
+          <BookShelveCmpt/>
         </div>
       </div>
     </>
