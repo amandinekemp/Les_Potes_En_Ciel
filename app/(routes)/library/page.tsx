@@ -2,7 +2,7 @@ import BookCreateForm from "@/app/_components/library/BookCreateForm";
 import BookShelveCmpt from "@/app/_components/library/BookShelveCmpt";
 import { Metadata } from "next";
 
-let isCreation: boolean = true;
+let isCreation: boolean = false;
 
 export const metadata: Metadata = {
   title: "Bibliothèque - Les potes en ciel",
