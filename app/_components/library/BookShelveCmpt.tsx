@@ -3,10 +3,10 @@
 import React, { useState, useEffect } from 'react';
 import type {Book} from '../../_types/Book';
 import BookDetailCmpt from './BookDetailCmpt';
-import BookCreateForm from './BookCreateForm';
+import { Button } from 'react-bootstrap';
 
 // Composant LibraryPage qui affiche la bibliothèque et permet de gérer les livres
-const BookShelveCmpt = () => {
+const BookShelveCmpt = (props: { onCreate: any; }) => {
   // const [books, setBooks] = useState([]);  // État pour stocker la liste des livres
 
   // useEffect(() => {
@@ -71,6 +71,7 @@ const BookShelveCmpt = () => {
   return (
     <div className="container mt-5">
       <h2>Bibliothèque</h2>
+      <Button variant="primary" onClick={props.onCreate}>Ajouter un livre</Button>
       <div className="row">
         {/* Affiche les détails de chaque livre dans une carte */}
         {books.map((bookItem:Book) => (
