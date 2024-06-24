@@ -20,7 +20,7 @@ function NavbarCmpt() {
             <NavDropdown title="L'association" id="basic-nav-dropdown">
               <DropdownItem href="/about_us">A propos de nous</DropdownItem>
               <DropdownItem href="/help_us">Nous aider</DropdownItem>
-              <DropdownItem href="#action/3.3">Contact</DropdownItem>
+              <DropdownItem href="#action/3.3">Contactez nous</DropdownItem>
             </NavDropdown>
           </Nav>
         </NavbarCollapse>
