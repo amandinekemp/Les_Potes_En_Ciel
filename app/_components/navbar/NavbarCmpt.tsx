@@ -15,7 +15,7 @@ function NavbarCmpt() {
             <NavLink href="/library">Bibliothèque</NavLink>
             <NavDropdown title="Les nouvelles" id="basic-nav-dropdown">
               <DropdownItem href="/news">Actualités</DropdownItem>
-              <DropdownItem href="#action/3.2">Newsletter</DropdownItem>
+              <DropdownItem href="/newsletter">Newsletter</DropdownItem>
             </NavDropdown>
             <NavDropdown title="L'association" id="basic-nav-dropdown">
               <DropdownItem href="/about_us">A propos de nous</DropdownItem>
