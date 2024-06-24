@@ -17,8 +17,8 @@ const FooterCmpt = () => {
                   <p>de 9h30 à 18h30</p>
               </div>
               <div className="col-md-4 text-center">
-                  <a href="#" className="btn btn-light mx-1">L&apos;association</a>
-                  <a href="#" className="btn btn-light mx-1">Nous aider</a>
+                  <a href="/about_us" className="btn btn-light mx-1">A propos de nous</a>
+                  <a href="/help_us" className="btn btn-light mx-1">Nous aider</a>
                   <a href="#" className="btn btn-light mx-1">Contact</a>
                   <a href="#" className="btn btn-link text-light d-block mt-2">Suivez-nous <i className="bi bi-facebook"></i></a>
               </div>
