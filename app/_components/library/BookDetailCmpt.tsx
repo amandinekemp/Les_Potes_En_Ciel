@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Card, CardBody, CardText, CardTitle } from 'react-bootstrap';
+import { Accordion, Button, Card, CardBody, CardText, CardTitle } from 'react-bootstrap';
 import type {Book} from '../../_types/Book';
 
 // Composant BookDetail qui affiche les détails d'un livre et propose des actions de réservation et d'annulation
@@ -14,8 +14,15 @@ const BookDetailCmpt = (props: { book: Book; onReserve: any; }) => {
         <Card.Title>{book.title}</Card.Title>
         {/* Auteur du livre */}
         <h6 className="card-subtitle mb-2 text-muted">{book.author}</h6>
-        {/* Résumé du livre */}
-        <Card.Text>{book.summary}</Card.Text>
+        {/* Résumé du livre avec un menu déroulant */}
+        <Accordion>
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>Résumé</Accordion.Header>
+            <Accordion.Body>
+              <Card.Text>{book.summary}</Card.Text>
+            </Accordion.Body>
+          </Accordion.Item>
+        </Accordion>
         {/* Bouton pour réserver le livre */}
         <Button variant="primary" onClick={() => props.onReserve(book.isbn)}>Réserver</Button>
       </CardBody>
