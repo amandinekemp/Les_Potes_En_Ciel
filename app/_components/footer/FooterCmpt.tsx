@@ -19,8 +19,8 @@ const FooterCmpt = () => {
               <div className="col-md-4 text-center">
                   <a href="/about_us" className="btn btn-light mx-1">A propos de nous</a>
                   <a href="/help_us" className="btn btn-light mx-1">Nous aider</a>
-                  <a href="#" className="btn btn-light mx-1">Contactez nous</a>
-                  <a href="#" className="btn btn-link text-light d-block mt-2">Suivez-nous <i className="bi bi-facebook"></i></a>
+                  <a href="/contact_us" className="btn btn-light mx-1">Contactez nous</a>
+                  <a href="https://www.facebook.com/lespotesenciel/?locale=fr_FR" className="btn btn-link text-light d-block mt-2">Suivez-nous <i className="bi bi-facebook"></i></a>
               </div>
           </div>
       </div>
