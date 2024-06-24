@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { Button, Form, Image, InputGroup } from 'react-bootstrap';
 
 // Composant BookCreateForm qui permet d'ajouter un nouveau livre à la bibliothèque
-const BookCreateForm = () => {
+const BookCreateForm = (props: { onShelve: any; }) => {
   // États pour gérer les champs du formulaire
   const [title, setTitle] = useState('');       // État pour le titre du livre
   const [author, setAuthor] = useState('');     // État pour l'auteur du livre
@@ -36,6 +36,7 @@ const BookCreateForm = () => {
   };
 
   return (
+    <>
     <Form className="mt-4" onSubmit={handleSubmit}>
       {/* <h3>Ajouter un nouveau livre</h3> */}
       {/* Champ pour le titre du livre */}
@@ -84,8 +85,10 @@ const BookCreateForm = () => {
         )}
       </Form.Group>
       {/* Bouton de soumission du formulaire */}
-      <Button type="submit" className="btn btn-success">Ajouter</Button>
+      <Button type="submit" variant="success">Ajouter</Button>
+      <Button variant="secondary" onClick={props.onShelve}>Annuler</Button>
     </Form>
+    </>
   );
 };
 
