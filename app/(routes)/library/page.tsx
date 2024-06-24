@@ -1,8 +1,5 @@
-import BookCreateForm from "@/app/_components/library/BookCreateForm";
-import BookShelveCmpt from "@/app/_components/library/BookShelveCmpt";
+import LibraryCmpt from "@/app/_components/library/LibraryCmpt";
 import { Metadata } from "next";
-
-let isCreation: boolean = false;
 
 export const metadata: Metadata = {
   title: "Bibliothèque - Les potes en ciel",
@@ -12,11 +9,7 @@ export const metadata: Metadata = {
 export default function LibraryPage() {
   return (
     <>
-      <div className="container mt-5">
-        <div className="row justify-content-center">
-          { isCreation ?  <BookCreateForm/> : <BookShelveCmpt/> }
-        </div>
-      </div>
+      <LibraryCmpt/>
     </>
   );
 }
