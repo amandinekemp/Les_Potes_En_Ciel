@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion, Button, Card, CardBody, CardText, CardTitle } from 'react-bootstrap';
+import { Accordion, Button, Card, CardBody } from 'react-bootstrap';
 import type {Book} from '../../_types/Book';
 
 // Composant BookDetail qui affiche les détails d'un livre et propose des actions de réservation et d'annulation
