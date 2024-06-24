@@ -85,7 +85,7 @@ const BookCreateForm = (props: { onShelve: any; }) => {
         )}
       </Form.Group>
       {/* Bouton de soumission du formulaire */}
-      <Button type="submit" variant="success">Ajouter</Button>
+      <Button type="submit" variant="primary">Ajouter</Button>
       <Button variant="secondary" onClick={props.onShelve}>Annuler</Button>
     </Form>
     </>
