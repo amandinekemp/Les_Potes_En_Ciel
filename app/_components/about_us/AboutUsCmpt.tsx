@@ -94,7 +94,7 @@ const AboutUsCmpt = () => {
           <p>
             Les Potes en ciel, ce sont avant tout des personnes qui s&apos;engagent et qui travaillent au quotidien pour faire vivre le projet. C&apos;est plus de 850 membres, enfants et adultes, qui fréquentent nos espaces, 43 bénévoles actifs, 10 administratrice.eur.s bénévoles et 8 salarié.e.s.
           </p>
-          <Image src={"/une_equipe.jpg"} alt="Une équipe" width={350} height={500} className="mx-auto"></Image>
+          <Image src={"/about_us/une_equipe.jpg"} alt="Une équipe" width={350} height={500} className="mx-auto"></Image>
         </Col>
       </Row>
 
@@ -108,13 +108,13 @@ const AboutUsCmpt = () => {
 
       <Row className="mt-4">
         <Col md={4}>
-          <Image src="/about_us_footer1.jpg" alt="about_us_footer1" width={250} height={300}/>
+          <Image src="/about_us/about_us_footer1.jpg" alt="about_us_footer1" width={250} height={300}/>
         </Col>
         <Col md={4}>
-          <Image src="/about_us_footer2.jpg" alt="about_us_footer2" width={250} height={300}/>
+          <Image src="/about_us/about_us_footer2.jpg" alt="about_us_footer2" width={250} height={300}/>
         </Col>
         <Col md={4}>
-          <Image src="/about_us_footer3.jpg" alt="about_us_footer3" width={250} height={300}/>
+          <Image src="/about_us/about_us_footer3.jpg" alt="about_us_footer3" width={250} height={300}/>
         </Col>
       </Row>
 
