@@ -53,7 +53,7 @@ const InscriptionForm = () => {
             </Form.Label>
           </div>
           <div className="d-grid">
-            <Button type="submit" variant="info" className="text-white">Enregistrer</Button>
+            <Button type="submit" variant="primary" className="text-white">Enregistrer</Button>
           </div>
         </Form>
       </div>
