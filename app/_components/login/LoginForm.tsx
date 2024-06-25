@@ -20,8 +20,11 @@ const LoginForm = () => {
               </Button>
             </InputGroup>
           </div>
+          <div className="mb-3 text-end">
+              <a href="#" className="text-decoration-none">Mot de passe oublié ?</a>
+            </div>
           <div className="d-grid gap-2">
-            <Button type="submit" variant="info" className="text-white">Se connecter</Button>
+            <Button type="submit" variant="primary" className="text-white">Se connecter</Button>
           </div>
         </Form>
       </div>
