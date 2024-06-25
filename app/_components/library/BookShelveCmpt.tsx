@@ -71,8 +71,8 @@ const BookShelveCmpt = (props: { onCreate: any; }) => {
   return (
     <div className="container mt-5">
       <h2>Bibliothèque</h2>
-      <Button variant="primary" onClick={props.onCreate}>Ajouter un livre</Button>
-      <div className="row">
+      <Button variant="primary" className="mb-3" onClick={props.onCreate}>Ajouter un livre</Button>
+      <div className="row mt-4">
         {/* Affiche les détails de chaque livre dans une carte */}
         {books.map((bookItem:Book) => (
           <div key={bookItem.isbn} className="col-md-4 mb-4">
