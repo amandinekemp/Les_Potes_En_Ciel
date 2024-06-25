@@ -38,7 +38,7 @@ const BookCreateForm = (props: { onShelve: any; }) => {
   return (
     <>
     <Form className="mt-4" onSubmit={handleSubmit}>
-      {/* <h3>Ajouter un nouveau livre</h3> */}
+      <h3>Ajouter un nouveau livre</h3>
       {/* Champ pour le titre du livre */}
       <Form.Group>
         <Form.Label>Titre</Form.Label>
@@ -85,8 +85,10 @@ const BookCreateForm = (props: { onShelve: any; }) => {
         )}
       </Form.Group>
       {/* Bouton de soumission du formulaire */}
-      <Button type="submit" variant="primary">Ajouter</Button>
-      <Button variant="secondary" onClick={props.onShelve}>Annuler</Button>
+      <div className="mt-4 d-flex justify-content-between">
+        <Button type="submit" variant="primary">Ajouter</Button>
+        <Button variant="secondary" onClick={props.onShelve}>Annuler</Button>
+      </div>
     </Form>
     </>
   );
