@@ -21,7 +21,7 @@ const LoginFormCmpt = () => {
             </InputGroup>
           </div>
           <div className="mb-3 text-end">
-            <a href="/FormForgotPasswordCmpt" className="text-decoration-none">Mot de passe oublié ?</a>
+            <a href="/lost_password" className="text-decoration-none">Mot de passe oublié ?</a>
           </div>
           <div className="d-grid gap-2">
             <Button type="submit" variant="primary" className="text-white">Se connecter</Button>

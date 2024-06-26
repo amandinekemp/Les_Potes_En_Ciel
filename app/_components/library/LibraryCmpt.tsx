@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import BookCreateForm from "@/app/_components/library/BookCreateForm";
+import BookCreateFormCmpt from "@/app/_components/library/BookCreateFormCmpt";
 import BookShelveCmpt from "@/app/_components/library/BookShelveCmpt";
 
 export default function LibraryCmpt() {
@@ -11,7 +11,7 @@ export default function LibraryCmpt() {
     <>
       <div className="container mt-5">
         <div className="row justify-content-center">
-          {creationMode === 'true' && <BookCreateForm onShelve={() => setCreationMode("")}/>}
+          {creationMode === 'true' && <BookCreateFormCmpt onShelve={() => setCreationMode("")}/>}
           {creationMode !== 'true' && <BookShelveCmpt onCreate={() => setCreationMode("true")}/> }
         </div>
       </div>
