@@ -32,7 +32,7 @@ const FormForgotPasswordCmpt = () => {
     <div className="container mt-5">
       <h1>Lost Password</h1>
       {/* <div className="row justify-content-center">
-        <div className="col-md-6">
+        <div className="col-6">
           <div className="card">
             <div className="card-body">
               <h3 className="card-title">Réinitialiser le mot de passe</h3>

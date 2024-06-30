@@ -8,7 +8,6 @@ import 'bootstrap-icons/font/bootstrap-icons.min.css';
 // App styles
 import "./globals.css";
 import "./_components/navbar/NavbarCmpt.css";
-import "./_components/footer/FooterCmpt.css";
 import "./_components/carousel/CarouselCmpt.css";
 
 

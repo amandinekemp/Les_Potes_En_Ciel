@@ -37,7 +37,7 @@ const BookCreateFormCmpt = (props: { onShelve: any; }) => {
 
   return (
     <>
-    <Form className="mt-4" onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <h3>Ajouter un nouveau livre</h3>
       {/* Champ pour le titre du livre */}
       <Form.Group>

@@ -56,6 +56,7 @@ const BookShelveCmpt = (props: { onCreate: any; }) => {
   // Gestion de l'ajout d'un nouveau livre
   const handleAddBook = (bookIsbn:string) => {
     // Logique pour ajouter un livre
+    console.log(`Sauvegarde du livre ${bookIsbn}`);
   };
 
   // // Gestion de la modification d'un livre existant
@@ -69,15 +70,15 @@ const BookShelveCmpt = (props: { onCreate: any; }) => {
   // };
 
   return (
-    <div className="container mt-5">
-      <h2>Bibliothèque</h2>
-      <Button variant="primary" className="mb-3" onClick={props.onCreate}>Ajouter un livre</Button>
+    <div className="container">
+      <div className="row">
+        <h2 className="col">Bibliothèque</h2>
+        <Button variant="primary" className="col-auto" onClick={props.onCreate}>Ajouter un livre</Button>
+      </div>
       <div className="row mt-4">
         {/* Affiche les détails de chaque livre dans une carte */}
         {books.map((bookItem:Book) => (
-          <div key={bookItem.isbn} className="col-md-4 mb-4">
-            <BookDetailCmpt book={bookItem} onReserve={handleReservation}/>
-          </div>
+          <BookDetailCmpt key={bookItem.isbn} book={bookItem} onReserve={handleReservation}/>
         ))}
       </div>
     </div>

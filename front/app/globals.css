@@ -1,12 +1,28 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* ---------------------------------------------------------------------------------------- */
+/* -------------------------------- Global ------------------------------------------------ */
+/* ---------------------------------------------------------------------------------------- */
 
 body {
-  background-color: #F6F4E8;
   /* ajouter la propriété background-color pour définir la couleur de fond */
-  color: #333;
+  background-color: #F6F4E8;
 }
+
+/* ---------------------------------------------------------------------------------------- */
+/* -------------------------------- Footer ----------------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
+
+.footer {
+  background-color: black;
+}
+
+.footer .copyright {
+  color: grey;
+  font-size: 0.7rem;
+}
+
+/* ---------------------------------------------------------------------------------------- */
+/* -------------------------------- Accueil ----------------------------------------------- */
+/* ---------------------------------------------------------------------------------------- */
 
 .mission {
   background-color: #fff;
@@ -15,86 +31,20 @@ body {
 
 /* Section for Planning Image */
 .planning img {
-  width: 100%;
   /* Assure que l'image prend toute la largeur de l'élément parent */
-  height: auto;
+  width: 100%;
   /* Maintient le ratio d'aspect de l'image */
-  object-fit: cover;
+  height: auto;
   /* L'image s'adapte à l'élément parent en conservant son ratio d'aspect */
+  object-fit: cover;
 }
 
-/* ---------------------------------------------------------------------------------------- */
-/* -------------------------------- Accueil ----------------------------------------------- */
-/* ---------------------------------------------------------------------------------------- */
-
-body.light-beige {
-  background-color: #F8F5ED;
+.width-33 {
+  width: 32%;
+  margin-right: .5rem;
 }
 
-.nav-wrapper .brand-logo {
-  font-size: 2rem;
-  margin-bottom: 20px;
-}
-
-.banner-container {
-  position: relative;
-  text-align: center;
-}
-
-.banner-img {
-  width: 80%;
-}
-
-.banner-logo {
-  position: absolute;
-  top: 15%;
-  left: 15%;
-  height: 40%;
-}
-
-.hamburger-menu {
-  position: absolute;
-  top: 0%;
-  right: 95%;
-  color: black;
-}
-
-.mission-title {
-  margin-top: 30px;
-  text-align: center;
-  font-size: 2rem;
-  color: black;
-}
-
-.mission-text {
-  margin: 20px 0;
-  font-size: 1.2rem;
-  text-align: center;
-}
-
-.page-footer .container .row .beige-text {
-  color: #f5f5dc !important;
-}
-
-.footer-buttons a {
-  display: block;
-  margin-bottom: 20px;
-}
-
-/* ---------------------------------------------------------------------------------------- */
-/* ---------------------------------- Login ----------------------------------------------- */
-/* ---------------------------------------------------------------------------------------- */
-
-body.bg-custom {
-  background-color: #F8F5ED;
-}
-
-.card {
-  background-color: #ffffff;
-  border-radius: 10px;
-}
-
-.btn-info {
-  background-color: #40e0d0;
-  border-color: #40e0d0;
+.bookCardBottom {
+  padding-top: 0;
+  flex-grow: 0;
 }
