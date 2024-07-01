@@ -14,8 +14,8 @@ export default function HomePage() {
     <>
       {/* Banner and logo */}
       <div className="banner">
-          <Image src={banner_img} alt="Banner Image" className="banner_img img-fluid" />
-          <Image src={logo_img} alt="Logo" className="logo" />
+          <Image src={banner_img} alt="LPEC picture" className="bannerBackground img-fluid" />
+          <Image src={logo_img} alt="LPEC logo" className="bannerLogo" />
       </div>
 
       {/* Mission Section */}
