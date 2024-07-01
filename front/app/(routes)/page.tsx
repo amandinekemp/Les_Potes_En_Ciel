@@ -32,7 +32,11 @@ export default function HomePage() {
       </section>
 
       {/* Activities Section */}
-      <CarouselCmpt/>
+      <section className="activities py-5">
+        <div className="container">
+          <CarouselCmpt/>
+        </div>
+      </section>
     </>
   );
 }

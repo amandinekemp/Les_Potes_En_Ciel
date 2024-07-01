@@ -7,21 +7,21 @@ const FooterCmpt = () => {
     <footer className="footer text-light py-3 mt-5">
       <div className="container">
           <div className="row">
-              <div className="col-4">
+              <div className="col-3">
                   <p>Adresse:</p>
                   <p>
                     70 rue de Flers<br/>
                     59800 Lille, France
                   </p>
               </div>
-              <div className="col-4">
+              <div className="col-3">
                   <p>Horaires d&apos;ouverture:</p>
                   <p>
                     du mercredi au samedi<br/>
                     de 9h30 à 18h30
                   </p>
               </div>
-              <div className="col-4 text-center">
+              <div className="col-6 text-center">
                   <Button variant='light' href="/about_us" className="mx-1 mb-2">A propos de nous</Button>
                   <Button variant='light' href="/help_us" className="mx-1 mb-2">Nous aider</Button>
                   <Button variant='light' href="/contact_us" className="mx-1 mb-2">Contactez nous</Button>

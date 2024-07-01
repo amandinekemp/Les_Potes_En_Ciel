@@ -39,28 +39,21 @@ const carousel_rows : CarouselImage[][] = image_list.reduce(merge_carousel_rows,
 const CarouselCmpt = () => {
   return (
     <>
-    <section className="activities py-5">
-      <div className="container">
-        <div className="row">
-          <Carousel className="col-12">
-            {/* Itérer sur les lignes du carrousel */}
-            {carousel_rows.map((row, index_row) => (
-            <CarouselItem key={index_row}>
-              <div className="d-flex flex-wrap">
-                {/* Itérer sur les images de chaque ligne */}
-                {row.map((img, index_img) => (
-                <div key={index_img}>
-                  {/* Afficher l'image avec Next.js Image component */}
-                  <Image src={img.path} className="d-block w-100" alt={img.name} width={300} height={500}></Image>
-                </div>
-                ))}
-              </div>
-            </CarouselItem>
+      <Carousel>
+        {/* Itérer sur les lignes du carrousel */}
+        {carousel_rows.map((row, index_row) => (
+        <CarouselItem key={index_row}>
+          <div className="row d-flex">
+            {/* Itérer sur les images de chaque ligne */}
+            {row.map((img, index_img) => (
+            <div key={index_img} className="col-4">
+              <Image src={img.path} className="w-100" alt={img.name} width={300} height={600}></Image>
+            </div>
             ))}
-          </Carousel>
-        </div>
-      </div>
-    </section>
+          </div>
+        </CarouselItem>
+        ))}
+      </Carousel>
     </>
   );
 }

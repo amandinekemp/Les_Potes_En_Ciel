@@ -71,6 +71,13 @@ body {
   max-height: 200px;
 }
 
+.activities .carousel-control-prev-icon,
+.activities .carousel-control-next-icon,
+.activities .carousel-indicators [data-bs-target] {
+  background-color: black;
+}
+
+
 /* ---------------------------------------------------------------------------------------- */
 /* -------------------------------- Library ----------------------------------------------- */
 /* ---------------------------------------------------------------------------------------- */
