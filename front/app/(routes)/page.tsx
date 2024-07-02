@@ -27,7 +27,7 @@ export default function HomePage() {
       {/* Planning Image Section */}
       <section className="planning py-5">
         <div className="container">
-          <Image src={"/planning/planning_2024_S23.jpg"} alt="planning_2024_S23" width={800} height={500}></Image>
+          <Image src={"/planning/planning_2024_S28.png"} alt="planning_2024_S28" width={800} height={500}></Image>
         </div>
       </section>
 
