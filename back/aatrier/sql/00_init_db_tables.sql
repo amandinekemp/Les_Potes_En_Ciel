@@ -1,24 +1,66 @@
 -- Création de la BDD
-CREATE DATABASE IF NOT EXISTS `liste_de_livres`;
-USE `liste_de_livres`;
+CREATE DATABASE IF NOT EXISTS `les_potes_en_ciel`;
+USE `les_potes_en_ciel`;
 
--- Création de la table books
-CREATE TABLE IF NOT EXISTS `books` (
-    `book_isbn` int(13) NOT NULL AUTO_INCREMENT,
+-- Création de la table Family
+CREATE TABLE IF NOT EXISTS `family` (
+    `id_family` int(11) NOT NULL AUTO_INCREMENT,
+    `email` varchar(128) NOT NULL,
+    `password` varchar(128) NOT NULL,
+    `address` varchar(128) NOT NULL,
+    `zip_code` int(11) NOT NULL,
+    `city` varchar(28) NOT NULL,
+    `phone_number` varchar(15) NOT NULL,
+    PRIMARY KEY (`id_family`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Création de la table Person
+CREATE TABLE IF NOT EXISTS `person` (
+    `id_person` int(11) NOT NULL AUTO_INCREMENT,
+    `id_family` int(11) NOT NULL,
+    `person_type` varchar(128) NOT NULL,
+    `first_name` varchar(128) NOT NULL,
+    `last_name` varchar(128) NOT NULL,
+    `birth_date` DATE NOT NULL,
+    PRIMARY KEY (`id_person`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Création de la table Book
+CREATE TABLE IF NOT EXISTS `book` (
+    `book_isbn` int(13) NOT NULL,
     `title` varchar(128) NOT NULL,
-    `summary` TEXT NOT NULL,
     `author` varchar(255) NOT NULL,
-    `is_enabled` BOOLEAN NOT NULL,
-    'genre_list' varchar(128) NOT NULL,
+    `summary` TEXT NOT NULL,
+    `is_available` BOOLEAN NOT NULL,
+    `genre_list` varchar(128) NOT NULL,
     PRIMARY KEY (`book_isbn`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Création de la table users
-CREATE TABLE IF NOT EXISTS `users` (
-    `user_id` int(11) NOT NULL AUTO_INCREMENT,
-    `full_name` varchar(64) NOT NULL,
-    `email` varchar(255) NOT NULL,
-    `password` varchar(255) NOT NULL,
-    `age` INT NOT NULL,
-    PRIMARY KEY (`user_id`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+-- Création de la table Borrow
+CREATE TABLE IF NOT EXISTS `borrow` (
+    `id_borrow` int(11) NOT NULL AUTO_INCREMENT,
+    `book_isbn` int(13) NOT NULL,
+    `id_family` int(11) NOT NULL,
+    `loan_date` DATE NOT NULL,
+    `return_date` DATE NOT NULL,
+    PRIMARY KEY (`id_borrow`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Création de la table Workshop
+CREATE TABLE IF NOT EXISTS `workshop` (
+    `id_workshop` int(11) NOT NULL AUTO_INCREMENT,
+    `title` varchar(128) NOT NULL,
+    `start_date` DATE NOT NULL,
+    `end_date` DATE NOT NULL,
+    `description` TEXT NOT NULL,
+    `place` varchar(128) NOT NULL,
+    `id_organizer` int(11) NOT NULL,
+    PRIMARY KEY (`id_workshop`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- Création de la table Workshop_participant
+CREATE TABLE IF NOT EXISTS `workshop_participant` (
+    `id_workshop` int(11) NOT NULL,
+    `id_person` int(11) NOT NULL,
+    PRIMARY KEY (`id_workshop`, `id_person`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
