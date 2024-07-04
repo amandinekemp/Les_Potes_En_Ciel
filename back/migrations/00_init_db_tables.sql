@@ -27,19 +27,19 @@ CREATE TABLE IF NOT EXISTS `person` (
 
 -- Création de la table Book
 CREATE TABLE IF NOT EXISTS `book` (
-    `book_isbn` int(13) NOT NULL,
-    `title` varchar(128) NOT NULL,
+    `isbn` int(13) NOT NULL,
+    `title` varchar(255) NOT NULL,
     `author` varchar(255) NOT NULL,
     `summary` TEXT NOT NULL,
     `is_available` BOOLEAN NOT NULL,
     `genre_list` varchar(128) NOT NULL,
-    PRIMARY KEY (`book_isbn`)
+    PRIMARY KEY (`isbn`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Création de la table Borrow
 CREATE TABLE IF NOT EXISTS `borrow` (
     `id_borrow` int(11) NOT NULL AUTO_INCREMENT,
-    `book_isbn` int(13) NOT NULL,
+    `isbn` int(13) NOT NULL,
     `id_family` int(11) NOT NULL,
     `loan_date` DATE NOT NULL,
     `return_date` DATE NOT NULL,
