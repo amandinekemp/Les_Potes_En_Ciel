@@ -50,8 +50,8 @@ CREATE TABLE IF NOT EXISTS `borrow` (
 CREATE TABLE IF NOT EXISTS `workshop` (
     `id_workshop` int(11) NOT NULL AUTO_INCREMENT,
     `title` varchar(128) NOT NULL,
-    `start_date` DATE NOT NULL,
-    `end_date` DATE NOT NULL,
+    `start_date` DATETIME NOT NULL,
+    `end_date` DATETIME NOT NULL,
     `description` TEXT NOT NULL,
     `place` varchar(128) NOT NULL,
     `id_organizer` int(11) NOT NULL,
