@@ -29,9 +29,9 @@ INSERT INTO `borrow` (`book_isbn`, `id_family`, `loan_date`, `return_date`) VALU
 -- Workshop
 
 INSERT INTO `workshop` (`id_workshop`, `title`, `start_date`, `end_date`, `description`, `place`, `id_organizer`) VALUES 
-(1, 'Ludothéque Parc Matisse', '2024-07-10 14h', '2024-07-10 18h', '', 'Parc Matisse avec le festival "Un air d&aposété".', 1),
-(2, 'Pote mobile', '2024-07-10 16h', '2024-07-17h30', '', 'Place Caulier Lille', 2),
-(3, 'Pote mobile', '2024-07-12 16h', '2024-07-17h30', '', 'Ecole Dombrowski à Hellemmes', 2),
+(1, 'Ludothéque Parc Matisse', '2024-07-10 14:00:00', '2024-07-10 18:00:00', '', 'Parc Matisse avec le festival "Un air d&aposété".', 1),
+(2, 'Pote mobile', '2024-07-10 16:00:00', '2024-07-17:30:00', '', 'Place Caulier Lille', 2),
+(3, 'Pote mobile', '2024-07-12 16:00:00', '2024-07-17:30:00', '', 'Ecole Dombrowski à Hellemmes', 2),
 
 
 -- Workshop_participant
