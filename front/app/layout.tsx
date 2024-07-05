@@ -9,6 +9,7 @@ import "./bootstrap.scss";
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
 // App styles
 import "./globals.css";
+import './landing_page.css';
 
 export default function RootLayout({
   children: mypage,

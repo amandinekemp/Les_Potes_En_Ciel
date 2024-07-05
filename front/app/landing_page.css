@@ -1,0 +1,20 @@
+.landing section {
+  padding: 20px;
+  text-align: center;
+}
+
+.landing .btn {
+  padding: 10px 20px;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+.landing #header {
+  background-color: white;
+}
+
+.landing #features img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
