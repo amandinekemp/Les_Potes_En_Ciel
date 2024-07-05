@@ -8,20 +8,15 @@ type CarouselImage = {
 
 // Liste des images avec leur chemin et nom
 const image_list : CarouselImage[] = [
+  {path:"/activities/Activity_7.jpg", name:"Activity 7"},
+  {path:"/activities/Activity_6.jpg", name:"Activity 6"},
+  {path:"/activities/Activity_5.jpg", name:"Activity 5"},
+  {path:"/activities/Activity_8.jpg", name:"Activity 8"},
   {path:"/activities/Activity_1.jpg", name:"Activity 1"},
+  {path:"/activities/Activity_6.jpg", name:"Activity 6"},
   {path:"/activities/Activity_2.jpg", name:"Activity 2"},
   {path:"/activities/Activity_3.jpg", name:"Activity 3"},
   {path:"/activities/Activity_4.jpg", name:"Activity 4"},
-  {path:"/activities/Activity_5.jpg", name:"Activity 5"},
-  {path:"/activities/Activity_6.jpg", name:"Activity 6"},
-  {path:"/activities/Activity_1.jpg", name:"Activity 1"},
-  {path:"/activities/Activity_2.jpg", name:"Activity 2"},
-  {path:"/activities/Activity_3.jpg", name:"Activity 3"},
-  {path:"/activities/Activity_4.jpg", name:"Activity 4"},
-  {path:"/activities/Activity_5.jpg", name:"Activity 5"},
-  {path:"/activities/Activity_6.jpg", name:"Activity 6"},
-  {path:"/activities/Activity_6.jpg", name:"Activity 5"},
-  {path:"/activities/Activity_6.jpg", name:"Activity 6"},
 ];
 
 // Fonction pour fusionner les lignes du carrousel 3 par 3
