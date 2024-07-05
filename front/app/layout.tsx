@@ -1,13 +1,14 @@
 import Navbar from "./_components/navbar/NavbarCmpt";
 import FooterCmpt from "./_components/footer/FooterCmpt";
 
+
 // These styles apply to every route in the application
 // Library styles
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "./bootstrap.scss";
 import 'bootstrap-icons/font/bootstrap-icons.min.css';
 // App styles
 import "./globals.css";
-
 
 export default function RootLayout({
   children: mypage,

@@ -48,23 +48,20 @@ body {
 }
 
 .banner {
-  /* pour que les éléments enfants puissent être positionnés de manière absolue par rapport à la bannière */
+  height: 400px;
+  background-image: url('/banner_lpec.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  background-position: center center;
   position: relative;
-  text-align: left;
-  color: black;
-}
-
-.bannerBackground {
-  max-height: 400px;
 }
 
 .bannerLogo {
-  /* pour positionner le logo de manière absolue par rapport à la bannière */
-  position: absolute;
   /* pour ajouter un peu de marge en haut */
-  top: 40px;
+  margin-top: 40px;
   /* pour ajouter un peu de marge à gauche */
-  left: 40px;
+  margin-left: 40px;
   /* pour que la taille du logo soit égale à 50% de la hauteur de l'image de la bannière */
   height: 50%;
   /* pour éviter que le logo ne soit trop grand (vous pouvez ajuster cette valeur en fonction de vos besoins) */
