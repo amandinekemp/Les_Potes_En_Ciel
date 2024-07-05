@@ -1,53 +1,15 @@
 "use client"
 
 import React from 'react';
-import { FullCalendar } from 'primereact/fullcalendar';
 
 const CalendarCmpt = () => {
 
-//   const handleDateSelect = (selectInfo) => {
-//     let title = prompt('Event Title:');
-//     let calendarApi = selectInfo.view.calendar;
-
-//     calendarApi.unselect(); // clear date selection
-
-//     if (title) {
-//       calendarApi.addEvent({
-//         title,
-//         start: selectInfo.startStr,
-//         end: selectInfo.endStr,
-//         allDay: selectInfo.allDay
-//       });
-//     }
-//   };
-
-//   const handleEventClick = (clickInfo) => {
-//     if (window.confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-//       clickInfo.event.remove();
-//     }
-//   };
-
   return (
-    <div className="container mt-5">
-      <h2>Agenda du mois</h2>
-        {/* <FullCalendar
-          plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
-          headerToolbar={{
-            left: 'prev,next today',
-            center: 'title',
-            right: 'dayGridMonth,timeGridWeek,timeGridDay'
-          }}
-          initialView="dayGridMonth"
-          editable={true}
-          selectable={true}
-          selectMirror={true}
-          dayMaxEvents={true}
-          weekends={true}
-          initialEvents={events} // alternatively, use the `events` setting to fetch from a feed
-          select={handleDateSelect}
-          eventClick={handleEventClick}
-        /> */}
-    </div>
+    <>
+      <iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=2&ctz=Europe%2FParis&bgcolor=%23ffffff&showTitle=0&showCalendars=0&showTz=0&showPrint=0&src=YWdlbmRhbGVzcG90ZXNlbmNpZWxAZ21haWwuY29t&src=ZW4uZnJlbmNoI2hvbGlkYXlAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&color=%23039BE5&color=%230B8043"
+        width="100%" height="600">
+      </iframe>
+    </>
   );
 };
 
