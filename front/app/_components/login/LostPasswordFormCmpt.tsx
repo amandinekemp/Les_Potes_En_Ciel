@@ -29,7 +29,7 @@ const FormForgotPasswordCmpt = () => {
   // };
 
   return (
-    <div className="container mt-5">
+    <>
       <h1>Lost Password</h1>
       {/* <div className="row justify-content-center">
         <div className="col-6">
@@ -56,7 +56,7 @@ const FormForgotPasswordCmpt = () => {
           </div>
         </div>
       </div> */}
-    </div>
+    </>
   );
 };
 

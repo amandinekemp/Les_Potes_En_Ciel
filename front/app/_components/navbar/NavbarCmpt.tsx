@@ -6,7 +6,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 function NavbarCmpt() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-tertiary mb-5">
       <Container>
         <NavbarToggle aria-controls="navbar-links"/>
         <NavbarCollapse id="navbar-links">
@@ -30,11 +30,11 @@ function NavbarCmpt() {
           Les Potes En Ciel
         </NavbarBrand>
 
-        <NavLink href="/login" className="mx-2 navbarIconButton">
+        <NavLink href="/login" className="mx-2">
           <i className="bi bi-person-circle text-dark"></i>
         </NavLink>
 
-        <NavDropdown title={<i className="bi bi-globe"></i>} className="mx-2 navbarIconButton">
+        <NavDropdown title={<i className="bi bi-globe"></i>} className="mx-2">
           <DropdownItem href="#todoEN">EN</DropdownItem>
           <DropdownItem href="#todoFR">FR</DropdownItem>
         </NavDropdown>

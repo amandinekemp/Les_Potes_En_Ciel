@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function AboutUsPage() {
   return (
     <>
-      <div className="container mt-5">
+      <div className="container">
         <div className="row justify-content-center">
           <AboutUsCmpt/>
         </div>

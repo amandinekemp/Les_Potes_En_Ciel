@@ -70,7 +70,7 @@ const BookShelveCmpt = (props: { onCreate: any; }) => {
   // };
 
   return (
-    <div className="container">
+    <>
       <div className="row">
         <h2 className="col">Bibliothèque</h2>
         <Button variant="primary" className="col-auto" onClick={props.onCreate}>Ajouter un livre</Button>
@@ -81,7 +81,7 @@ const BookShelveCmpt = (props: { onCreate: any; }) => {
           <BookDetailCmpt key={bookItem.isbn} book={bookItem} onReserve={handleReservation}/>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 

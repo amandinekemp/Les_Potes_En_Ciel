@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default function LoginPage() {
   return (
     <>
-      <div className="container mt-5">
+      <div className="container">
         <div className="row justify-content-center">
             <div className="col-6">
               <LoginFormCmpt/>
@@ -19,7 +19,6 @@ export default function LoginPage() {
           </div>
         </div>
       </div>
-      <Script src="authentification.js"></Script>
     </>
   );
 }

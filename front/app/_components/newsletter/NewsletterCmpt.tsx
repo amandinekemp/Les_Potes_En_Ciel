@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import { Container, Form, Button, Row, Col, Nav } from 'react-bootstrap';
+import { Form, Button, Col, Nav } from 'react-bootstrap';
 
 const NewsletterForm = () => {
   const [formType, setFormType] = useState('subscribe'); // 'subscribe' or 'unsubscribe'
@@ -26,43 +26,39 @@ const NewsletterForm = () => {
   };
 
   return (
-    <Container className="my-5">
-      <Row className="justify-content-center">
-        <Col xs={12} md={8}>
-          <h2 className="text-center mb-4">Newsletter - Les Potes en Ciel</h2>
-          <Nav variant="tabs" defaultActiveKey="subscribe">
-            <Nav.Item>
-              <Nav.Link eventKey="subscribe" onClick={() => setFormType('subscribe')}>S'inscrire</Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link eventKey="unsubscribe" onClick={() => setFormType('unsubscribe')}>Se désinscrire</Nav.Link>
-            </Nav.Item>
-          </Nav>
-          <Form onSubmit={handleSubmit} className="mt-4">
-            <Form.Group controlId="formEmail">
-              <Form.Label>Adresse email</Form.Label>
-              <Form.Control
-                type="email"
-                placeholder="Entrez votre e-mail"
-                value={email}
-                onChange={handleChange}
-                required
-              />
-            </Form.Group>
-            {formType === 'subscribe' && (
-              <Button variant="primary" type="submit" className="mt-3">
-                Je m’inscris gratuitement
-              </Button>
-            )}
-            {formType === 'unsubscribe' && (
-              <Button variant="primary" type="submit" className="mt-3">
-                Je me désinscris
-              </Button>
-            )}
-          </Form>
-        </Col>
-      </Row>
-    </Container>
+    <Col xs={12} md={8}>
+      <h2 className="text-center mb-4">Newsletter - Les Potes en Ciel</h2>
+      <Nav variant="tabs" defaultActiveKey="subscribe">
+        <Nav.Item>
+          <Nav.Link eventKey="subscribe" onClick={() => setFormType('subscribe')}>S'inscrire</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="unsubscribe" onClick={() => setFormType('unsubscribe')}>Se désinscrire</Nav.Link>
+        </Nav.Item>
+      </Nav>
+      <Form onSubmit={handleSubmit} className="mt-4">
+        <Form.Group controlId="formEmail">
+          <Form.Label>Adresse email</Form.Label>
+          <Form.Control
+            type="email"
+            placeholder="Entrez votre e-mail"
+            value={email}
+            onChange={handleChange}
+            required
+          />
+        </Form.Group>
+        {formType === 'subscribe' && (
+          <Button variant="primary" type="submit" className="mt-3">
+            Je m’inscris gratuitement
+          </Button>
+        )}
+        {formType === 'unsubscribe' && (
+          <Button variant="primary" type="submit" className="mt-3">
+            Je me désinscris
+          </Button>
+        )}
+      </Form>
+    </Col>
   );
 };
 

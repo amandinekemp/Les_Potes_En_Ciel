@@ -9,7 +9,11 @@ export const metadata: Metadata = {
 export default function LibraryPage() {
   return (
     <>
-      <LibraryCmpt/>
+      <div className="container">
+        <div className="row justify-content-center">
+          <LibraryCmpt/>
+        </div>
+      </div>
     </>
   );
 }

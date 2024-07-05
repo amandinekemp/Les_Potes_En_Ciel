@@ -34,7 +34,7 @@ const ChangePasswordFormCmpt = () => {
   // };
 
   return (
-    <div className="container mt-5">
+    <>
       <h1>Change Password</h1>
       {/* <div className="row justify-content-center">
         <div className="col-6">
@@ -73,7 +73,7 @@ const ChangePasswordFormCmpt = () => {
           </div>
         </div>
       </div> */}
-    </div>
+    </>
   );
 };
 

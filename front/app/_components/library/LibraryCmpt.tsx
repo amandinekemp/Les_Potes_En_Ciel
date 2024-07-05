@@ -9,12 +9,8 @@ export default function LibraryCmpt() {
 
   return (
     <>
-      <div className="container mt-5">
-        <div className="row justify-content-center">
-          {creationMode === 'true' && <BookCreateFormCmpt onShelve={() => setCreationMode("")}/>}
-          {creationMode !== 'true' && <BookShelveCmpt onCreate={() => setCreationMode("true")}/> }
-        </div>
-      </div>
+      {creationMode === 'true' && <BookCreateFormCmpt onShelve={() => setCreationMode("")}/>}
+      {creationMode !== 'true' && <BookShelveCmpt onCreate={() => setCreationMode("true")}/> }
     </>
   );
 }

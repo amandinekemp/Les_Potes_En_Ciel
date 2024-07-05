@@ -1,10 +1,10 @@
 import React from 'react';
-import { Container, Row, Col, Button, Ratio } from 'react-bootstrap';
+import { Row, Col, Button, Ratio } from 'react-bootstrap';
 import Image from 'next/image';
 
 const AboutUsCmpt = () => {
   return (
-    <Container className="mt-5">
+    <>
       <Row>
         <Col>
           <h1>Qui sommes-nous</h1>
@@ -117,8 +117,7 @@ const AboutUsCmpt = () => {
           <Image src="/about_us/about_us_footer3.jpg" alt="about_us_footer3" width={250} height={300}/>
         </Col>
       </Row>
-
-    </Container>
+    </>
   );
 };
 

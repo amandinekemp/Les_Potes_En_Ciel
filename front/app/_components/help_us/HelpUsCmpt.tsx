@@ -1,10 +1,10 @@
 import React from 'react';
-import { Button, Card, Container, Row, Col, CardBody, Ratio, CardTitle, CardText } from 'react-bootstrap';
+import { Button, Card, Row, Col, CardBody, Ratio, CardTitle, CardText } from 'react-bootstrap';
 import Image from 'next/image';
 
 const HelpUsCmpt = () => {
   return (
-    <Container className="my-5">
+    <>
       <Row className="mb-4">
         <Col>
           <h2 className="text-center">Nous aider</h2>
@@ -88,7 +88,7 @@ const HelpUsCmpt = () => {
           </CardBody>
         </Card>
       </Row>
-    </Container>
+    </>
   );
 };
 

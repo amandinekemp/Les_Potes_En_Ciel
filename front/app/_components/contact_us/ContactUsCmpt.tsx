@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useState } from 'react';
-import { Container, Row, Col, Form, Button, Alert } from 'react-bootstrap';
+import { Row, Col, Form, Button, Alert } from 'react-bootstrap';
 
 const ContactUsCmpt = () => {
   const [formData, setFormData] = useState({
@@ -43,7 +43,7 @@ const ContactUsCmpt = () => {
   };
 
   return (
-    <Container className="my-5">
+    <>
       <Row className="mb-4">
         <Col>
           <h2 className="text-center">Contactez nous</h2>
@@ -135,7 +135,7 @@ const ContactUsCmpt = () => {
           ></iframe>
         </Col>
       </Row>
-    </Container>
+    </>
   );
 };
 

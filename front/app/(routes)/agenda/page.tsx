@@ -9,8 +9,9 @@ export const metadata: Metadata = {
 export default function CalendarPage() {
   return (
     <>
-      <div className="container mt-5">
+      <div className="container">
         <div className="row justify-content-center">
+          <h2>Agenda du mois</h2>
           <CalendarCmpt/>
         </div>
       </div>
