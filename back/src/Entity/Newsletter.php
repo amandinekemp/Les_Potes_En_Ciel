@@ -12,9 +12,6 @@ class Newsletter
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
-    #[ORM\Column]
-    private ?bool $subscribe = null;
-
     public function getEmail(): ?string
     {
         return $this->email;
@@ -23,18 +20,6 @@ class Newsletter
     public function setEmail(string $email): static
     {
         $this->email = $email;
-
-        return $this;
-    }
-
-    public function isSubscribe(): ?bool
-    {
-        return $this->subscribe;
-    }
-
-    public function setSubscribe(bool $subscribe): static
-    {
-        $this->subscribe = $subscribe;
 
         return $this;
     }

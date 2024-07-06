@@ -49,6 +49,6 @@ INSERT INTO `workshop_participant` (`id_workshop`, `id_person`) VALUES
 
 -- Newsletter
 
-INSERT INTO `newsletter` (`email`, `subscribe`) VALUES
-('amandinekemp+jaisouscrit@gmail.com', TRUE),
-('amandinekemp+jaipassouscrit@gmail.com', FALSE);
+INSERT INTO `newsletter` (`email`) VALUES
+('amandinekemp+jaisouscrit@gmail.com'),
+('amandinekemp+moiaussi@gmail.com');

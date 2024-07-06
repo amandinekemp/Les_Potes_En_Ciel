@@ -68,6 +68,5 @@ CREATE TABLE IF NOT EXISTS `workshop_participant` (
 -- Création de la table Newsletter
 CREATE TABLE IF NOT EXISTS `newsletter` (
     `email` varchar(128) NOT NULL,
-    `subscribe` BOOLEAN NOT NULL,
     PRIMARY KEY (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
