@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS `borrow` (
     `isbn` char(13) NOT NULL,
     `id_family` int(11) NOT NULL,
     `borrow_date` DATETIME NOT NULL,
-    `return_date` DATETIME NOT NULL,
+    `return_date` DATETIME,
     PRIMARY KEY (`id_borrow`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

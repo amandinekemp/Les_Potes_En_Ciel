@@ -11,10 +11,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Book
 {
   #[ORM\Id]
-  #[ORM\Column]
+  #[ORM\Column(length: 13)]
   #[Assert\NotBlank(message: "L'ISBN est obligatoire")]
   #[Assert\Length(min: 13, max: 13, minMessage: "L'ISBN doit faire exactement {{ limit }} caractères", maxMessage: "L'ISBN doit faire exactement {{ limit }} caractères")]
-  private ?int $isbn = null;
+  private ?string $isbn = null;
 
   #[ORM\Column(length: 255)]
   #[Assert\NotBlank(message: "Le titre est obligatoire")]
@@ -34,12 +34,12 @@ class Book
   #[ORM\Column]
   private ?bool $isAvailable = null;
 
-  public function getIsbn(): ?int
+  public function getIsbn(): ?string
   {
     return $this->isbn;
   }
 
-  public function setIsbn(int $isbn): static
+  public function setIsbn(string $isbn): static
   {
     $this->isbn = $isbn;
 
