@@ -8,15 +8,13 @@ const FooterCmpt = () => {
       <div className="container">
           <div className="row">
               <div className="col-3">
-                  <p>Adresse:</p>
-                  <p>
+                  <p><b>Adresse:</b><br/>
                     70 rue de Flers<br/>
                     59800 Lille, France
                   </p>
               </div>
               <div className="col-3">
-                  <p>Horaires d&apos;ouverture:</p>
-                  <p>
+                  <p><b>Horaires d&apos;ouverture:</b><br/>
                     du mercredi au samedi<br/>
                     de 9h30 à 18h30
                   </p>
