@@ -41,8 +41,8 @@ CREATE TABLE IF NOT EXISTS `borrow` (
     `id_borrow` int(11) NOT NULL AUTO_INCREMENT,
     `isbn` char(13) NOT NULL,
     `id_family` int(11) NOT NULL,
-    `loan_date` DATE NOT NULL,
-    `return_date` DATE NOT NULL,
+    `borrow_date` DATETIME NOT NULL,
+    `return_date` DATETIME NOT NULL,
     PRIMARY KEY (`id_borrow`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
