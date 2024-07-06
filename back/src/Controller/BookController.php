@@ -53,7 +53,7 @@ class BookController extends AbstractController
     // On vérifie les erreurs
     $errors = $validator->validate($book);
     if ($errors->count() > 0) {
-        return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
+      return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
     }
 
     $em->persist($book);
@@ -77,7 +77,7 @@ class BookController extends AbstractController
     // On vérifie les erreurs
     $errors = $validator->validate($updatedBook);
     if ($errors->count() > 0) {
-        return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
+      return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
     }
 
     $em->persist($updatedBook);
