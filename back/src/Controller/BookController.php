@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
+use Symfony\Component\Validator\Validator\ValidatorInterface;
 use Doctrine\ORM\EntityManagerInterface;
 
 use App\Entity\Book;
@@ -45,9 +46,16 @@ class BookController extends AbstractController
   }
 
   #[Route('/api/books', name: "createBook", methods: ['POST'])]
-  public function createBook(Request $request, SerializerInterface $serializer, EntityManagerInterface $em): JsonResponse
+  public function createBook(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
   {
     $book = $serializer->deserialize($request->getContent(), Book::class, 'json');
+
+    // On vérifie les erreurs
+    $errors = $validator->validate($book);
+    if ($errors->count() > 0) {
+        return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
+    }
+
     $em->persist($book);
     $em->flush();
 
@@ -57,7 +65,7 @@ class BookController extends AbstractController
   }
 
   #[Route('/api/books/{id}', name: "updateBook", methods: ['PUT'])]
-  public function updateBook(Book $bddBook, Request $request, SerializerInterface $serializer, EntityManagerInterface $em): JsonResponse
+  public function updateBook(Book $bddBook, Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
   {
     $updatedBook = $serializer->deserialize(
       $request->getContent(),
@@ -65,6 +73,12 @@ class BookController extends AbstractController
       'json',
       [AbstractNormalizer::OBJECT_TO_POPULATE => $bddBook]
     );
+
+    // On vérifie les erreurs
+    $errors = $validator->validate($updatedBook);
+    if ($errors->count() > 0) {
+        return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
+    }
 
     $em->persist($updatedBook);
     $em->flush();
