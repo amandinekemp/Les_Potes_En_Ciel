@@ -6,10 +6,10 @@ USE `les_potes_en_ciel`;
 CREATE TABLE IF NOT EXISTS `family` (
     `id_family` int(11) NOT NULL AUTO_INCREMENT,
     `email` varchar(128) NOT NULL,
-    `password` varchar(128) NOT NULL,
-    `address` varchar(128) NOT NULL,
-    `zip_code` int(11) NOT NULL,
-    `city` varchar(28) NOT NULL,
+    `password` varchar(255) NOT NULL,
+    `address` varchar(255) NOT NULL,
+    `zip_code` varchar(5) NOT NULL,
+    `city` varchar(255) NOT NULL,
     `phone_number` varchar(15) NOT NULL,
     PRIMARY KEY (`id_family`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
