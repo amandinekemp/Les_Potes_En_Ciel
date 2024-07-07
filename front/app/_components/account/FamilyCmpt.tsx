@@ -1,8 +1,7 @@
 import React from 'react';
-
-import MemberCmpt from "@/app/_components/account/MemberCmpt";
-import type {Family} from '@/app/_types/Family';
 import { Card, CardBody } from 'react-bootstrap';
+
+import type {Family} from '@/app/_types/Family';
 
 const FamilyCmpt = ({ family }: { family: Family }) => {
   return (

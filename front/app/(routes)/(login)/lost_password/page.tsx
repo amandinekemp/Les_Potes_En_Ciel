@@ -11,7 +11,7 @@ export default function LostPasswordPage() {
     <>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-6">
+          <div className="col-lg-8 col-md-10">
             <h1>Mot de passe perdu</h1>
             <LostPasswordFormCmpt/>
           </div>

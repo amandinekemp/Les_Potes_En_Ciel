@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { BrowserRouter } from "react-router-dom";
 import InscriptionFormCmpt from "@/app/_components/login/InscriptionFormCmpt";
 import LoginFormCmpt from "@/app/_components/login/LoginFormCmpt";
 
@@ -13,7 +12,7 @@ export default function LoginPage() {
     <>
       <div className="container">
         <div className="row justify-content-center">
-            <div className="col-6">
+            <div className="col-lg-8 col-md-10">
               <LoginFormCmpt/>
               <InscriptionFormCmpt/>
           </div>

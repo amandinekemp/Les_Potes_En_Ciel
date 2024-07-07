@@ -11,7 +11,7 @@ export default function ChangePasswordPage() {
     <>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-6">
+          <div className="col-lg-8 col-md-10">
               <ChangePasswordFormCmpt/>
           </div>
         </div>

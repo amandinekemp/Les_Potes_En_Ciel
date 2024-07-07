@@ -1,9 +1,11 @@
 "use client";
 
+import { useState } from 'react';
 import { BrowserRouter, useNavigate } from 'react-router-dom';
 import { Button, Form, InputGroup } from "react-bootstrap";
 
 const LoginFormCmpt = () => {
+  const [hidden, setHidden] = useState(true);
   // const navigation = useNavigate();
 
   const handleLogin = (e: any) => {
@@ -24,9 +26,9 @@ const LoginFormCmpt = () => {
           <div className="mb-3">
             <Form.Label htmlFor="password" >Mot de passe*</Form.Label>
             <InputGroup>
-              <Form.Control type="password" id="password" required></Form.Control>
-              <Button type="button" variant="outline-secondary" id="togglePassword">
-                <i className="bi bi-eye"></i>
+              <Form.Control type={hidden ? "password" : "text"} id="password" required></Form.Control>
+              <Button type="button" variant="outline-secondary" onClick={() => setHidden((prev) => !prev)}>
+                <i className={"bi bi-eye" + (hidden ? "-slash" : "")}></i>
               </Button>
             </InputGroup>
           </div>

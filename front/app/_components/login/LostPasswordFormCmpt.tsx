@@ -36,8 +36,8 @@ const FormForgotPasswordCmpt = () => {
               />
             </Form.Group>
             <div className="mt-4 d-flex justify-content-between">
-              <Button variant="primary" type="submit">Envoyer</Button>
               <Button variant="secondary" href='/login'>Annuler</Button>
+              <Button variant="primary" type="submit">Envoyer</Button>
             </div>
           </Form>
           {message && <p className="mt-3">{message}</p>}

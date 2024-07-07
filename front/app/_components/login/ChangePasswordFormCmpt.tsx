@@ -63,10 +63,10 @@ const ChangePasswordFormCmpt = () => {
                     onChange={(e) => setConfirmPassword(e.target.value)} 
                     required 
                   />
-                </div>
-                <button type="submit" className="btn btn-primary">Réinitialiser le mot de passe</button>*/}
+                </div>*/}
                 <Button variant="secondary" href='/'>Annuler</Button>
               {/*
+                <button type="submit" className="btn btn-primary">Réinitialiser le mot de passe</button>
               </form>
               {message && <p className="mt-3">{message}</p>}
             </div>
