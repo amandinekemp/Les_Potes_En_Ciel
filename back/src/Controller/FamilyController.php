@@ -15,7 +15,14 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class FamilyController extends AbstractController
 {
-  #[Route('/api/family', name: "createFamily", methods: ['POST'])]
+  #[Route('/api/families/{id}', name: 'familyDetail', methods: ['GET'])]
+  public function getFamilyDetail(Family $bddFamily, SerializerInterface $serializer): JsonResponse
+  {
+    $jsonFamily = $serializer->serialize($bddFamily, 'json', ['groups' => 'getFamily']);
+    return new JsonResponse($jsonFamily, Response::HTTP_OK, ['accept' => 'json'], true);
+  }
+
+  #[Route('/api/families', name: "createFamily", methods: ['POST'])]
   public function createFamily(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
   {
     $family = $serializer->deserialize($request->getContent(), Family::class, 'json');
@@ -29,12 +36,12 @@ class FamilyController extends AbstractController
     $em->persist($family);
     $em->flush();
 
-    $jsonFamily = $serializer->serialize($family, 'json');
+    $jsonFamily = $serializer->serialize($family, 'json', ['groups' => 'getFamily']);
 
     return new JsonResponse($jsonFamily, Response::HTTP_CREATED, [], true);
   }
 
-  #[Route('/api/family/{id}', name: "updateFamily", methods: ['PUT'])]
+  #[Route('/api/families/{id}', name: "updateFamily", methods: ['PUT'])]
   public function updateFamily(Family $bddFamily, Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
   {
     $updatedFamily = $serializer->deserialize(
@@ -43,6 +50,8 @@ class FamilyController extends AbstractController
       'json',
       [AbstractNormalizer::OBJECT_TO_POPULATE => $bddFamily]
     );
+
+    // TODO : gerer la mise à jour des membres
 
     // On vérifie les erreurs
     $errors = $validator->validate($updatedFamily);

@@ -25,7 +25,7 @@ function App() {
           <Button variant="primary" href="#features">Features</Button>
           <Button variant="primary" href="#about">About me</Button>
         </nav>
-        <Button variant="primary" href="#TODO">Access &quot;Les Potes En Ciel&quot; web application</Button>
+        <Button variant="primary" href="/">Access &quot;Les Potes En Ciel&quot; web application</Button>
       </section>
 
       <section id="features">

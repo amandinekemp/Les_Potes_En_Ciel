@@ -14,7 +14,7 @@ CREATE TABLE IF NOT EXISTS `family` (
     PRIMARY KEY (`id_family`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Création de la table Person
+-- Création de la table Member
 CREATE TABLE IF NOT EXISTS `member` (
     `id_member` INT(11) NOT NULL AUTO_INCREMENT,
     `id_family` INT(11) NOT NULL,
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `book` (
     `author` VARCHAR(255) NOT NULL,
     `summary` TEXT NOT NULL,
     `available` BOOLEAN NOT NULL,
-    `genre_list` VARCHAR(128) NOT NULL,
+    `genre_list` VARCHAR(255) NOT NULL,
     PRIMARY KEY (`isbn`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
