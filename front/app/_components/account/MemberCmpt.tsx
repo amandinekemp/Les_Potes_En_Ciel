@@ -10,7 +10,7 @@ const MemberCmpt = ({ member }: { member: Member }) => {
         <Card className="w-100">
           <CardBody>
             <div>
-              <strong>Type de Membre:</strong> {member.memberType}
+              <strong>Membre:</strong> {member.memberType}
             </div>
             <div>
               <strong>Prénom:</strong> {member.firstName}

@@ -1,9 +1,10 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import { Button } from 'react-bootstrap';
+
 import type {Book} from '../../_types/Book';
 import BookDetailCmpt from './BookDetailCmpt';
-import { Button } from 'react-bootstrap';
 
 // Composant LibraryPage qui affiche la bibliothèque et permet de gérer les livres
 const BookShelveCmpt = (props: { onCreate: any; }) => {

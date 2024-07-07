@@ -27,17 +27,6 @@ class BookController extends AbstractController
     return new JsonResponse($jsonBookList, Response::HTTP_OK, [], true);
   }
 
-  //   #[Route('/api/books/{isbn}', name: 'bookDetail', methods: ['GET'])]
-  //   public function getBookDetail(int $isbn, BookRepository $bookRepository, SerializerInterface $serializer): JsonResponse
-  //   {
-  //       $book = $bookRepository->find($isbn);
-  //       if ($book) {
-  //           $jsonBook = $serializer->serialize($book, 'json');
-  //           return new JsonResponse($jsonBook, Response::HTTP_OK, [], true);
-  //       }
-  //       return new JsonResponse(null, Response::HTTP_NOT_FOUND);
-  //  }
-
   #[Route('/api/books/{id}', name: 'bookDetail', methods: ['GET'])]
   public function getBookDetail(Book $bddBook, SerializerInterface $serializer): JsonResponse
   {

@@ -11,33 +11,22 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class BorrowRepository extends ServiceEntityRepository
 {
-    public function __construct(ManagerRegistry $registry)
-    {
-        parent::__construct($registry, Borrow::class);
-    }
+  public function __construct(ManagerRegistry $registry)
+  {
+    parent::__construct($registry, Borrow::class);
+  }
 
-    //    /**
-    //     * @return Borrow[] Returns an array of Borrow objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('b')
-    //            ->andWhere('b.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('b.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
-
-    //    public function findOneBySomeField($value): ?Borrow
-    //    {
-    //        return $this->createQueryBuilder('b')
-    //            ->andWhere('b.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+  /**
+   * @return Borrow[] Returns all borrows for a family
+   */
+  public function findByFamily($idFamily): array
+  {
+    return $this->createQueryBuilder('b')
+      ->andWhere('b.idFamily = :val')
+      ->setParameter('val', $idFamily)
+      ->orderBy('b.return_date', 'DESC')
+      ->setMaxResults(10)
+      ->getQuery()
+      ->getResult();
+  }
 }

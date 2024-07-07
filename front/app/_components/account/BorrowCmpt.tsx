@@ -12,9 +12,6 @@ const BorrowCmpt = ({ borrow }: { borrow: Borrow }) => {
             <strong>ISBN:</strong> {borrow.isbn}
           </div>
           <div>
-            <strong>ID de la Famille:</strong> {borrow.idFamily}
-          </div>
-          <div>
             <strong>Date de Prêt:</strong> {new Date(borrow.borrowDate).toLocaleDateString()}
           </div>
           <div>

@@ -1,3 +1,5 @@
+import type {Member} from '@/app/_types/Member';
+
 export type Family = {
   idFamily: string;
   email: string;
@@ -5,4 +7,5 @@ export type Family = {
   zipCode: string;
   city: string;
   phoneNumber: string;
+  members: Member[];
 }
