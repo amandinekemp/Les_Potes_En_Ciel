@@ -7,24 +7,25 @@ import { format } from "date-fns";
 import type {Book} from '../../_types/Book';
 import BookDetailCmpt from './BookDetailCmpt';
 
+const idFamily = 2;
+// TODO gérer les erreurs de récupération des livres
+
 // Composant LibraryPage qui affiche la bibliothèque et permet de gérer les livres
 const BookShelveCmpt = (props: { onCreate: any; }) => {
   // État pour stocker la liste des livres
   const [books, setBooks] = useState([]);
 
+  // Lors du chargement de la page
   useEffect(() => {
-    // Récupérer les livres depuis le serveur lors du montage du composant
+    // Récupérer les livres depuis le serveur
     fetch('http://localhost:8000/api/books')
       .then(response => response.json())
       .then(data => setBooks(data))
       .catch(error => console.error(error));
   }, []);
-  // TODO gérer les erreurs
 
   // Gestion de la réservation d'un livre
   const handleReserveBook = (bookIsbn:string) => {
-    // Logique pour réserver un livre
-    console.log(`Réserver le livre ${bookIsbn}`);
     fetch('http://localhost:8000/api/borrows', {
       method: 'POST',
       headers: {
@@ -33,7 +34,7 @@ const BookShelveCmpt = (props: { onCreate: any; }) => {
       },
       body: JSON.stringify({
         isbn: bookIsbn,
-        idFamily: 2,
+        idFamily: idFamily,
         borrowDate: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
       })
     })

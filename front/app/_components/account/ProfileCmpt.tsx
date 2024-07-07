@@ -12,15 +12,15 @@ import BorrowCmpt from "@/app/_components/account/BorrowCmpt";
 export default function ProfileCmpt() {
   const [family, setFamily] = useState<Family>();
   const [borrows, setBorrows] = useState<Borrow[]>();
-  const familyId = 2;
+  const idFamily = 2;
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/families/'+familyId)
+    fetch('http://localhost:8000/api/families/'+idFamily)
       .then(response => response.json())
       .then(data => setFamily(data))
       .catch(error => console.error(error));
 
-    fetch('http://localhost:8000/api/borrows/'+familyId)
+    fetch('http://localhost:8000/api/borrows/'+idFamily)
     .then(response => response.json())
     .then(data => setBorrows(data))
     .catch(error => console.error(error));
