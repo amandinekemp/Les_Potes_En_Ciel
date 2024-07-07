@@ -1,24 +1,28 @@
 import React from 'react';
 import type { Borrow } from '@/app/_types/Borrow';
+import { Card, CardBody } from 'react-bootstrap';
 
 const BorrowCmpt = ({ borrow }: { borrow: Borrow }) => {
   return (
     <>
-      <div className="info-item">
-        <strong>ID de Prêt:</strong> {borrow.idBorrow}
-      </div>
-      <div className="info-item">
-        <strong>ISBN:</strong> {borrow.isbn}
-      </div>
-      <div className="info-item">
-        <strong>ID de la Famille:</strong> {borrow.idFamily}
-      </div>
-      <div className="info-item">
-        <strong>Date de Prêt:</strong> {new Date(borrow.borrowDate).toLocaleDateString()}
-      </div>
-      <div className="info-item">
-        <strong>Date de Retour:</strong> {new Date(borrow.returnDate).toLocaleDateString()}
-      </div>
+    <div className="col-lg-4 col-md-6 pb-4">
+      <Card className="w-100">
+        <CardBody>
+          <div>
+            <strong>ISBN:</strong> {borrow.isbn}
+          </div>
+          <div>
+            <strong>ID de la Famille:</strong> {borrow.idFamily}
+          </div>
+          <div>
+            <strong>Date de Prêt:</strong> {new Date(borrow.borrowDate).toLocaleDateString()}
+          </div>
+          <div>
+            <strong>Date de Retour:</strong> {new Date(borrow.returnDate).toLocaleDateString()}
+          </div>
+        </CardBody>
+      </Card>
+    </div>
     </>
   );
 };

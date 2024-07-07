@@ -19,17 +19,13 @@ export default function AccountProfilePage() {
           <h2>Informations de la famille</h2>
           <FamilyCmpt family={ {} }/>
         </div>
-        <div className="row justify-content-center mt-4">
+        <div className="row mt-4">
           <h2>Informations sur les membres de la famille</h2>
-          Loop
           <MemberCmpt member={ {} }/>
-          End Loop
         </div>
-        <div className="row justify-content-center mt-4">
+        <div className="row mt-4">
           <h2>Emprunts en cours</h2>
-          Loop
           <BorrowCmpt borrow={ {} }/>
-          End Loop
         </div>
       </div>
     </>
