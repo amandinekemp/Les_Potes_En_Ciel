@@ -1,4 +1,7 @@
 import { Metadata } from "next";
+import FamilyCmpt from "@/app/_components/account/FamilyCmpt";
+import MemberCmpt from "@/app/_components/account/MemberCmpt";
+import BorrowCmpt from "@/app/_components/account/BorrowCmpt";
 
 export const metadata: Metadata = {
   title: "Profile utilisateur - Les potes en ciel",
@@ -10,10 +13,23 @@ export default function AccountProfilePage() {
     <>
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-6">
             <h1>Mon profile</h1>
-            A faire
-          </div>
+        </div>
+        <div className="row justify-content-center mt-4">
+          <h2>Informations de la famille</h2>
+          <FamilyCmpt family={ {} }/>
+        </div>
+        <div className="row justify-content-center mt-4">
+          <h2>Informations sur les membres de la famille</h2>
+          Loop
+          <MemberCmpt member={ {} }/>
+          End Loop
+        </div>
+        <div className="row justify-content-center mt-4">
+          <h2>Emprunts en cours</h2>
+          Loop
+          <BorrowCmpt borrow={ {} }/>
+          End Loop
         </div>
       </div>
     </>

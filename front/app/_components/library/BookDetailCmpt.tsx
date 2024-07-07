@@ -1,6 +1,6 @@
 import React from 'react';
-import { Accordion, Button, Card, CardBody, CardFooter } from 'react-bootstrap';
-import type {Book} from '../../_types/Book';
+import { Accordion, Button, Card, CardBody } from 'react-bootstrap';
+import type {Book} from '@/app/_types/Book';
 
 // Composant BookDetail qui affiche les détails d'un livre et propose des actions de réservation et d'annulation
 const BookDetailCmpt = (props: { book: Book; onReserve: any; }) => {
