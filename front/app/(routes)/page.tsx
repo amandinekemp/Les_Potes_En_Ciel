@@ -5,7 +5,7 @@ import logo_img from '/public/logo_lpec.png';
 
 export const metadata: Metadata = {
   title: "Les potes en ciel",
-  description: "Description des potes en ciel",
+  description: "Page d'accueil des potes en ciel",
 };
 
 export default function HomePage() {

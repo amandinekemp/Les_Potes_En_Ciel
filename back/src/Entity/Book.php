@@ -31,8 +31,9 @@ class Book
   #[Assert\Length(min: 20, minMessage: "Le résumé doit faire au moins {{ limit }} caractères")]
   private ?string $summary = null;
 
-  #[ORM\Column]
-  private ?bool $available = null;
+  #[ORM\Column(type: Types::TEXT)]
+  #[Assert\NotBlank(message: "Le(s) genre(s) est(sont) obligatoire(s)")]
+  private ?string $genres = null;
 
   public function getIsbn(): ?string
   {
@@ -82,14 +83,14 @@ class Book
     return $this;
   }
 
-  public function available(): ?bool
+  public function getGenres(): ?string
   {
-    return $this->available;
+    return $this->genres;
   }
 
-  public function setAvailable(bool $available): static
+  public function setGenres(string $genres): static
   {
-    $this->available = $available;
+    $this->genres = $genres;
 
     return $this;
   }

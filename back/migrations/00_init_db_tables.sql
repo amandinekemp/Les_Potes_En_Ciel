@@ -32,8 +32,7 @@ CREATE TABLE IF NOT EXISTS `book` (
     `title` VARCHAR(255) NOT NULL,
     `author` VARCHAR(255) NOT NULL,
     `summary` TEXT NOT NULL,
-    `available` BOOLEAN NOT NULL,
-    `genre_list` VARCHAR(255) NOT NULL,
+    `genres` VARCHAR(255) NOT NULL,
     PRIMARY KEY (`isbn`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
