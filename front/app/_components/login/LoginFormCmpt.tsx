@@ -1,12 +1,22 @@
+"use client";
+
+import { BrowserRouter, useNavigate } from 'react-router-dom';
 import { Button, Form, InputGroup } from "react-bootstrap";
 
 const LoginFormCmpt = () => {
+  // const navigation = useNavigate();
+
+  const handleLogin = (e: any) => {
+    //e.preventDefault();
+    // navigation('/account');
+  };
+
   return (
     <>
     <div className="card shadow rounded mb-4">
       <div className="card-body">
         <h3 className="card-title text-center">Se connecter</h3>
-        <Form>
+        <Form onSubmit={handleLogin} action={"/account"}>
           <div className="mb-3">
             <Form.Label htmlFor="email">E-mail*</Form.Label>
             <Form.Control type="email" id="email" required></Form.Control>

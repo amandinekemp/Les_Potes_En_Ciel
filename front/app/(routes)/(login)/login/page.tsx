@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import Script from "next/script";
+import { BrowserRouter } from "react-router-dom";
 import InscriptionFormCmpt from "@/app/_components/login/InscriptionFormCmpt";
 import LoginFormCmpt from "@/app/_components/login/LoginFormCmpt";
 
