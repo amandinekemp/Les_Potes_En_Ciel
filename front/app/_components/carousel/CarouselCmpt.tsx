@@ -41,7 +41,7 @@ const CarouselCmpt = () => {
           <div className="row d-flex">
             {/* Itérer sur les images de chaque ligne */}
             {row.map((img, index_img) => (
-            <div key={index_img} className="col-4">
+            <div key={index_img} className="col-lg-4 col-md-6">
               <Image src={img.path} className="w-100" alt={img.name} width={300} height={600}></Image>
             </div>
             ))}

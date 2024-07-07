@@ -1,18 +1,27 @@
 "use client"
 
-import { generateKey } from 'crypto';
 import React, { useState } from 'react';
+import { generateKey } from 'crypto';
 import { Button, Form, Image, InputGroup } from 'react-bootstrap';
+
+import { Book } from '@/app/_types/Book';
 
 // Composant BookCreateForm qui permet d'ajouter un nouveau livre à la bibliothèque
 const BookCreateFormCmpt = (props: { onShelve: any; }) => {
+
+  const createEmptyBook = () => {
+    return {
+      isbn: '',
+      title: '',
+      author: '',
+      summary: '',
+      genres: ''
+    }
+  };
+
   // États pour gérer les champs du formulaire
   const [message, setMessage] = useState('');
-  const [isbn, setIsbn] = useState('');
-  const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
-  const [summary, setSummary] = useState('');
-  const [genres, setGenres] = useState('');
+  const [book, setBook] = useState<Book>(createEmptyBook());
   //const [cover, setCover] = useState(null);
 
   // Fonction pour gérer la sélection du fichier de couverture
@@ -38,24 +47,13 @@ const BookCreateFormCmpt = (props: { onShelve: any; }) => {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        isbn: isbn, 
-        title: title, 
-        author: author, 
-        summary: summary, 
-        genres: genres
-      })
+      body: JSON.stringify(book)
     })
     .then(response => {
       if(response.ok) { 
         setMessage("Le livre a été ajouté avec succès !");
         // Réinitialise les champs du formulaire après la soumission
-        setIsbn('');
-        setTitle('');
-        setAuthor('');
-        setSummary('');
-        setGenres('');
-        //setCover(null);
+        setBook(createEmptyBook());
       } else {
         response.json().then((data:any) => {
           setMessage(data.detail);
@@ -79,8 +77,8 @@ const BookCreateFormCmpt = (props: { onShelve: any; }) => {
         <Form.Label>ISBN</Form.Label>
         <InputGroup>
           <Form.Control type="text"
-            value={isbn}
-            onChange={(e) => setIsbn(e.target.value)}
+            value={book.isbn}
+            onChange={(e) => setBook({...book, isbn: e.target.value})}
             required
           ></Form.Control>
         </InputGroup>
@@ -90,8 +88,8 @@ const BookCreateFormCmpt = (props: { onShelve: any; }) => {
         <Form.Label>Titre</Form.Label>
         <InputGroup>
           <Form.Control type="text"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
+            value={book.title}
+            onChange={(e) => setBook({...book, title: e.target.value})}
             required
           ></Form.Control>
         </InputGroup>
@@ -101,8 +99,8 @@ const BookCreateFormCmpt = (props: { onShelve: any; }) => {
         <Form.Label>Auteur</Form.Label>
         <InputGroup>
           <Form.Control type="text"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
+            value={book.author}
+            onChange={(e) => setBook({...book, author: e.target.value})}
             required
           ></Form.Control>
         </InputGroup>
@@ -111,8 +109,8 @@ const BookCreateFormCmpt = (props: { onShelve: any; }) => {
       <Form.Group>
         <Form.Label>Résumé</Form.Label>
         <Form.Control as="textarea"
-          value={summary}
-          onChange={(e) => setSummary(e.target.value)}
+          value={book.summary}
+          onChange={(e) => setBook({...book, summary: e.target.value})}
           required
         ></Form.Control>
       </Form.Group>
@@ -121,8 +119,8 @@ const BookCreateFormCmpt = (props: { onShelve: any; }) => {
         <Form.Label>Genre(s)</Form.Label>
         <InputGroup>
           <Form.Control type="text"
-            value={genres}
-            onChange={(e) => setGenres(e.target.value)}
+            value={book.genres}
+            onChange={(e) => setBook({...book, genres: e.target.value})}
             required
           ></Form.Control>
         </InputGroup>

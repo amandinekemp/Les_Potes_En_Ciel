@@ -6,7 +6,7 @@ import type {Book} from '@/app/_types/Book';
 const BookDetailCmpt = (props: { book: Book; onReserve: any; }) => {
   let book: Book = props.book;
   return (
-    <div className="col-4 pb-4">
+    <div className="col-lg-4 col-md-6 pb-4">
     <Card className="w-100 h-100 p-2">
       {/* Image de la couverture du livre*/}
       <Card.Img variant="top" src={`/books/${book.isbn}.jpg`} alt={`${book.title} cover`} height={400} 

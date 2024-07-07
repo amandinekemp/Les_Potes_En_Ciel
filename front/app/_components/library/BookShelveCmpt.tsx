@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from 'react-bootstrap';
+import { format } from "date-fns";
 
 import type {Book} from '../../_types/Book';
 import BookDetailCmpt from './BookDetailCmpt';
@@ -24,6 +25,18 @@ const BookShelveCmpt = (props: { onCreate: any; }) => {
   const handleReserveBook = (bookIsbn:string) => {
     // Logique pour réserver un livre
     console.log(`Réserver le livre ${bookIsbn}`);
+    fetch('http://localhost:8000/api/borrows', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        isbn: bookIsbn,
+        idFamily: 2,
+        borrowDate: format(new Date(), "yyyy-MM-dd HH:mm:ss"),
+      })
+    })
   };
 
   return (

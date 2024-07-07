@@ -1,6 +1,8 @@
 import React from 'react';
-import type { Borrow } from '@/app/_types/Borrow';
 import { Card, CardBody } from 'react-bootstrap';
+import { format } from "date-fns";
+
+import type { Borrow } from '@/app/_types/Borrow';
 
 const BorrowCmpt = ({ borrow }: { borrow: Borrow }) => {
   return (
@@ -12,10 +14,10 @@ const BorrowCmpt = ({ borrow }: { borrow: Borrow }) => {
             <strong>ISBN:</strong> {borrow.isbn}
           </div>
           <div>
-            <strong>Date de Prêt:</strong> {new Date(borrow.borrowDate).toLocaleDateString()}
+            <strong>Date de Prêt:</strong> {format(new Date(borrow.borrowDate), "dd/MM/yyyy")}
           </div>
           <div>
-            <strong>Date de Retour:</strong> {new Date(borrow.returnDate).toLocaleDateString()}
+            <strong>Date de Retour:</strong> {borrow.returnDate && format(new Date(borrow.returnDate), "dd/MM/yyyy")}
           </div>
         </CardBody>
       </Card>
