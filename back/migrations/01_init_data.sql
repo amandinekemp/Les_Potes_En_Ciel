@@ -7,10 +7,10 @@ insert into `family` ( `id_family`, `email`, `password`, `address`, `zip_code`, 
 
 -- Person
 
-insert into `person` (`id_person`, `id_family`, `person_type`, `first_name`, `last_name`, `birth_date`) values (1, 1, "parent", "Jean", "Dupont", "1980-01-01");
-insert into `person` (`id_person`, `id_family`, `person_type`, `first_name`, `last_name`, `birth_date`) values (2, 1, "child", "Paul", "Dupont", "2000-01-01");
-insert into `person` (`id_person`, `id_family`, `person_type`, `first_name`, `last_name`, `birth_date`) values (3, 2, "parent", "Marie", "Durand", "1980-01-01");
-insert into `person` (`id_person`, `id_family`, `person_type`, `first_name`, `last_name`, `birth_date`) values (4, 2, "child", "Luc", "Durand", "2000-01-01");
+insert into `member` (`id_member`, `id_family`, `member_type`, `first_name`, `last_name`, `birth_date`) values (1, 1, "parent", "Jean", "Dupont", "1980-01-01");
+insert into `member` (`id_member`, `id_family`, `member_type`, `first_name`, `last_name`, `birth_date`) values (2, 1, "child", "Paul", "Dupont", "2000-01-01");
+insert into `member` (`id_member`, `id_family`, `member_type`, `first_name`, `last_name`, `birth_date`) values (3, 2, "parent", "Marie", "Durand", "1980-01-01");
+insert into `member` (`id_member`, `id_family`, `member_type`, `first_name`, `last_name`, `birth_date`) values (4, 2, "child", "Luc", "Durand", "2000-01-01");
 
 -- Book
 
@@ -24,11 +24,11 @@ INSERT INTO `book` (`isbn`, `title`, `author`, `summary`, `available`, `genre_li
 
 INSERT INTO `borrow` (`isbn`, `id_family`, `borrow_date`, `return_date`) VALUES 
 ('9782317023637', 1, '2024-07-03 18:00:00', '2024-07-24 18:00:00'),
-('9783161484100', 1, '2023-01-15 18:00:00', '2023-02-15 18:00:00'),
-('9783161484101', 2, '2023-02-20 18:00:00', '2023-03-20 18:00:00'),
-('9783161484102', 3, '2023-03-25 18:00:00', '2023-04-25 18:00:00'),
-('9783161484103', 4, '2023-04-30 18:00:00', '2023-05-30 18:00:00'),
-('9783161484104', 5, '2023-05-05 18:00:00', '2023-06-05 18:00:00'),
+('9782957698929', 2, '2023-01-15 18:00:00', '2023-02-15 18:00:00'),
+('9782092783726', 2, '2023-02-20 18:00:00', '2023-03-20 18:00:00'),
+('9782317023637', 3, '2023-03-25 18:00:00', '2023-04-25 18:00:00'),
+('9782092783726', 3, '2023-04-30 18:00:00', '2023-05-30 18:00:00'),
+('9782092783726', 2, '2023-05-05 18:00:00', '2023-06-05 18:00:00'),
 ('9782845942486', 2, '2024-07-05 18:00:00', '2024-07-26 18:00:00');
 
 -- Workshop
@@ -41,7 +41,7 @@ INSERT INTO `workshop` (`id_workshop`, `title`, `start_date`, `end_date`, `descr
 
 -- Workshop_participant
 
-INSERT INTO `workshop_participant` (`id_workshop`, `id_person`) VALUES
+INSERT INTO `workshop_participant` (`id_workshop`, `id_member`) VALUES
 (1, 1), -- Ludothéque Parc Matisse, Participant 1
 (1, 2), -- Ludothéque Parc Matisse, Participant 2
 (2, 2), -- Pote mobile, Participant 2
