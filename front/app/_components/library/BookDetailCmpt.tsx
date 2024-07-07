@@ -9,7 +9,12 @@ const BookDetailCmpt = (props: { book: Book; onReserve: any; }) => {
     <div className="col-4 pb-4">
     <Card className="w-100 h-100 p-2">
       {/* Image de la couverture du livre*/}
-      <Card.Img variant="top" src={`/books/${book.isbn}.jpg`} alt={`${book.title} cover`} height={400}/>
+      <Card.Img variant="top" src={`/books/${book.isbn}.jpg`} alt={`${book.title} cover`} height={400} 
+          onError={({ currentTarget }) => {
+            if (currentTarget.src.includes("default.jpg")) return; // prevents looping
+            currentTarget.onerror = null;
+            currentTarget.src="/books/default.jpg";
+          }}/>
       <CardBody>
         {/* Titre du livre */}
         <Card.Title>{book.title}</Card.Title>
@@ -27,8 +32,7 @@ const BookDetailCmpt = (props: { book: Book; onReserve: any; }) => {
           </Accordion.Item>
         </Accordion>
         {/* Bouton pour réserver le livre */}
-        <Button variant="primary" className="mt-2 w-100"
-          onClick={() => props.onReserve(book.isbn)}>Réserver</Button>
+        <Button variant="primary" className="mt-2 w-100" onClick={() => props.onReserve(book.isbn)}>Réserver</Button>
       </CardBody>
     </Card>
     </div>

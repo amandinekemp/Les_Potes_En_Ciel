@@ -32,7 +32,7 @@ class Book
   private ?string $summary = null;
 
   #[ORM\Column]
-  private ?bool $isAvailable = null;
+  private ?bool $available = null;
 
   public function getIsbn(): ?string
   {
@@ -82,14 +82,14 @@ class Book
     return $this;
   }
 
-  public function isAvailable(): ?bool
+  public function available(): ?bool
   {
-    return $this->isAvailable;
+    return $this->available;
   }
 
-  public function setAvailable(bool $isAvailable): static
+  public function setAvailable(bool $available): static
   {
-    $this->isAvailable = $isAvailable;
+    $this->available = $available;
 
     return $this;
   }
