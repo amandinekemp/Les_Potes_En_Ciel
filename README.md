@@ -140,8 +140,8 @@ For any questions or inquiries, please contact:
 
 * Amandine Kemp
 
- * - [Github](https://github.com/amandinekemp)
- * - [LinkedIn](https://www.linkedin.com/in/amandinekemp/)
+  - [Github](https://github.com/amandinekemp)
+  - [LinkedIn](https://www.linkedin.com/in/amandinekemp/)
 
  Thank you for your interest in the "Les Potes En Ciel" project!
 
