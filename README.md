@@ -49,15 +49,18 @@ Welcome to the "Les Potes En Ciel" project! This project aims to modernize the c
 
 ## ➤ Technologies Used
 
-- HTML
-- CSS
-- JavaScript
-- PHP
+### Front-end :
+
 - React
 - React Bootstrap
+- HTML
+- CSS
+
+### Back-end :
+
+- Symfony
+- Php
 - MySQL
-- [Next.js](https://nextjs.org/)
-- [Node.js](https://nodejs.org/)
 
 ----------
 
@@ -137,8 +140,8 @@ For any questions or inquiries, please contact:
 
 * Amandine Kemp
 
- * - Amandine KEMP [Github](https://github.com/amandinekemp)
- * - Amandine KEMP [LinkedIn](https://www.linkedin.com/in/amandinekemp/)
+ * - [Github](https://github.com/amandinekemp)
+ * - [LinkedIn](https://www.linkedin.com/in/amandinekemp/)
 
  Thank you for your interest in the "Les Potes En Ciel" project!
 
