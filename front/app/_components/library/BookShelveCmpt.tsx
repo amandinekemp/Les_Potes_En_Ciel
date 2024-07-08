@@ -10,21 +10,21 @@ import BookDetailCmpt from './BookDetailCmpt';
 const idFamily = 2;
 // TODO gérer les erreurs de récupération des livres
 
-// Composant LibraryPage qui affiche la bibliothèque et permet de gérer les livres
+// LibraryPage component for displaying the library and managing books
 const BookShelveCmpt = (props: { onCreate: any; }) => {
-  // État pour stocker la liste des livres
+  // State to store the list of books
   const [books, setBooks] = useState([]);
 
-  // Lors du chargement de la page
+  // When the page loads
   useEffect(() => {
-    // Récupérer les livres depuis le serveur
+    // Get books from the server
     fetch('http://localhost:8000/api/books')
       .then(response => response.json())
       .then(data => setBooks(data))
       .catch(error => console.error(error));
   }, []);
 
-  // Gestion de la réservation d'un livre
+  // Book reservation management
   const handleReserveBook = (bookIsbn:string) => {
     fetch('http://localhost:8000/api/borrows', {
       method: 'POST',
@@ -47,7 +47,7 @@ const BookShelveCmpt = (props: { onCreate: any; }) => {
         <Button variant="primary" className="col-auto" onClick={props.onCreate}>Ajouter un livre</Button>
       </div>
       <div className="row mt-4">
-        {/* Affiche les détails de chaque livre dans une carte */}
+        {/* Displays details of each book in a map */}
         {books.map((bookItem:Book) => (
           <BookDetailCmpt key={bookItem.isbn} book={bookItem} onReserve={handleReserveBook} />
         ))}
