@@ -5,12 +5,19 @@ import BookCreateFormCmpt from "@/app/_components/library/BookCreateFormCmpt";
 import BookShelveCmpt from "@/app/_components/library/BookShelveCmpt";
 
 export default function LibraryCmpt() {
-  const [creationMode, setCreationMode] = useState('isCreation');
+  const [shelveMode, setShelveMode] = useState(true);
+  const [isbnBookToEdit, setIsbnBookToEdit] = useState("");
 
   return (
     <>
-      {creationMode === 'true' && <BookCreateFormCmpt onShelve={() => setCreationMode("")}/>}
-      {creationMode !== 'true' && <BookShelveCmpt onCreate={() => setCreationMode("true")}/> }
+      {shelveMode && <BookShelveCmpt
+        onCreate={() => {setShelveMode(false); setIsbnBookToEdit("")}}
+        onEdit={(isbn:string) => {setShelveMode(false); setIsbnBookToEdit(isbn);} }
+        /> }
+      {!shelveMode && <BookCreateFormCmpt
+        onShelve={() => setShelveMode(true)}
+        isbnBookToEdit={isbnBookToEdit}
+        />}
     </>
   );
 }

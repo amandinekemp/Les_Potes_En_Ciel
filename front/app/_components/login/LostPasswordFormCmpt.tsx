@@ -11,9 +11,7 @@ const FormForgotPasswordCmpt = () => {
      e.preventDefault();
   //   fetch('/api/password-reset-request', {
   //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
+  //     headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
   //     body: JSON.stringify({ email }),
   //   })
   //   .then(response => {

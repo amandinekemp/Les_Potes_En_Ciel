@@ -18,9 +18,7 @@ const ChangePasswordFormCmpt = () => {
   //   // This is a placeholder, replace with actual server call
   //   fetch('/api/password-reset', {
   //     method: 'POST',
-  //     headers: {
-  //       'Content-Type': 'application/json',
-  //     },
+  //     headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
   //     body: JSON.stringify({ token, password }),
   //   })
   //   .then(response => response.json())

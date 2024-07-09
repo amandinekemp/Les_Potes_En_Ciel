@@ -1,28 +1,36 @@
 "use client"
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { generateKey } from 'crypto';
 import { Button, Form, Image, InputGroup } from 'react-bootstrap';
 
 import { Book } from '@/app/_types/Book';
 
 // Composant BookCreateForm qui permet d'ajouter un nouveau livre à la bibliothèque
-const BookCreateFormCmpt = (props: { onShelve: any; }) => {
-
-  const createEmptyBook = () => {
-    return {
-      isbn: '',
-      title: '',
-      author: '',
-      summary: '',
-      genres: ''
-    }
-  };
+const BookCreateFormCmpt = (props: { onShelve: any; isbnBookToEdit: string;}) => {
 
   // États pour gérer les champs du formulaire
   const [message, setMessage] = useState('');
-  const [book, setBook] = useState<Book>(createEmptyBook());
+  const [creation, setCreation] = useState(true);
+  const [book, setBook] = useState<Book>({});
   //const [cover, setCover] = useState(null);
+
+  // When the page loads
+  useEffect(() => {
+    // fill with existing book if set
+    console.log("ISBN to edit: "+props.isbnBookToEdit)
+    if (props.isbnBookToEdit) {
+      setCreation(false);
+      fetch('http://localhost:8000/api/books/'+props.isbnBookToEdit, {
+        method: 'GET',
+        headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}
+      })
+      .then(response => response.json())
+      .then(data => {
+        setBook(data);
+      });
+    }
+  }, []);
 
   // Fonction pour gérer la sélection du fichier de couverture
   // const handleCoverChange = (e) => {
@@ -41,19 +49,15 @@ const BookCreateFormCmpt = (props: { onShelve: any; }) => {
     // Empêche le rechargement de la page lors de la soumission du formulaire
     e.preventDefault();
     // Appelle la fonction onSubmit avec le nouvel objet livre
-    fetch('http://localhost:8000/api/books', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
+    fetch('http://localhost:8000/api/books' + (creation ? '' : '/'+book.isbn), {
+      method: creation ? 'POST' : 'PUT',
+      headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
       body: JSON.stringify(book)
     })
     .then(response => {
       if(response.ok) { 
-        setMessage("Le livre a été ajouté avec succès !");
-        // Réinitialise les champs du formulaire après la soumission
-        setBook(createEmptyBook());
+        setMessage("Le livre a été " + (creation ? "ajouté" : "modifié") + " avec succès !");
+        setCreation(false);
       } else {
         response.json().then((data:any) => {
           setMessage(data.detail);
@@ -79,6 +83,7 @@ const BookCreateFormCmpt = (props: { onShelve: any; }) => {
           <Form.Control type="text"
             value={book.isbn}
             onChange={(e) => setBook({...book, isbn: e.target.value})}
+            disabled={!creation}
             required
           ></Form.Control>
         </InputGroup>
@@ -108,7 +113,7 @@ const BookCreateFormCmpt = (props: { onShelve: any; }) => {
       {/* Champ pour le résumé du livre */}
       <Form.Group>
         <Form.Label>Résumé</Form.Label>
-        <Form.Control as="textarea"
+        <Form.Control as="textarea" rows={5}
           value={book.summary}
           onChange={(e) => setBook({...book, summary: e.target.value})}
           required
@@ -141,10 +146,10 @@ const BookCreateFormCmpt = (props: { onShelve: any; }) => {
       </Form.Group> */}
       {/* Bouton de soumission du formulaire */}
       <div className="mt-4 d-flex justify-content-between">
-        <Button variant="secondary" onClick={props.onShelve}>Annuler</Button>
-        <Button type="submit" variant="primary">Ajouter</Button>
+        <Button variant="secondary" onClick={props.onShelve}>Retour</Button>
+        <Button type="submit" variant="primary">{creation ? "Ajouter" : "Mettre à jour"}</Button>
       </div>
-      {message && <p className="mt-3">{message}</p>}
+      {message && <p className="multiLineText mt-3">{message}</p>}
       </Form>
     </>
   );

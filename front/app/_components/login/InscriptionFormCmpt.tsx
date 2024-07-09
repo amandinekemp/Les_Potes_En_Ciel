@@ -15,10 +15,7 @@ const InscriptionFormCmpt = () => {
     // Appelle la fonction onSubmit avec le nouvel objet livre
     fetch('http://localhost:8000/api/families', {
       method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
+      headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
       body: JSON.stringify(account)
     })
     .then(response => {
