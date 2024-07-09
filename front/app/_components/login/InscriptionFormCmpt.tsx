@@ -1,12 +1,13 @@
 "use client";
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { Button, Form, InputGroup } from "react-bootstrap";
 
 const InscriptionFormCmpt = () => {
   const [hidden, setHidden] = useState(true);
-
   const [account, setAccount] = useState({});
+  const router = useRouter();
 
   const handleSubmit = (e:any) => {
     // Empêche le rechargement de la page lors de la soumission du formulaire
@@ -21,8 +22,10 @@ const InscriptionFormCmpt = () => {
       body: JSON.stringify(account)
     })
     .then(response => {
-      if(response.ok) { 
-        // TODO rediriger page du compte
+      if(response.ok) {
+        router.replace('/account');
+      } else {
+        console.error('Login status not ok:', response);
       }
     })
     .catch(error => {

@@ -1,16 +1,15 @@
 "use client";
 
 import { useState } from 'react';
-import { BrowserRouter, useNavigate } from 'react-router-dom';
+import { useRouter } from "next/navigation";
 import { Button, Form, InputGroup } from "react-bootstrap";
 
 const LoginFormCmpt = () => {
   const [hidden, setHidden] = useState(true);
-  // const navigation = useNavigate();
+  const router = useRouter();
 
   const handleLogin = (e: any) => {
-    //e.preventDefault();
-    // navigation('/account');
+    router.replace('/account');
   };
 
   return (
