@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Button, Form, InputGroup } from "react-bootstrap";
 
 const InscriptionFormCmpt = () => {
-  const [hidden, setHidden] = useState(true);
+  const [hiddenPassword, setHiddenPassword] = useState(true);
   const [account, setAccount] = useState({});
   const router = useRouter();
 
@@ -13,7 +13,7 @@ const InscriptionFormCmpt = () => {
     // Empêche le rechargement de la page lors de la soumission du formulaire
     e.preventDefault();
     // Appelle la fonction onSubmit avec le nouvel objet livre
-    fetch('http://localhost:8000/api/families', {
+    fetch('http://localhost:8000/api/register/account', {
       method: 'POST',
       headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
       body: JSON.stringify(account)
@@ -75,11 +75,11 @@ const InscriptionFormCmpt = () => {
           <div className="mb-3">
             <Form.Label htmlFor="passwordSignup">Mot de passe*</Form.Label>
             <InputGroup>
-              <Form.Control type={hidden ? "password" : "text"} id="passwordSignup"
+              <Form.Control type={hiddenPassword ? "password" : "text"} id="passwordSignup"
               onChange={(e) => setAccount({...account, password: e.target.value})}
               required></Form.Control>
-              <Button type="button" variant="outline-secondary" onClick={() => setHidden((prev) => !prev)}>
-                <i className={"bi bi-eye" + (hidden ? "-slash" : "")}></i>
+              <Button type="button" variant="outline-secondary" onClick={() => setHiddenPassword((prev) => !prev)}>
+                <i className={"bi bi-eye" + (hiddenPassword ? "-slash" : "")}></i>
               </Button>
             </InputGroup>
           </div>

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { Button, Form, InputGroup } from "react-bootstrap";
 
 const LoginFormCmpt = () => {
-  const [hidden, setHidden] = useState(true);
+  const [hiddenPassword, setHiddenPassword] = useState(true);
   const router = useRouter();
 
   const handleLogin = (e: any) => {
@@ -25,9 +25,9 @@ const LoginFormCmpt = () => {
           <div className="mb-3">
             <Form.Label htmlFor="password" >Mot de passe*</Form.Label>
             <InputGroup>
-              <Form.Control type={hidden ? "password" : "text"} id="password" required></Form.Control>
-              <Button type="button" variant="outline-secondary" onClick={() => setHidden((prev) => !prev)}>
-                <i className={"bi bi-eye" + (hidden ? "-slash" : "")}></i>
+              <Form.Control type={hiddenPassword ? "password" : "text"} id="password" required></Form.Control>
+              <Button type="button" variant="outline-secondary" onClick={() => setHiddenPassword((prev) => !prev)}>
+                <i className={"bi bi-eye" + (hiddenPassword ? "-slash" : "")}></i>
               </Button>
             </InputGroup>
           </div>
