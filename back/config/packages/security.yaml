@@ -37,6 +37,11 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
+        - { path: ^/api/books, roles: PUBLIC_ACCESS }
+        - { path: ^/api/register, roles: PUBLIC_ACCESS }
+        # Any other URL requires authenticated user, like:
+        # /borrows
+        # /users
         - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
 
 when@test:

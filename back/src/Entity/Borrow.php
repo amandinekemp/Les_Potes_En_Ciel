@@ -24,10 +24,10 @@ class Borrow
   private ?int $idUser = null;
 
   #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-  private ?\DateTimeInterface $borrow_date = null;
+  private ?\DateTimeInterface $borrowDate = null;
 
   #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-  private ?\DateTimeInterface $return_date = null;
+  private ?\DateTimeInterface $returnDate = null;
 
   public function getIdBorrow(): ?int
   {
@@ -60,24 +60,24 @@ class Borrow
 
   public function getBorrowDate(): ?\DateTimeInterface
   {
-    return $this->borrow_date;
+    return $this->borrowDate;
   }
 
-  public function setBorrowDate(\DateTimeInterface $borrow_date): static
+  public function setBorrowDate(\DateTimeInterface $borrowDate): static
   {
-    $this->borrow_date = $borrow_date;
+    $this->borrowDate = $borrowDate;
 
     return $this;
   }
 
   public function getReturnDate(): ?\DateTimeInterface
   {
-    return $this->return_date;
+    return $this->returnDate;
   }
 
-  public function setReturnDate(\DateTimeInterface $return_date): static
+  public function setReturnDate(\DateTimeInterface $returnDate): static
   {
-    $this->return_date = $return_date;
+    $this->returnDate = $returnDate;
 
     return $this;
   }

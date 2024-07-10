@@ -14,11 +14,13 @@ use Doctrine\ORM\EntityManagerInterface;
 
 use App\Entity\Book;
 use App\Repository\BookRepository;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-
+# Access to controller is public if nothing is specified
+#[Route('/api/books')]
 class BookController extends AbstractController
 {
-  #[Route('/api/books', name: 'bookList', methods: ['GET'])]
+  #[Route('/', name: 'bookList', methods: ['GET'])]
   public function getBookList(BookRepository $bookRepository, SerializerInterface $serializer): JsonResponse
   {
     $bookList = $bookRepository->findAll();
@@ -27,14 +29,15 @@ class BookController extends AbstractController
     return new JsonResponse($jsonBookList, Response::HTTP_OK, [], true);
   }
 
-  #[Route('/api/books/{id}', name: 'bookDetail', methods: ['GET'])]
+  #[Route('/{id}', name: 'bookDetail', methods: ['GET'])]
   public function getBookDetail(Book $bddBook, SerializerInterface $serializer): JsonResponse
   {
     $jsonBook = $serializer->serialize($bddBook, 'json');
     return new JsonResponse($jsonBook, Response::HTTP_OK, ['accept' => 'json'], true);
   }
 
-  #[Route('/api/books', name: "createBook", methods: ['POST'])]
+  #[Route('/', name: "createBook", methods: ['POST'])]
+  #[IsGranted('ROLE_ADMIN', message: 'Vous n\'avez pas les droits suffisants pour créer un livre')]
   public function createBook(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
   {
     $book = $serializer->deserialize($request->getContent(), Book::class, 'json');
@@ -53,7 +56,8 @@ class BookController extends AbstractController
     return new JsonResponse($jsonBook, Response::HTTP_CREATED, [], true);
   }
 
-  #[Route('/api/books/{id}', name: "updateBook", methods: ['PUT'])]
+  #[Route('/{id}', name: "updateBook", methods: ['PUT'])]
+  #[IsGranted('ROLE_ADMIN', message: 'Vous n\'avez pas les droits suffisants pour modifier un livre')]
   public function updateBook(Book $bddBook, Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
   {
     $updatedBook = $serializer->deserialize(
@@ -74,7 +78,8 @@ class BookController extends AbstractController
     return new JsonResponse(null, JsonResponse::HTTP_NO_CONTENT);
   }
 
-  #[Route('/api/books/{id}', name: 'deleteBook', methods: ['DELETE'])]
+  #[Route('/{id}', name: 'deleteBook', methods: ['DELETE'])]
+  #[IsGranted('ROLE_ADMIN', message: 'Vous n\'avez pas les droits suffisants pour supprimer un livre')]
   public function deleteBook(Book $bddBook, EntityManagerInterface $em): JsonResponse
   {
     $em->remove($bddBook);

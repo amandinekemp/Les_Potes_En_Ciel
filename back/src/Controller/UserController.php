@@ -13,35 +13,18 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
+# Access to entire controller requires authenticated user (defined in /config/packages/security.yaml)
+#[Route('/api/users')]
 class UserController extends AbstractController
 {
-  #[Route('/api/users/{id}', name: 'userDetail', methods: ['GET'])]
+  #[Route('/{id}', name: 'userDetail', methods: ['GET'])]
   public function getUserDetail(User $bddUser, SerializerInterface $serializer): JsonResponse
   {
     $jsonUser = $serializer->serialize($bddUser, 'json', ['groups' => 'getAccountDetails']);
     return new JsonResponse($jsonUser, Response::HTTP_OK, ['accept' => 'json'], true);
   }
 
-  #[Route('/api/users', name: "createUser", methods: ['POST'])]
-  public function createUser(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
-  {
-    $user = $serializer->deserialize($request->getContent(), User::class, 'json');
-
-    // On vérifie les erreurs
-    $errors = $validator->validate($user);
-    if ($errors->count() > 0) {
-      return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
-    }
-
-    $em->persist($user);
-    $em->flush();
-
-    $jsonUser = $serializer->serialize($user, 'json', ['groups' => 'getAccountDetails']);
-
-    return new JsonResponse($jsonUser, Response::HTTP_CREATED, [], true);
-  }
-
-  #[Route('/api/users/{id}', name: "updateUser", methods: ['PUT'])]
+  #[Route('/{id}', name: "updateUser", methods: ['PUT'])]
   public function updateUser(User $bddUser, Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
   {
     $updatedUser = $serializer->deserialize(

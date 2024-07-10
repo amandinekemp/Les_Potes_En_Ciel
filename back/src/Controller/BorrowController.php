@@ -10,13 +10,16 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
+# Access to entire controller requires authenticated user (defined in /config/packages/security.yaml)
+#[Route('/api/borrows')]
 class BorrowController extends AbstractController
 {
-  #[Route('/api/borrows/{idUser}', name: 'borrowList', methods: ['GET'])]
+  #[Route('/user/{idUser}', name: 'borrowList', methods: ['GET'])]
   public function getBorrowList(int $idUser, BorrowRepository $borrowRepository, SerializerInterface $serializer): JsonResponse
   {
     $borrowList = $borrowRepository->findByUser($idUser);
@@ -29,7 +32,7 @@ class BorrowController extends AbstractController
     return new JsonResponse($jsonBorrowList, Response::HTTP_OK, [], true);
   }
 
-  #[Route('/api/borrows', name: "createBorrow", methods: ['POST'])]
+  #[Route('/', name: "createBorrow", methods: ['POST'])]
   public function createBorrow(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
   {
     $borrow = $serializer->deserialize($request->getContent(), Borrow::class, 'json');
@@ -48,7 +51,8 @@ class BorrowController extends AbstractController
     return new JsonResponse($jsonBook, Response::HTTP_CREATED, [], true);
   }
 
-  #[Route('/api/borrows/{id}', name: "updateBorrow", methods: ['PUT'])]
+  #[Route('/{id}', name: "updateBorrow", methods: ['PUT'])]
+  #[IsGranted('ROLE_ADMIN', message: 'Vous n\'avez pas les droits suffisants pour valider le retour d\'un livre')]
   public function updateBorrow(Borrow $bddBorrow, Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
   {
     $updatedBorrow = $serializer->deserialize(

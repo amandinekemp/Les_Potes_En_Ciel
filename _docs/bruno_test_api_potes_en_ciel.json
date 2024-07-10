@@ -1,0 +1,470 @@
+{
+  "name": "potes_en_ciel",
+  "version": "1",
+  "items": [
+    {
+      "type": "folder",
+      "name": "0-public",
+      "items": [
+        {
+          "type": "http",
+          "name": "user - create",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:8000/api/register/account",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"email\": \"test5@exemple.com\",\n  \"password\": \"MotDePass5\",\n  \"address\": \"55, rue de la liberté\",\n  \"zipCode\": \"55000\",\n  \"city\": \"Lille\",\n  \"phoneNumber\": \"0350000000\"\n}\n",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "newsletter - create",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:8000/api/register/newsletters",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"email\": \"je-vais_etre+supprime@gmail.com\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "newsletter - delete",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:8000/api/register/newsletters/je-vais_etre+supprime@gmail.com",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "book - get all",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:8000/api/books",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "book - get one",
+          "seq": 5,
+          "request": {
+            "url": "http://localhost:8000/api/books/9782092783726",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "1-connection",
+      "items": [
+        {
+          "type": "http",
+          "name": "connection - login (user)",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:8000/api/login_check",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"username\": \"user2@lpec.com\",\n  \"password\": \"user2Secure\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {
+              "res": [
+                {
+                  "name": "accessToken",
+                  "value": "res.body.token",
+                  "enabled": true,
+                  "local": false
+                }
+              ]
+            },
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "connection - login (admin)",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:8000/api/login_check",
+            "method": "POST",
+            "headers": [
+              {
+                "name": "Content-Type",
+                "value": "application/json",
+                "enabled": true
+              }
+            ],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"username\": \"admin@lpec.com\",\n  \"password\": \"adminSecure\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {
+              "res": [
+                {
+                  "name": "accessToken",
+                  "value": "res.body.token",
+                  "enabled": true,
+                  "local": false
+                }
+              ]
+            },
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "2-connected",
+      "root": {
+        "request": {
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{accessToken}}",
+              "enabled": true,
+              "uid": "2wURVscTa16sftk7HoWAZ"
+            }
+          ],
+          "script": {},
+          "vars": {},
+          "tests": ""
+        },
+        "meta": {
+          "name": "2-connected"
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "user - update",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:8000/api/users/2",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"idUser\": 2,\n  \"email\": \"user@lpec.com\",\n  \"address\": \"3, rue de la libertézzz\",\n  \"zipCode\": \"59000\",\n  \"city\": \"Lille\",\n  \"phoneNumber\": \"0320000001\",\n  \"members\": [\n    {\n      \"idMember\": 3,\n      \"memberType\": \"parent\",\n      \"firstName\": \"Mariezz\",\n      \"lastName\": \"Durand\",\n      \"birthDate\": \"1980-01-01T00:00:00+00:00\"\n    },\n    {\n      \"idMember\": 4,\n      \"memberType\": \"child\",\n      \"firstName\": \"Luczz\",\n      \"lastName\": \"Durand\",\n      \"birthDate\": \"2000-01-01T00:00:00+00:00\"\n    }\n  ]\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "user - get one",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:8000/api/users/2",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "borrow - create",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:8000/api/borrows/",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"isbn\": \"9782317023637\",\n  \"idUser\": 2,\n  \"borrowDate\": \"2024-07-03 18:00:00\"\n}\n",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "borrow - get all",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:8000/api/borrows/user/2",
+            "method": "GET",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "3-admin",
+      "root": {
+        "request": {
+          "headers": [
+            {
+              "name": "Authorization",
+              "value": "Bearer {{accessToken}}",
+              "enabled": true,
+              "uid": "gBdQRaSJG0eJ1IWsYpAcB"
+            }
+          ],
+          "script": {},
+          "vars": {},
+          "tests": ""
+        },
+        "meta": {
+          "name": "3-admin"
+        }
+      },
+      "items": [
+        {
+          "type": "http",
+          "name": "book - create",
+          "seq": 1,
+          "request": {
+            "url": "http://localhost:8000/api/books/",
+            "method": "POST",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"isbn\": \"1234567890123\",\n  \"title\": \"Livre 456\",\n  \"author\": \"Author 456\",\n  \"summary\": \"Quatrième de couverture numéro : 456\",\n  \"genres\": \"fantaisie\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "book - delete",
+          "seq": 2,
+          "request": {
+            "url": "http://localhost:8000/api/books/1234567890123",
+            "method": "DELETE",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "none",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "book - update",
+          "seq": 3,
+          "request": {
+            "url": "http://localhost:8000/api/books/1234567890123",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"summary\": \"non c'est caaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        },
+        {
+          "type": "http",
+          "name": "borrow - update",
+          "seq": 4,
+          "request": {
+            "url": "http://localhost:8000/api/borrows/9",
+            "method": "PUT",
+            "headers": [],
+            "params": [],
+            "body": {
+              "mode": "json",
+              "json": "{\n  \"returnDate\": \"2024-07-03 20:00:00\"\n}",
+              "formUrlEncoded": [],
+              "multipartForm": []
+            },
+            "script": {},
+            "vars": {},
+            "assertions": [],
+            "tests": "",
+            "auth": {
+              "mode": "none"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "environments": [],
+  "root": {
+    "request": {
+      "auth": {
+        "mode": "none"
+      }
+    },
+    "meta": {
+      "name": "potes_en_ciel"
+    }
+  },
+  "brunoConfig": {
+    "version": "1",
+    "name": "potes_en_ciel",
+    "type": "collection",
+    "ignore": [
+      "node_modules",
+      ".git"
+    ]
+  }
+}
