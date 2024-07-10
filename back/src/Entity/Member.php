@@ -13,28 +13,28 @@ class Member
   #[ORM\Id]
   #[ORM\GeneratedValue]
   #[ORM\Column]
-  #[Groups(["getFamily"])]
+  #[Groups(["getAccountDetails"])]
   private ?int $idMember = null;
 
   #[ORM\Column(length: 128)]
-  #[Groups(["getFamily"])]
+  #[Groups(["getAccountDetails"])]
   private ?string $memberType = null;
 
   #[ORM\Column(length: 128)]
-  #[Groups(["getFamily"])]
+  #[Groups(["getAccountDetails"])]
   private ?string $firstName = null;
 
   #[ORM\Column(length: 128)]
-  #[Groups(["getFamily"])]
+  #[Groups(["getAccountDetails"])]
   private ?string $lastName = null;
 
   #[ORM\Column(type: Types::DATE_MUTABLE)]
-  #[Groups(["getFamily"])]
+  #[Groups(["getAccountDetails"])]
   private ?\DateTimeInterface $birthDate = null;
 
   #[ORM\ManyToOne(inversedBy: 'members')]
-  #[ORM\JoinColumn(name: "id_family", referencedColumnName: "id_family", nullable: false)]
-  private ?Family $family = null;
+  #[ORM\JoinColumn(name: "id_user", referencedColumnName: "id_user", nullable: false)]
+  private ?User $user = null;
 
   public function getIdMember(): ?int
   {
@@ -89,14 +89,14 @@ class Member
     return $this;
   }
 
-  public function getFamily(): ?Family
+  public function getUser(): ?User
   {
-    return $this->family;
+    return $this->user;
   }
 
-  public function setFamily(?Family $family): static
+  public function setUser(?User $user): static
   {
-    $this->family = $family;
+    $this->user = $user;
 
     return $this;
   }

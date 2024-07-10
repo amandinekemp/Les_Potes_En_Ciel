@@ -17,13 +17,13 @@ class BorrowRepository extends ServiceEntityRepository
   }
 
   /**
-   * @return Borrow[] Returns all borrows for a family
+   * @return Borrow[] Returns all borrows for a user
    */
-  public function findByFamily($idFamily): array
+  public function findByUser($idUser): array
   {
     return $this->createQueryBuilder('b')
-      ->andWhere('b.idFamily = :val')
-      ->setParameter('val', $idFamily)
+      ->andWhere('b.idUser = :val')
+      ->setParameter('val', $idUser)
       ->orderBy('b.return_date', 'DESC')
       ->setMaxResults(10)
       ->getQuery()

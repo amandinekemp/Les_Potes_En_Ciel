@@ -16,10 +16,10 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class BorrowController extends AbstractController
 {
-  #[Route('/api/borrows/{idFamily}', name: 'borrowList', methods: ['GET'])]
-  public function getBorrowList(int $idFamily, BorrowRepository $borrowRepository, SerializerInterface $serializer): JsonResponse
+  #[Route('/api/borrows/{idUser}', name: 'borrowList', methods: ['GET'])]
+  public function getBorrowList(int $idUser, BorrowRepository $borrowRepository, SerializerInterface $serializer): JsonResponse
   {
-    $borrowList = $borrowRepository->findByFamily($idFamily);
+    $borrowList = $borrowRepository->findByUser($idUser);
 
     if (!$borrowList) {
       return new JsonResponse(null, Response::HTTP_NOT_FOUND);

@@ -1,16 +1,16 @@
 
--- Family
+-- User
 
-insert into `family` ( `id_family`, `email`, `password`, `address`, `zip_code`, `city`, `phone_number`) values (1, 'test1@exemple.com', 'MotDePass0', '10, rue de la liberté', '59000', 'Lille', '0320000000');
-insert into `family` ( `id_family`, `email`, `password`, `address`, `zip_code`, `city`, `phone_number`) values (2, 'test2@exemple.com', 'MotDePass1', '3, rue de la liberté', '59000', 'Lille', '0320000001');
-insert into `family` ( `id_family`, `email`, `password`, `address`, `zip_code`, `city`, `phone_number`) values (3, 'test3@exemple.com', 'MotDePass2', '4, rue de la liberté', '59000', 'Lille', '0320000002');
+insert into `user` ( `id_user`, `email`, `roles`, `password`, `address`, `zip_code`, `city`, `phone_number`) values (1, 'admin@lpec.com', '["ROLE_ADMIN"]', '$2y$13$tvVpmr4hqzvzIRubVDOSJeKk77jnd3PFOA8gqEY6QKZc8hc.eMJaS', '10, rue de la liberté', '59000', 'Lille', '0320000000');
+insert into `user` ( `id_user`, `email`, `roles`, `password`, `address`, `zip_code`, `city`, `phone_number`) values (2, 'user@lpec.com', '["ROLE_USER"]', '$2y$13$kZWQDMnX5sAYKbm6vW0ydu8Pualt7oDvCBCnWUZ67uqeVwYtLEijO', '3, rue de la liberté', '59000', 'Lille', '0320000001');
+insert into `user` ( `id_user`, `email`, `roles`, `password`, `address`, `zip_code`, `city`, `phone_number`) values (3, 'user2@lpec.com', '["ROLE_USER"]', '$2y$13$TmX6.SneSyoMI4c07OBaTeecIq.lQdLoQu08O8EhDpsNxcbSp2vK6', '4, rue de la liberté', '59000', 'Lille', '0320000002');
 
 -- Person
 
-insert into `member` (`id_member`, `id_family`, `member_type`, `first_name`, `last_name`, `birth_date`) values (1, 1, "parent", "Jean", "Dupont", "1980-01-01");
-insert into `member` (`id_member`, `id_family`, `member_type`, `first_name`, `last_name`, `birth_date`) values (2, 1, "child", "Paul", "Dupont", "2000-01-01");
-insert into `member` (`id_member`, `id_family`, `member_type`, `first_name`, `last_name`, `birth_date`) values (3, 2, "parent", "Marie", "Durand", "1980-01-01");
-insert into `member` (`id_member`, `id_family`, `member_type`, `first_name`, `last_name`, `birth_date`) values (4, 2, "child", "Luc", "Durand", "2000-01-01");
+insert into `member` (`id_member`, `id_user`, `member_type`, `first_name`, `last_name`, `birth_date`) values (1, 1, "parent", "Jean", "Dupont", "1980-01-01");
+insert into `member` (`id_member`, `id_user`, `member_type`, `first_name`, `last_name`, `birth_date`) values (2, 1, "child", "Paul", "Dupont", "2000-01-01");
+insert into `member` (`id_member`, `id_user`, `member_type`, `first_name`, `last_name`, `birth_date`) values (3, 2, "parent", "Marie", "Durand", "1980-01-01");
+insert into `member` (`id_member`, `id_user`, `member_type`, `first_name`, `last_name`, `birth_date`) values (4, 2, "child", "Luc", "Durand", "2000-01-01");
 
 -- Book
 
@@ -22,7 +22,7 @@ INSERT INTO `book` (`isbn`, `title`, `author`, `summary`, `genres`) VALUES
 
 -- Borrow
 
-INSERT INTO `borrow` (`isbn`, `id_family`, `borrow_date`, `return_date`) VALUES 
+INSERT INTO `borrow` (`isbn`, `id_user`, `borrow_date`, `return_date`) VALUES 
 ('9782317023637', 1, '2024-07-03 18:00:00', '2024-07-24 18:00:00'),
 ('9782957698929', 2, '2023-01-15 18:00:00', '2023-02-15 18:00:00'),
 ('9782092783726', 2, '2023-02-20 18:00:00', '2023-03-20 18:00:00'),

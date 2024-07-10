@@ -21,7 +21,7 @@ class Borrow
   private ?string $isbn = null;
 
   #[ORM\Column(length: 11)]
-  private ?int $idFamily = null;
+  private ?int $idUser = null;
 
   #[ORM\Column(type: Types::DATETIME_MUTABLE)]
   private ?\DateTimeInterface $borrow_date = null;
@@ -46,14 +46,14 @@ class Borrow
     return $this;
   }
 
-  public function getIdFamily(): ?int
+  public function getIdUser(): ?int
   {
-    return $this->idFamily;
+    return $this->idUser;
   }
 
-  public function setIdFamily(int $idFamily): static
+  public function setIdUser(int $idUser): static
   {
-    $this->idFamily = $idFamily;
+    $this->idUser = $idUser;
 
     return $this;
   }
