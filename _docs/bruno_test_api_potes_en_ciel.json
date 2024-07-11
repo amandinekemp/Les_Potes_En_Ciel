@@ -150,17 +150,10 @@
               "formUrlEncoded": [],
               "multipartForm": []
             },
-            "script": {},
-            "vars": {
-              "res": [
-                {
-                  "name": "accessToken",
-                  "value": "res.body.token",
-                  "enabled": true,
-                  "local": false
-                }
-              ]
+            "script": {
+              "res": "const cookies = res.getHeader('set-cookie');\n\nif(cookies) {\n  bru.setVar(\"cookie\", cookies.join('; '));\n}"
             },
+            "vars": {},
             "assertions": [],
             "tests": "",
             "auth": {
@@ -189,17 +182,10 @@
               "formUrlEncoded": [],
               "multipartForm": []
             },
-            "script": {},
-            "vars": {
-              "res": [
-                {
-                  "name": "accessToken",
-                  "value": "res.body.token",
-                  "enabled": true,
-                  "local": false
-                }
-              ]
+            "script": {
+              "res": "const cookies = res.getHeader('set-cookie');\n\nif(cookies) {\n  bru.setVar(\"cookie\", cookies.join('; '));\n}"
             },
+            "vars": {},
             "assertions": [],
             "tests": "",
             "auth": {
@@ -214,15 +200,10 @@
       "name": "2-connected",
       "root": {
         "request": {
-          "headers": [
-            {
-              "name": "Authorization",
-              "value": "Bearer {{accessToken}}",
-              "enabled": true,
-              "uid": "2wURVscTa16sftk7HoWAZ"
-            }
-          ],
-          "script": {},
+          "headers": [],
+          "script": {
+            "req": "const cookie = bru.getVar(\"cookie\");\n\nif(cookie) {\n  req.setHeader(\"Cookie\", cookie)\n}"
+          },
           "vars": {},
           "tests": ""
         },
@@ -340,7 +321,9 @@
               "uid": "gBdQRaSJG0eJ1IWsYpAcB"
             }
           ],
-          "script": {},
+          "script": {
+            "req": "const cookie = bru.getVar(\"cookie\");\n\nif(cookie) {\n  req.setHeader(\"Cookie\", cookie)\n}"
+          },
           "vars": {},
           "tests": ""
         },

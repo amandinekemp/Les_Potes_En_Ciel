@@ -1,15 +1,28 @@
 "use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button, Form, InputGroup } from "react-bootstrap";
 
 const LoginFormCmpt = () => {
   const [hiddenPassword, setHiddenPassword] = useState(true);
+  const [user, setUser] = useState({});
   const router = useRouter();
 
-  const handleLogin = (e: any) => {
-    router.replace('/account');
+  const handleLogin = (e:any) => {
+    e.preventDefault();
+    fetch("http://localhost:8000/api/login_check", {
+      method: "POST",
+      headers: { Accept: "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify(user),
+      credentials: 'include'
+    })
+    .then((response) => {
+      if (response.ok) {
+        router.push("/account");
+      }
+    })
+    .catch((error) => console.error(error));
   };
 
   return (
@@ -20,12 +33,16 @@ const LoginFormCmpt = () => {
         <Form onSubmit={handleLogin} action={"/account"}>
           <div className="mb-3">
             <Form.Label htmlFor="email">E-mail*</Form.Label>
-            <Form.Control type="email" id="email" required></Form.Control>
+            <Form.Control type="email" id="email"
+              onChange={(e) => setUser({...user, username: e.target.value})}
+              required></Form.Control>
           </div>
           <div className="mb-3">
             <Form.Label htmlFor="password" >Mot de passe*</Form.Label>
             <InputGroup>
-              <Form.Control type={hiddenPassword ? "password" : "text"} id="password" required></Form.Control>
+              <Form.Control type={hiddenPassword ? "password" : "text"} id="password"
+                onChange={(e) => setUser({...user, password: e.target.value})}
+                required></Form.Control>
               <Button type="button" variant="outline-secondary" onClick={() => setHiddenPassword((prev) => !prev)}>
                 <i className={"bi bi-eye" + (hiddenPassword ? "-slash" : "")}></i>
               </Button>
@@ -42,6 +59,6 @@ const LoginFormCmpt = () => {
     </div>
     </>
   );
-}
+};
 
 export default LoginFormCmpt;

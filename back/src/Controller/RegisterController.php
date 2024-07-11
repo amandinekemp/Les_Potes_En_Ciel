@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
@@ -17,6 +18,13 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 #[Route('/api/register')]
 class RegisterController extends AbstractController
 {
+  private $userPasswordHasher;
+
+  public function __construct(UserPasswordHasherInterface $userPasswordHasher)
+  {
+    $this->userPasswordHasher = $userPasswordHasher;
+  }
+
   #[Route('/account', name: "createAccount", methods: ['POST'])]
   public function createAccount(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
   {
@@ -27,6 +35,8 @@ class RegisterController extends AbstractController
     if ($errors->count() > 0) {
       return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
     }
+    $user->setRoles(['ROLE_USER']);
+    $user->setPassword($this->userPasswordHasher->hashPassword($user, $user->getPassword()));
 
     $em->persist($user);
     $em->flush();

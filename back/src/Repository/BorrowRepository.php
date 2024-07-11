@@ -3,6 +3,7 @@
 namespace App\Repository;
 
 use App\Entity\Borrow;
+use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
@@ -19,14 +20,15 @@ class BorrowRepository extends ServiceEntityRepository
   /**
    * @return Borrow[] Returns all borrows for a user
    */
-  public function findByUser($idUser): array
+  public function findByUserEmail($email): array
   {
     return $this->createQueryBuilder('b')
       ->addSelect("(CASE WHEN b.returnDate IS NULL THEN 1 ELSE 0 END) AS HIDDEN nullReturnFirst")
-      ->andWhere('b.idUser = :idUserValue')
-      ->setParameter('idUserValue', $idUser)
+      ->leftJoin(User::class, 'u', 'WITH', 'b.idUser = u.idUser')
+      ->andWhere('u.email = :emailValue')
       ->orderBy('nullReturnFirst', 'DESC')
       ->addOrderBy('b.returnDate', 'DESC')
+      ->setParameter('emailValue', $email)
       ->setMaxResults(10)
       ->getQuery()
       ->getResult();

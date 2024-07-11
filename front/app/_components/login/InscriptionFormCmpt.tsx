@@ -1,13 +1,19 @@
 "use client";
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import { Button, Form, InputGroup } from "react-bootstrap";
 
 const InscriptionFormCmpt = () => {
   const [hiddenPassword, setHiddenPassword] = useState(true);
   const [account, setAccount] = useState({});
-  const router = useRouter();
+  const [message, setMessage] = useState("");
+
+  const isBrowser = () => typeof window !== 'undefined'; //The approach recommended by Next.js
+
+  function scrollToTop() {
+      if (!isBrowser()) return;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
   const handleSubmit = (e:any) => {
     // Empêche le rechargement de la page lors de la soumission du formulaire
@@ -20,9 +26,11 @@ const InscriptionFormCmpt = () => {
     })
     .then(response => {
       if(response.ok) {
-        router.replace('/account');
+        console.log('Registration ok!');
+        scrollToTop();
+        setMessage('Votre compte a bien été créé, vous pouvez vous connecter.');
       } else {
-        console.error('Login status not ok:', response);
+        console.error('Registration status not ok:', response);
       }
     })
     .catch(error => {
@@ -31,11 +39,11 @@ const InscriptionFormCmpt = () => {
     });
   };
 
-
   return (
     <>
     <div className="card shadow rounded">
       <div className="card-body">
+        {message && <p className="mt-3">{message}</p>}
         <h3 className="card-title text-center">Créer un compte</h3>
         <Form onSubmit={handleSubmit}>
           <div className="mb-3">

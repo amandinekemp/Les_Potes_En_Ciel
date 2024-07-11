@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\User;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -17,16 +18,24 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 #[Route('/api/users')]
 class UserController extends AbstractController
 {
-  #[Route('/{id}', name: 'userDetail', methods: ['GET'])]
-  public function getUserDetail(User $bddUser, SerializerInterface $serializer): JsonResponse
+  private function getCurrentUser(UserRepository $userRepository)
   {
+    $currentUserEmail = $this->getUser()->getUserIdentifier();
+    return $userRepository->findOneBy(['email' => $currentUserEmail]);
+  }
+
+  #[Route('/me', name: 'userDetail', methods: ['GET'])]
+  public function getUserDetail(UserRepository $userRepository, SerializerInterface $serializer): JsonResponse
+  {
+    $bddUser = $this->getCurrentUser($userRepository);
     $jsonUser = $serializer->serialize($bddUser, 'json', ['groups' => 'getAccountDetails']);
     return new JsonResponse($jsonUser, Response::HTTP_OK, ['accept' => 'json'], true);
   }
 
-  #[Route('/{id}', name: "updateUser", methods: ['PUT'])]
-  public function updateUser(User $bddUser, Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
+  #[Route('/me', name: "updateUser", methods: ['PUT'])]
+  public function updateUser(UserRepository $userRepository, Request $request, SerializerInterface $serializer, ValidatorInterface $validator): JsonResponse
   {
+    $bddUser = $this->getCurrentUser($userRepository);
     $updatedUser = $serializer->deserialize(
       $request->getContent(),
       User::class,
@@ -42,8 +51,8 @@ class UserController extends AbstractController
       return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
     }
 
-    $em->persist($updatedUser);
-    $em->flush();
+    $userRepository->persist($updatedUser);
+    $userRepository->flush();
     return new JsonResponse(null, JsonResponse::HTTP_NO_CONTENT);
   }
 }

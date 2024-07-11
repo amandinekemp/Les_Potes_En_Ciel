@@ -1,4 +1,7 @@
 import { Metadata } from "next";
+import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
+
 import ProfileCmpt from "@/app/_components/account/ProfileCmpt";
 
 export const metadata: Metadata = {
@@ -7,6 +10,12 @@ export const metadata: Metadata = {
 };
 
 export default function AccountProfilePage() {
+  const bearer = cookies().get('BEARER');
+  if (!bearer) {
+    console.log("No token found, redirecting to login page");
+    redirect("/login");
+  }
+
   return (
     <>
       <div className="container">
