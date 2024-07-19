@@ -4,46 +4,66 @@
 
 ----------
 
-# <p align="center">Les Potes En Ciel</p>
+# <p align="center">Les Potes en Ciel: Enhancing Online Presence and Boosting Member Engagement</p>
 
 ----------
 
-Welcome to the "Les Potes En Ciel" project! This project aims to modernize the communication tools of the "Les Potes En Ciel" association, making its library more accessible and enhancing community involvement. Below you will find detailed information about the project and how to set it up.
+## Introduction
+
+**Project Name:** Les Potes en Ciel
+
+**Description:** This project aims to reinforce the online presence of the association Les Potes en Ciel and improve the engagement of members and supporters. Les Potes en Ciel is dedicated to promoting the well-being of children and families. The project includes creating interactive and informative platforms that facilitate communication and community engagement.
+
+**Youtube video of a demo of the app:** [Les Potes en Ciel](https://www.youtube.com/watch?v=eRLAB-CGK_I)
+
+**Deployed Site:** [Les Potes en Ciel](http://localhost:3000/)
+
+**Blog Article:** [Final Project Blog Article](https://medium.com/@amandinekemp/blog-post-improving-online-presence-and-member-engagement-5ec8adffa047)
+
+**Author:** [Amandine Kemp](https://www.linkedin.com/in/amandinekemp/)
 
 ----------
 
 ## ➤ Table of Contents
 
-- [➤ Project Overview](#project-overview)
+
+- [➤ Introduction](#introduction)
 - [➤ Features](#features)
 - [➤ Technologies Used](#technologies-used)
 - [➤ Installation](#installation)
 - [➤ Usage](#usage)
+- [➤ Acknowledgements](#acknowledgements)
 - [➤ License](#license)
 - [➤ Contact](#contact)
 
 ----------
 
-## ➤ Project Overview
-
-"Les Potes En Ciel" is an initiative aimed at reinforcing the online presence and community involvement for the well-being of children and families associated with the "Les Potes En Ciel" association. The project includes an online platform where users can access various features like the library, authentication, and newsletter subscription.
-
-----------
-
-## ➤ Features
+## ➤ Features:
 
 ### 1. Library
+**Description:**
 - Access a collection of books available in the association's library.
 - Option to borrow or cancel reservations online.
 - Easy-to-use online tools to search the catalog, reserve books, and manage borrowing history.
 
+**Screenshot:**
+![Library Screenshot](screenshots_features/screenshot_library.png)
+
 ### 2. Authentication
+**Description:**
 - User-friendly login system with password recovery and multi-factor authentication.
 - Allows users to change their password and register new users.
 
+**Screenshot:**
+![Authentication Screenshot](screenshots_features/screenshot_authentification.png)
+
 ### 3. Newsletter Subscription
+**Description:**
 - Subscribe to the newsletter to stay updated with the latest news and events from the association.
 - Receive exclusive content, member testimonials, and information on community impact.
+
+**Screenshot:**
+![Newsletter Screenshot](screenshots_features/screenshot_newsletter_subscription.png)
 
 ----------
 
@@ -116,21 +136,19 @@ Welcome to the "Les Potes En Ciel" project! This project aims to modernize the c
 * Subscribe to the newsletter to receive the latest updates from the association.
 
 ----------
-## ➤ Demo-Day
 
-TODO
-
-----------
 ## ➤ Acknowledgements
 
-TODO
+I would like to express my gratitude to the members of the C22 class at Holberton School, and to those around me, for their invaluable support and advice throughout this project. Your encouragement, feedback and collaborative spirit were invaluable in bringing this project to fruition.
+
+Thank you all so much!
 
 ----------
 
 
 ## ➤ License
 
-* This project is licensed under the MIT License. See the [LICENSE](TODO) file for more details.
+* This project is licensed under the MIT License. See the [LICENSE ISC](LICENSE) file for details.
 
 ----------
 
@@ -144,4 +162,3 @@ For any questions or inquiries, please contact:
   - [LinkedIn](https://www.linkedin.com/in/amandinekemp/)
 
  Thank you for your interest in the "Les Potes En Ciel" project!
-
