@@ -27,14 +27,14 @@
 ## ➤ Table of Contents
 
 
-- [➤ Introduction](#introduction)
-- [➤ Features](#features)
-- [➤ Technologies Used](#technologies-used)
-- [➤ Installation](#installation)
-- [➤ Usage](#usage)
-- [➤ Acknowledgements](#acknowledgements)
-- [➤ License](#license)
-- [➤ Contact](#contact)
+- [➤ Introduction](https://github.com/amandinekemp/Les_Potes_En_Ciel?tab=readme-ov-file#introduction)
+- [➤ Features](https://github.com/amandinekemp/Les_Potes_En_Ciel?tab=readme-ov-file#-features)
+- [➤ Technologies Used](https://github.com/amandinekemp/Les_Potes_En_Ciel?tab=readme-ov-file#-technologies-used)
+- [➤ Installation](https://github.com/amandinekemp/Les_Potes_En_Ciel?tab=readme-ov-file#-installation)
+- [➤ Usage](https://github.com/amandinekemp/Les_Potes_En_Ciel?tab=readme-ov-file#-usage)
+- [➤ Acknowledgements](https://github.com/amandinekemp/Les_Potes_En_Ciel?tab=readme-ov-file#-acknowledgements)
+- [➤ License](https://github.com/amandinekemp/Les_Potes_En_Ciel?tab=readme-ov-file#-license)
+- [➤ Contact](https://github.com/amandinekemp/Les_Potes_En_Ciel?tab=readme-ov-file#-contact)
 
 ----------
 
