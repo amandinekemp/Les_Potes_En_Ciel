@@ -4,6 +4,8 @@ import { format } from "date-fns";
 
 import type { Borrow } from '@/app/_types/Borrow';
 
+/** Component to display borrow details with ISBN, borrow date, and return date **/
+
 const BorrowCmpt = ({ borrow }: { borrow: Borrow }) => {
   return (
     <>

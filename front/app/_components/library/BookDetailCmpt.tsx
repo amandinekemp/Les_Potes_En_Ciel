@@ -6,7 +6,7 @@ import type {Book} from '@/app/_types/Book';
 
 const idFamily = 2;
 
-// Composant BookDetail qui affiche les détails d'un livre et propose des actions de réservation et d'annulation
+// BookDetail component displays book details and proposes reservation and cancellation actions
 const BookDetailCmpt = (props: { book: Book; onEdit: any; refreshLibrary: any;}) => {
   let book: Book = props.book;
 
@@ -38,7 +38,7 @@ const BookDetailCmpt = (props: { book: Book; onEdit: any; refreshLibrary: any;})
   return (
     <div className="col-lg-4 col-md-6 pb-4">
     <Card className="w-100 h-100 p-2">
-      {/* Image de la couverture du livre*/}
+      {/* Book cover image */}
       <Card.Img variant="top" src={`/books/${book.isbn}.jpg`} alt={`${book.title} cover`} height={400} 
           onError={({ currentTarget }) => {
             if (currentTarget.src.includes("default.jpg")) return; // prevents looping
@@ -46,13 +46,13 @@ const BookDetailCmpt = (props: { book: Book; onEdit: any; refreshLibrary: any;})
             currentTarget.src="/books/default.jpg";
           }}/>
       <CardBody>
-        {/* Titre du livre */}
+        {/* Book title */}
         <Card.Title>{book.title}</Card.Title>
-        {/* Auteur du livre */}
+        {/* Book author */}
         <Card.Subtitle className="text-muted">{book.author}</Card.Subtitle>
       </CardBody>
       <CardBody className="bookCardBottom">
-        {/* Résumé du livre avec un menu déroulant */}
+        {/* Book summary with drop-down menu */}
         <Accordion>
           <Accordion.Item eventKey="0">
             <Accordion.Header>Résumé</Accordion.Header>
@@ -61,7 +61,7 @@ const BookDetailCmpt = (props: { book: Book; onEdit: any; refreshLibrary: any;})
             </Accordion.Body>
           </Accordion.Item>
         </Accordion>
-        {/* Bouton pour réserver le livre */}
+        {/* Button to reserve - modify - delete the book */}
         <Button variant="primary" className="mt-2 w-100" onClick={() => onBorrowBook(book.isbn)}>Réserver</Button>
         <Button variant="warning" className="mt-2 w-100" onClick={() => props.onEdit(book.isbn)}>Modifier</Button>
         <Button variant="danger" className="mt-2 w-100" onClick={() => onDeleteBook(book.isbn)}>Supprimer</Button>

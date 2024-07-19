@@ -1,5 +1,6 @@
 <?php
 
+/** Repository for the Borrow entity, manages book loans **/
 namespace App\Repository;
 
 use App\Entity\Member;

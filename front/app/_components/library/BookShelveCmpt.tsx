@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap';
 import type {Book} from '../../_types/Book';
 import BookDetailCmpt from './BookDetailCmpt';
 
-// TODO gérer les erreurs de récupération des livres
+// TODO manage book retrieval errors
 
 // LibraryPage component for displaying the library and managing books
 const BookShelveCmpt = (props: { onCreate: any; onEdit: any; }) => {

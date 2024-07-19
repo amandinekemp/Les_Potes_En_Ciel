@@ -1,6 +1,8 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 
+/** NewsFeedCmpt displays the latest news and integrates a Facebook page feed **/
+
 const NewsFeedCmpt = () => {
   return (
     <>
@@ -12,7 +14,7 @@ const NewsFeedCmpt = () => {
       </Row>
       <Row className="justify-content-center">
         <Col xs={10} md={8} className="d-flex justify-content-center">
-          {/* Insérer ici le visuel de la page Facebook */}
+          {/* Insert here the visual of the Facebook page */}
           <iframe
             src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FLesPotesEnCiel&tabs=timeline&width=500&height=600&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
             width="500"

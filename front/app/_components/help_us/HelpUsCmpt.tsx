@@ -2,6 +2,8 @@ import React from 'react';
 import { Button, Card, Row, Col, CardBody, Ratio, CardTitle, CardText } from 'react-bootstrap';
 import Image from 'next/image';
 
+/** HelpUsCmpt component for donation campaign and volunteering opportunities **/
+
 const HelpUsCmpt = () => {
   return (
     <>

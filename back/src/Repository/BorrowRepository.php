@@ -1,5 +1,6 @@
 <?php
 
+/** Repository for the Borrow entity, manages persistence operations related to borrowing **/
 namespace App\Repository;
 
 use App\Entity\Borrow;

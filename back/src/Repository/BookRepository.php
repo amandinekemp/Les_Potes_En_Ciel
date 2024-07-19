@@ -1,5 +1,6 @@
 <?php
 
+/** Repository for the Book entity, manages persistence operations **/
 namespace App\Repository;
 
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;

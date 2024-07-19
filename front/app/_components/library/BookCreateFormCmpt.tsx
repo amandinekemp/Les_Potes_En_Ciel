@@ -6,10 +6,10 @@ import { Button, Form, Image, InputGroup } from 'react-bootstrap';
 
 import { Book } from '@/app/_types/Book';
 
-// Composant BookCreateForm qui permet d'ajouter un nouveau livre à la bibliothèque
+/** BookCreateForm component for adding a new book to the library **/
 const BookCreateFormCmpt = (props: { onShelve: any; isbnBookToEdit: string;}) => {
 
-  // États pour gérer les champs du formulaire
+  // Reports to manage form fields
   const [message, setMessage] = useState('');
   const [creation, setCreation] = useState(true);
   const [book, setBook] = useState<Book>({});
@@ -32,23 +32,23 @@ const BookCreateFormCmpt = (props: { onShelve: any; isbnBookToEdit: string;}) =>
     }
   }, []);
 
-  // Fonction pour gérer la sélection du fichier de couverture
+  // Function to manage cover file selection
   // const handleCoverChange = (e) => {
   //   const file = e.target.files[0];
   //   if (file) {
   //     const reader = new FileReader();
   //     reader.onloadend = () => {
-  //       setCover(reader.result); // Met à jour l'état avec l'URL du fichier
+  //       setCover(reader.result); // Updates status with file URL
   //     };
-  //     reader.readAsDataURL(file); // Lire le fichier en tant qu'URL de données
+  //     reader.readAsDataURL(file); // Read file as data URL
   //   }
   // };
 
-  // Fonction de gestion de la soumission du formulaire
+  // Form submission management function
   const handleSubmit = (e:any) => {
-    // Empêche le rechargement de la page lors de la soumission du formulaire
+    // Prevents page reload on form submission
     e.preventDefault();
-    // Appelle la fonction onSubmit avec le nouvel objet livre
+    // Calls the onSubmit function with the new book object
     fetch('http://localhost:8000/api/books' + (creation ? '' : '/'+book.isbn), {
       method: creation ? 'POST' : 'PUT',
       headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
@@ -61,12 +61,12 @@ const BookCreateFormCmpt = (props: { onShelve: any; isbnBookToEdit: string;}) =>
       } else {
         response.json().then((data:any) => {
           setMessage(data.detail);
-          // TODO afficher les erreurs sur plusieurs lignes
+          // TODO display errors on multiple lines
         });
       }
     })
     .catch(error => {
-      // Si la requête a échoué, affiche un message d'erreur
+      // If the query fails, displays an error message
       setMessage("Une erreur s'est produite lors de l'ajout du livre. Veuillez réessayer.");
       console.error('Erreur:', error);
     });
@@ -76,7 +76,7 @@ const BookCreateFormCmpt = (props: { onShelve: any; isbnBookToEdit: string;}) =>
     <>
     <Form onSubmit={handleSubmit}>
       <h3>Ajouter un nouveau livre</h3>
-      {/* Champ pour l'ISBN du livre */}
+      {/* Field for book ISBN */}
       <Form.Group>
         <Form.Label>ISBN</Form.Label>
         <InputGroup>
@@ -88,7 +88,7 @@ const BookCreateFormCmpt = (props: { onShelve: any; isbnBookToEdit: string;}) =>
           ></Form.Control>
         </InputGroup>
       </Form.Group>
-      {/* Champ pour le titre du livre */}
+      {/* Book title field */}
       <Form.Group>
         <Form.Label>Titre</Form.Label>
         <InputGroup>
@@ -99,7 +99,7 @@ const BookCreateFormCmpt = (props: { onShelve: any; isbnBookToEdit: string;}) =>
           ></Form.Control>
         </InputGroup>
       </Form.Group>
-      {/* Champ pour l'auteur du livre */}
+      {/* Champ for the book's author */}
       <Form.Group>
         <Form.Label>Auteur</Form.Label>
         <InputGroup>
@@ -110,7 +110,7 @@ const BookCreateFormCmpt = (props: { onShelve: any; isbnBookToEdit: string;}) =>
           ></Form.Control>
         </InputGroup>
       </Form.Group>
-      {/* Champ pour le résumé du livre */}
+      {/* Champ for the book summary */}
       <Form.Group>
         <Form.Label>Résumé</Form.Label>
         <Form.Control as="textarea" rows={5}
@@ -119,7 +119,7 @@ const BookCreateFormCmpt = (props: { onShelve: any; isbnBookToEdit: string;}) =>
           required
         ></Form.Control>
       </Form.Group>
-      {/* Champ pour le genre du livre */}
+      {/* Book genre field */}
       <Form.Group>
         <Form.Label>Genre(s)</Form.Label>
         <InputGroup>
@@ -130,7 +130,7 @@ const BookCreateFormCmpt = (props: { onShelve: any; isbnBookToEdit: string;}) =>
           ></Form.Control>
         </InputGroup>
       </Form.Group>
-      {/* Champ pour la couverture du livre */}
+      {/* Book cover field */}
       {/* <Form.Group>
         <Form.Label>Couverture</Form.Label>
         <InputGroup>
@@ -144,7 +144,7 @@ const BookCreateFormCmpt = (props: { onShelve: any; isbnBookToEdit: string;}) =>
           <Image src={cover} alt="Book cover preview" className="mt-2" style={{ width: '100px', height: '150px' }} />
         )}
       </Form.Group> */}
-      {/* Bouton de soumission du formulaire */}
+      {/* Submit form button */}
       <div className="mt-4 d-flex justify-content-between">
         <Button variant="secondary" onClick={props.onShelve}>Retour</Button>
         <Button type="submit" variant="primary">{creation ? "Ajouter" : "Mettre à jour"}</Button>

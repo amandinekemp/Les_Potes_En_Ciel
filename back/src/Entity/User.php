@@ -1,5 +1,6 @@
 <?php
 
+/** Entity representing a user with personal and login information **/
 namespace App\Entity;
 
 use App\Repository\UserRepository;
@@ -131,7 +132,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
   }
 
   /**
-   * Méthode getUsername qui permet de retourner le champ qui est utilisé pour l'authentification.
+   * getUsername method, which returns the field used for authentication.
    *
    * @return string
    */

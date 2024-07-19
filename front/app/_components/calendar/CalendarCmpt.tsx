@@ -2,6 +2,8 @@
 
 import React from 'react';
 
+/** Component to embed and display a Google Calendar **/
+
 const CalendarCmpt = () => {
 
   return (

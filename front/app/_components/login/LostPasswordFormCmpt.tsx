@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { Button, Card, CardBody, Form } from 'react-bootstrap';
 
+/** FormForgotPasswordCmpt handles password reset requests with email input **/
+
 const FormForgotPasswordCmpt = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');

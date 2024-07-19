@@ -4,6 +4,8 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button, Form, InputGroup } from "react-bootstrap";
 
+/** LoginFormCmpt handles user login with form submission and password visibility toggle **/
+
 const LoginFormCmpt = () => {
   const [hiddenPassword, setHiddenPassword] = useState(true);
   const [user, setUser] = useState({});

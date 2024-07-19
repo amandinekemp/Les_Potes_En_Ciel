@@ -1,5 +1,6 @@
 <?php
 
+/** Repository for the Newsletter entity, manages newsletter subscriptions **/
 namespace App\Repository;
 
 use App\Entity\Newsletter;

@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { Form, Button, Col, Nav } from 'react-bootstrap';
 
+/** NewsletterForm handles subscription and unsubscription from the newsletter **/
+
 const NewsletterForm = () => {
   const [formType, setFormType] = useState('subscribe'); // 'subscribe' or 'unsubscribe'
   const [email, setEmail] = useState('');
@@ -24,7 +26,7 @@ const NewsletterForm = () => {
       setEmail('');
     })
     .catch(error => {
-      // Si la requête a échoué, affiche un message d'erreur
+      // If the query fails, displays an error message
       setMessage("Une erreur s'est produite. Veuillez réessayer plus tard.");
       console.error('Erreur:', error);
     });
@@ -39,7 +41,7 @@ const NewsletterForm = () => {
       setEmail('');
     })
     .catch(error => {
-      // Si la requête a échoué, affiche un message d'erreur
+      // If the query fails, displays an error message
       setMessage("Une erreur s'est produite. Veuillez réessayer plus tard.");
       console.error('Erreur:', error);
     });

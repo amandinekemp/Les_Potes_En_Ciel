@@ -15,7 +15,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-# Access to entire controller requires authenticated user (defined in /config/packages/security.yaml)
+/** BorrowController handles CRUD operations for book borrowings **/
 #[Route('/api/borrows')]
 class BorrowController extends AbstractController
 {
@@ -38,7 +38,7 @@ class BorrowController extends AbstractController
   {
     $borrow = $serializer->deserialize($request->getContent(), Borrow::class, 'json');
 
-    // On vérifie les erreurs
+    // Checking for errors
     $errors = $validator->validate($borrow);
     if ($errors->count() > 0) {
       return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
@@ -63,7 +63,7 @@ class BorrowController extends AbstractController
       [AbstractNormalizer::OBJECT_TO_POPULATE => $bddBorrow]
     );
 
-    // On vérifie les erreurs
+    // Checking for errors
     $errors = $validator->validate($updatedBorrow);
     if ($errors->count() > 0) {
       return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);

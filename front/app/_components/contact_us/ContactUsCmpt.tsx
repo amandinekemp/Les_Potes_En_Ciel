@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { Row, Col, Form, Button, Alert } from 'react-bootstrap';
 
+/** Contact form component with validation and submission **/
+
 const ContactUsCmpt = () => {
   const [formData, setFormData] = useState({
     name: '',

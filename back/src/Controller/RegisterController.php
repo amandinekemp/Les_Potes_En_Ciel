@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-# Access to controller is public if nothing is specified
+/** RegisterController handles user registration and newsletter subscriptions **/
 #[Route('/api/register')]
 class RegisterController extends AbstractController
 {
@@ -30,7 +30,7 @@ class RegisterController extends AbstractController
   {
     $user = $serializer->deserialize($request->getContent(), User::class, 'json');
 
-    // On vérifie les erreurs
+    // Checking for errors
     $errors = $validator->validate($user);
     if ($errors->count() > 0) {
       return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
@@ -50,9 +50,9 @@ class RegisterController extends AbstractController
   public function subscribeNewsletter(Request $request, SerializerInterface $serializer, EntityManagerInterface $em, ValidatorInterface $validator): JsonResponse
   {
     $newsletter = $serializer->deserialize($request->getContent(), Newsletter::class, 'json');
-    // TODO : si existe déjà, dire ok
+    // TODO :if already exists, say ok
 
-    // On vérifie les erreurs
+    // Checking for errors
     $errors = $validator->validate($newsletter);
     if ($errors->count() > 0) {
       return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
@@ -67,7 +67,7 @@ class RegisterController extends AbstractController
   #[Route('/newsletters/{id}', name: 'deleteNewsletter', methods: ['DELETE'])]
   public function deleteNewsletter(Newsletter $bddNewsletter, EntityManagerInterface $em): JsonResponse
   {
-    // TODO : ne pas dire si en BDD ou pas
+    // TODO :don't say whether in BDD or not
     $em->remove($bddNewsletter);
     $em->flush();
 

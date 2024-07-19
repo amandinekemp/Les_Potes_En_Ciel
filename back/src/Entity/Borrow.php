@@ -1,5 +1,6 @@
 <?php
 
+/** Entity representing a book loan with associated details **/
 namespace App\Entity;
 
 use App\Repository\BorrowRepository;

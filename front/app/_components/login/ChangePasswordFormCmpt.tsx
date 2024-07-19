@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Button } from 'react-bootstrap';
 // import { useParams } from 'react-router-dom';
 
+/** ChangePasswordFormCmpt allows users to reset their password (currently commented out) **/
+
 const ChangePasswordFormCmpt = () => {
   // const { token } = useParams();
   // const [password, setPassword] = useState('');

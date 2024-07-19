@@ -1,5 +1,6 @@
 <?php
 
+/** Entity representing a member with personal information and user relationship **/
 namespace App\Entity;
 
 use App\Repository\MemberRepository;

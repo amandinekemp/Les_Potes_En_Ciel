@@ -11,6 +11,8 @@ import FamilyCmpt from "@/app/_components/account/FamilyCmpt";
 import MemberCmpt from "@/app/_components/account/MemberCmpt";
 import BorrowCmpt from "@/app/_components/account/BorrowCmpt";
 
+/** Component to display user profile with family info, members, and book borrows **/
+
 const ProfileCmpt = () => {
   const [user, setUser] = useState<Family>();
   const [borrows, setBorrows] = useState<Borrow[]>();

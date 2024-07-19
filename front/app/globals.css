@@ -3,7 +3,6 @@
 /* ---------------------------------------------------------------------------------------- */
 
 body {
-  /* ajouter la propriété background-color pour définir la couleur de fond */
   background-color: #F6F4E8;
 }
 
@@ -35,11 +34,8 @@ body {
 
 /* Section for Planning Image */
 .planning img {
-  /* Assure que l'image prend toute la largeur de l'élément parent */
   width: 100%;
-  /* Maintient le ratio d'aspect de l'image */
   height: auto;
-  /* L'image s'adapte à l'élément parent en conservant son ratio d'aspect */
   object-fit: cover;
 }
 
@@ -54,13 +50,9 @@ body {
 }
 
 .bannerLogo {
-  /* pour ajouter un peu de marge en haut */
   margin-top: 40px;
-  /* pour ajouter un peu de marge à gauche */
   margin-left: 40px;
-  /* pour que la taille du logo soit égale à 50% de la hauteur de l'image de la bannière */
   height: 50%;
-  /* pour éviter que le logo ne soit trop grand (vous pouvez ajuster cette valeur en fonction de vos besoins) */
   max-height: 200px;
 }
 

@@ -4,6 +4,8 @@ import { format } from "date-fns";
 
 import type {Member} from '@/app/_types/Member';
 
+/** Component to display member details including type, name, and birth date **/
+
 const MemberCmpt = ({ member }: { member: Member }) => {
   return (
     <>

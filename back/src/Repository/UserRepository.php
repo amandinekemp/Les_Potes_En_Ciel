@@ -1,5 +1,6 @@
 <?php
 
+/** Repository for the User entity, manages user operations and password updates **/
 namespace App\Repository;
 
 use App\Entity\User;

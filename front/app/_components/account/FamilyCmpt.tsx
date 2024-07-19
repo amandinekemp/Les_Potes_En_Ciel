@@ -3,6 +3,8 @@ import { Card, CardBody } from 'react-bootstrap';
 
 import type {Family} from '@/app/_types/Family';
 
+/** Component to display family contact and address details **/
+
 const FamilyCmpt = ({ family }: { family: Family }) => {
   return (
     <>

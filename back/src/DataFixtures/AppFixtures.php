@@ -7,6 +7,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
+/** Load initial user data into the database **/
 class AppFixtures extends Fixture
 {
   private $userPasswordHasher;
@@ -18,7 +19,7 @@ class AppFixtures extends Fixture
 
   public function load(ObjectManager $manager): void
   {
-    // Création d'un user "normal"
+    // Creating a “normal” user
     $user = new User();
     $user->setEmail("user@lpec.com");
     $user->setRoles(["ROLE_USER"]);
@@ -39,7 +40,7 @@ class AppFixtures extends Fixture
     $user->setPhoneNumber("0102030405");
     $manager->persist($user);
 
-    // Création d'un user admin
+    // Creating an admin user
     $userAdmin = new User();
     $userAdmin->setEmail("admin@lpec.com");
     $userAdmin->setRoles(["ROLE_ADMIN"]);

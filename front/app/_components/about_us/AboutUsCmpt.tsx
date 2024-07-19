@@ -2,6 +2,8 @@ import React from 'react';
 import { Row, Col, Button, Ratio } from 'react-bootstrap';
 import Image from 'next/image';
 
+/** The `AboutUsCmpt` component showcases the "Les Potes en Ciel" association. It highlights their mission, values, and goals. The component includes a video, activity reports, and a call-to-action to join. **/
+
 const AboutUsCmpt = () => {
   return (
     <>

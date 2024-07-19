@@ -1,5 +1,6 @@
 <?php
 
+/** Entity representing a newsletter subscription with the email address **/
 namespace App\Entity;
 
 use App\Repository\NewsletterRepository;

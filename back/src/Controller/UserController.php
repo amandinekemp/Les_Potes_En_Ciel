@@ -14,7 +14,7 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\SerializerInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
-# Access to entire controller requires authenticated user (defined in /config/packages/security.yaml)
+/** UserController manages user details and updates **/
 #[Route('/api/users')]
 class UserController extends AbstractController
 {
@@ -43,9 +43,9 @@ class UserController extends AbstractController
       [AbstractNormalizer::OBJECT_TO_POPULATE => $bddUser]
     );
 
-    // TODO : gerer la mise à jour des membres
+    // TODO : manage member updates
 
-    // On vérifie les erreurs
+    // Checking for errors
     $errors = $validator->validate($updatedUser);
     if ($errors->count() > 0) {
       return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);

@@ -1,8 +1,8 @@
--- Création de la BDD
+-- DB creation
 CREATE DATABASE IF NOT EXISTS `les_potes_en_ciel`;
 USE `les_potes_en_ciel`;
 
--- Création de la table User
+-- Creating the User table
 CREATE TABLE IF NOT EXISTS `user` (
     `id_user` INT(11) NOT NULL AUTO_INCREMENT,
     `email` VARCHAR(180) NOT NULL,
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `user` (
     PRIMARY KEY (`id_user`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Création de la table Member
+-- Creating the Member table
 CREATE TABLE IF NOT EXISTS `member` (
     `id_member` INT(11) NOT NULL AUTO_INCREMENT,
     `id_user` INT(11) NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `member` (
     FOREIGN KEY (`id_user`) REFERENCES `user`(`id_user`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Création de la table Book
+-- Creating the Book table
 CREATE TABLE IF NOT EXISTS `book` (
     `isbn` CHAR(13) NOT NULL,
     `title` VARCHAR(255) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `book` (
     PRIMARY KEY (`isbn`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Création de la table Borrow
+-- Creating the Borrow table
 CREATE TABLE IF NOT EXISTS `borrow` (
     `id_borrow` INT(11) NOT NULL AUTO_INCREMENT,
     `isbn` CHAR(13) NOT NULL,
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS `borrow` (
     FOREIGN KEY (`id_user`) REFERENCES `user`(`id_user`) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Création de la table Workshop
+-- Workshop table creation
 CREATE TABLE IF NOT EXISTS `workshop` (
     `id_workshop` INT(11) NOT NULL AUTO_INCREMENT,
     `title` VARCHAR(128) NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `workshop` (
     FOREIGN KEY (`id_organizer`) REFERENCES `user`(`id_user`) ON DELETE SET NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Création de la table Workshop_participant
+-- Creation of the Workshop_participant table
 CREATE TABLE IF NOT EXISTS `workshop_participant` (
     `id_workshop` INT(11) NOT NULL,
     `id_member` INT(11) NOT NULL,
@@ -71,7 +71,7 @@ CREATE TABLE IF NOT EXISTS `workshop_participant` (
     FOREIGN KEY (`id_member`) REFERENCES `member`(`id_member`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Création de la table Newsletter
+-- Newsletter table creation
 CREATE TABLE IF NOT EXISTS `newsletter` (
     `email` VARCHAR(128) NOT NULL,
     PRIMARY KEY (`email`)

@@ -3,12 +3,14 @@
 import { useState } from 'react';
 import { Button, Form, InputGroup } from "react-bootstrap";
 
+/** InscriptionFormCmpt handles user registration with form inputs and submission logic **/
+
 const InscriptionFormCmpt = () => {
   const [hiddenPassword, setHiddenPassword] = useState(true);
   const [account, setAccount] = useState({});
   const [message, setMessage] = useState("");
 
-  const isBrowser = () => typeof window !== 'undefined'; //The approach recommended by Next.js
+  const isBrowser = () => typeof window !== 'undefined'; // The approach recommended by Next.js
 
   function scrollToTop() {
       if (!isBrowser()) return;
@@ -16,9 +18,9 @@ const InscriptionFormCmpt = () => {
   }
 
   const handleSubmit = (e:any) => {
-    // Empêche le rechargement de la page lors de la soumission du formulaire
+    // Prevents page reload on form submission
     e.preventDefault();
-    // Appelle la fonction onSubmit avec le nouvel objet livre
+    // Calls the onSubmit function with the new book object
     fetch('http://localhost:8000/api/register/account', {
       method: 'POST',
       headers: {'Accept': 'application/json', 'Content-Type': 'application/json'},
@@ -34,7 +36,7 @@ const InscriptionFormCmpt = () => {
       }
     })
     .catch(error => {
-      // Si la requête a échoué, affiche un message d'erreur
+      // If the query fails, displays an error message
       console.error('Erreur:', error);
     });
   };

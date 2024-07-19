@@ -16,7 +16,7 @@ use App\Entity\Book;
 use App\Repository\BookRepository;
 use Symfony\Component\Security\Http\Attribute\IsGranted;
 
-# Access to controller is public if nothing is specified
+/** BookController handles CRUD operations for books **/
 #[Route('/api/books')]
 class BookController extends AbstractController
 {
@@ -42,7 +42,7 @@ class BookController extends AbstractController
   {
     $book = $serializer->deserialize($request->getContent(), Book::class, 'json');
 
-    // On vérifie les erreurs
+    // Checking for errors
     $errors = $validator->validate($book);
     if ($errors->count() > 0) {
       return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);
@@ -67,7 +67,7 @@ class BookController extends AbstractController
       [AbstractNormalizer::OBJECT_TO_POPULATE => $bddBook]
     );
 
-    // On vérifie les erreurs
+    // Checking for errors
     $errors = $validator->validate($updatedBook);
     if ($errors->count() > 0) {
       return new JsonResponse($serializer->serialize($errors, 'json'), JsonResponse::HTTP_BAD_REQUEST, [], true);

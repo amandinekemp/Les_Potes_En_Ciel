@@ -1,5 +1,6 @@
 <?php
 
+/** Entity representing a book with its properties and validation constraints **/
 namespace App\Entity;
 
 use App\Repository\BookRepository;

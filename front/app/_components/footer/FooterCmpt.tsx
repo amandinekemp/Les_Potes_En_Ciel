@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
+/** Footer component with contact info, opening hours, and links **/
+
 const FooterCmpt = () => {
   return (
     <>
