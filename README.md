@@ -94,8 +94,8 @@
 ### Steps
 
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/amandinekemp/Les_Potes_En_Ciel.git
+  ```bash
+  git clone https://github.com/amandinekemp/Les_Potes_En_Ciel.git
   ```
 
 2. Navigate to the project directory:
